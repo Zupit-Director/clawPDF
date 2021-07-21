@@ -11,6 +11,7 @@ using Microsoft.Win32;
 using NLog;
 using pdfforge.DataStorage;
 using pdfforge.DataStorage.Storage;
+using System.Text;
 
 namespace zupit.zupitPDF.Helper
 {
@@ -20,6 +21,7 @@ namespace zupit.zupitPDF.Helper
     internal class SettingsHelper
     {
         private static zupitPDFSettings _settings;
+        private static bool _ClearOnWrite;
 
         /// <summary>
         ///     Gets the current application-wide settings instance. The settings will be loaded if required.
@@ -46,18 +48,25 @@ namespace zupit.zupitPDF.Helper
             if (settingsMover.MoveRequired())
                 settingsMover.MoveSettings();
 
-            _settings = CreateEmptySettings();
+            //_settings = CreateEmptySettings();
 
-            if (UserSettingsExist()) _settings.LoadData(_settings.GetStorage(), "", UpgradeSettings);
+            //if (UserSettingsExist()) _settings.LoadData(_settings.GetStorage(), "", UpgradeSettings);
 
-            if (!CheckValidSettings(_settings))
-            {
-                if (DefaultUserSettingsExist())
-                    _settings.LoadData(new RegistryStorage(RegistryHive.Users, @".DEFAULT\" + SETTINGS_REG_PATH), "",
-                        UpgradeSettings);
-                else
-                    _settings = CreateDefaultSettings();
-            }
+            //if (!CheckValidSettings(_settings))
+            //{
+            //    if (DefaultUserSettingsExist())
+            //        _settings.LoadData(new RegistryStorage(RegistryHive.Users, @".DEFAULT\" + SETTINGS_REG_PATH), "",
+            //            UpgradeSettings);
+            //    else
+            //        _settings = CreateSettingsFromIni();
+            //}
+
+            var ini = new IniStorage(Encoding.UTF8);
+
+            _settings = SettingsHelper.CreateEmptySettings();
+            if (!Directory.Exists(BASE_INI_PATH)) Directory.CreateDirectory(BASE_INI_PATH);
+            if (!File.Exists(INI_FILE_PATH)) File.Create(INI_FILE_PATH);
+            _settings.LoadData(ini, INI_FILE_PATH, UpgradeSettings);
 
             CheckAndAddMissingDefaultProfile(_settings);
 
@@ -516,12 +525,30 @@ namespace zupit.zupitPDF.Helper
         public static zupitPDFSettings CreateEmptySettings()
         {
             var storage = new RegistryStorage(RegistryHive.CurrentUser, SETTINGS_REG_PATH);
-            storage.ClearOnWrite = true;
 
             var settings = CreateSettings(storage);
             return settings;
         }
-
+        /// <summary>
+        ///     Create an empty settings class with the proper registry storage attached
+        /// </summary>
+        /// <returns>An empty settings object</returns>
+        public static zupitPDFSettings CreateSettingsFromIni()
+        {
+            var storage = new IniStorage(Encoding.UTF8);
+            _ClearOnWrite = true;
+            if (!Directory.Exists(BASE_INI_PATH)) Directory.CreateDirectory(BASE_INI_PATH);
+            if (!File.Exists(INI_FILE_PATH)) File.Create(INI_FILE_PATH);
+            var data = Data.CreateDataStorage();
+            storage.SetData(data);
+            storage.ReadData(INI_FILE_PATH);
+            _logger.Error("READ DATA From " + INI_FILE_PATH);
+            _logger.Error("Sections " + string.Join("-", storage.Data.GetSections()));
+            var settings = CreateSettings(storage);
+            
+            return settings;
+        }
+        
         /// <summary>
         ///     Create an empty settings class with the proper registry storage attached
         /// </summary>
@@ -574,6 +601,9 @@ namespace zupit.zupitPDF.Helper
 
         public const string zupitPDF_REG_PATH = @"Software\clawSoft\zupitPDF";
         private const string SETTINGS_REG_PATH = zupitPDF_REG_PATH + @"\Settings";
+        private const string BASE_INI_PATH = "C:\\ProgramData\\PDF Writer\\zupitPDF";
+        private const string INI_FILE = "zupitPDF.ini";
+        private const string INI_FILE_PATH = BASE_INI_PATH + "\\" + INI_FILE;
         public const string LAST_USED_PROFILE_GUID = "";
         public const int SETTINGS_VERSION = 5;
 
