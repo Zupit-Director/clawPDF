@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Utilities;
 using SystemInterface.IO;
 
-namespace clawSoft.clawPDF.Core.Ghostscript.OutputDevices
+namespace zupit.zupitPDF.Core.Ghostscript.OutputDevices
 {
     /// <summary>
     ///     Extends OutputDevice for Printing with installed Windowsprinters

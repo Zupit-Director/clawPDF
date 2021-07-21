@@ -1,6 +1,6 @@
 using System;
 
-namespace clawSoft.clawPDF.ftplib.FtpLib
+namespace zupit.zupitPDF.ftplib.FtpLib
 {
     public static class Extensions
     {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Utilities;
 using NLog;
 using SystemInterface.IO;
 using SystemWrapper.IO;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     public class JobCleanUp
     {

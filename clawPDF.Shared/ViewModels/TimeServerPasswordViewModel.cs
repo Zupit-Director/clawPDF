@@ -1,4 +1,4 @@
-﻿namespace clawSoft.clawPDF.Shared.ViewModels
+﻿namespace zupit.zupitPDF.Shared.ViewModels
 {
     public class TimeServerPasswordViewModel : ViewModelBase
     {

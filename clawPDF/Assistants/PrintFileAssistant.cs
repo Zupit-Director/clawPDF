@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.PrintFile;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.Views;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.PrintFile;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Views;
 
-namespace clawSoft.clawPDF.Assistants
+namespace zupit.zupitPDF.Assistants
 {
     /// <summary>
     ///     The PrintFileAssistant extends the PrintFileHelperBase with user interaction (ask to change default printer, show
@@ -29,7 +29,7 @@ namespace clawSoft.clawPDF.Assistants
 
         protected override void DirectoriesNotSupportedHint()
         {
-            const string caption = "clawPDF";
+            const string caption = "zupitPDF";
             var message = _translationHelper.TranslatorInstance.GetTranslation("PrintFiles", "DirectoriesNotSupported",
                 "You have tried to convert directories here. This is currently not supported.");
             MessageWindow.ShowTopMost(message, caption, MessageWindowButtons.OK, MessageWindowIcon.Warning);
@@ -40,7 +40,7 @@ namespace clawSoft.clawPDF.Assistants
             var fileList =
                 new List<string>(unprintable.Select(p => Path.GetFileName(p.Filename))
                     .Take(Math.Min(3, unprintable.Count)));
-            const string caption = "clawPDF";
+            const string caption = "zupitPDF";
             var message =
                 _translationHelper.TranslatorInstance.GetTranslation("PrintFiles", "NotPrintableFiles",
                     "The following files can't be converted:") +
@@ -60,8 +60,8 @@ namespace clawSoft.clawPDF.Assistants
         {
             var message =
                 _translationHelper.TranslatorInstance.GetTranslation("PrintFileHelper", "AskSwitchDefaultPrinter",
-                    "clawPDF needs to temporarily change the default printer to be able to convert the file. Do you want to proceed?");
-            const string caption = "clawPDF";
+                    "zupitPDF needs to temporarily change the default printer to be able to convert the file. Do you want to proceed?");
+            const string caption = "zupitPDF";
             return MessageWindowResponse.Yes ==
                    MessageWindow.ShowTopMost(message, caption, MessageWindowButtons.YesNo, MessageWindowIcon.Question);
         }

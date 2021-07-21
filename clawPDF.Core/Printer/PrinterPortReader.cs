@@ -1,9 +1,9 @@
 ﻿using System;
-using clawSoft.clawPDF.Utilities.IO;
+using zupit.zupitPDF.Utilities.IO;
 using SystemInterface.Microsoft.Win32;
 using SystemWrapper.Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Core.Printer
+namespace zupit.zupitPDF.Core.Printer
 {
     public interface IPrinterPortReader
     {
@@ -12,7 +12,7 @@ namespace clawSoft.clawPDF.Core.Printer
 
     public class PrinterPortReader : IPrinterPortReader
     {
-        private const string DefaultTempFolderName = "clawPDF";
+        private const string DefaultTempFolderName = "zupitPDF";
         private const string RegistryBaseKey = @"SYSTEM\CurrentControlSet\Control\Print\Monitors\CLAWMON\CLAWMON:\";
 
         private static readonly IPathSafe PathSafe = new PathWrapSafe();

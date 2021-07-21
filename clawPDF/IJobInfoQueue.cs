@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Utilities.Communication;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Utilities.Communication;
 
-namespace clawSoft.clawPDF
+namespace zupit.zupitPDF
 {
     public interface IJobInfoQueue
     {

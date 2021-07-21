@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SystemInterface;
 
-namespace clawSoft.clawPDF.Utilities.Tokens
+namespace zupit.zupitPDF.Utilities.Tokens
 {
     /// <summary>
     ///     class with method to replace Tokens (see -> ReplaceTokens) previously added in its private TokenDict (see ->

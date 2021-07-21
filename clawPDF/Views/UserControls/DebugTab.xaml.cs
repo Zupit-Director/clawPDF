@@ -3,17 +3,17 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.Helper.Logging;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.Views;
-using clawSoft.clawPDF.ViewModels.UserControls;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper.Logging;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Views;
+using zupit.zupitPDF.ViewModels.UserControls;
 using Microsoft.Win32;
 using pdfforge.DataStorage.Storage;
 
-namespace clawSoft.clawPDF.Views.UserControls
+namespace zupit.zupitPDF.Views.UserControls
 {
     internal partial class DebugTab
     {
@@ -26,7 +26,7 @@ namespace clawSoft.clawPDF.Views.UserControls
             if (TranslationHelper.IsInitialized) TranslationHelper.TranslatorInstance.Translate(this);
         }
 
-        public Action<clawPDFSettings> UpdateSettings { get; set; }
+        public Action<zupitPDFSettings> UpdateSettings { get; set; }
 
         public DebugTabViewModel ViewModel => (DebugTabViewModel)DataContext;
 
@@ -52,7 +52,7 @@ namespace clawSoft.clawPDF.Views.UserControls
             if (File.Exists(LoggingHelper.LogFile)) File.WriteAllText(LoggingHelper.LogFile, "");
         }
 
-        private void clawPDFTestPageButton_OnClick(object sender, RoutedEventArgs e)
+        private void zupitPDFTestPageButton_OnClick(object sender, RoutedEventArgs e)
         {
             if (!QuerySaveModifiedSettings())
                 return;
@@ -111,7 +111,7 @@ namespace clawSoft.clawPDF.Views.UserControls
             saveFileDialog.Filter = TranslationHelper.Instance.TranslatorInstance.GetTranslation(
                 "ApplicationSettingsWindow",
                 "IniFileFilter", "INI files (*.ini)|*.ini");
-            saveFileDialog.FileName = "clawPDF.ini";
+            saveFileDialog.FileName = "zupitPDF.ini";
 
             if (saveFileDialog.ShowDialog() != true)
                 return;
@@ -127,7 +127,7 @@ namespace clawSoft.clawPDF.Views.UserControls
             openFileDialog.Filter = TranslationHelper.Instance.TranslatorInstance.GetTranslation(
                 "ApplicationSettingsWindow",
                 "IniFileFilter", "INI files (*.ini)|*.ini");
-            openFileDialog.FileName = "clawPDF.ini";
+            openFileDialog.FileName = "zupitPDF.ini";
 
             if (openFileDialog.ShowDialog() != true)
                 return;
@@ -151,7 +151,7 @@ namespace clawSoft.clawPDF.Views.UserControls
             {
                 message = TranslationHelper.Instance.TranslatorInstance.GetTranslation("ApplicationSettingsWindow",
                     "InvalidSettingsWarning",
-                    "The file does not appear to contain valid clawPDF settings.");
+                    "The file does not appear to contain valid zupitPDF settings.");
                 caption = TranslationHelper.Instance.TranslatorInstance.GetTranslation("ApplicationSettingsWindow",
                     "InvalidSettings",
                     "Invalid settings");

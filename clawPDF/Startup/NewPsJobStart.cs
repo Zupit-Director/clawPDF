@@ -1,8 +1,8 @@
 ﻿using System.Runtime.InteropServices;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper;
 using NLog;
 
-namespace clawSoft.clawPDF.Startup
+namespace zupit.zupitPDF.Startup
 {
     internal class NewPsJobStart : MaybePipedStart
     {
@@ -10,7 +10,7 @@ namespace clawSoft.clawPDF.Startup
 
         private string _newInfFile;
 
-        public NewPsJobStart(string newPsFile, string printerName = "clawPDF")
+        public NewPsJobStart(string newPsFile, string printerName = "zupitPDF")
         {
             NewPsFile = newPsFile;
             PrinterName = printerName;

@@ -3,7 +3,7 @@ using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Threading;
 
-namespace clawSoft.clawPDF.Utilities.Communication
+namespace zupit.zupitPDF.Utilities.Communication
 {
     /// <summary>
     ///     This class manages a global Mutex that is shared among the different application instaces (multiple processes).

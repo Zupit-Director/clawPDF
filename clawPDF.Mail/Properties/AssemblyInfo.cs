@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("clawPDF.Mail")]
-[assembly: AssemblyDescription("clawPDF Mail")]
+[assembly: AssemblyTitle("zupitPDF.Mail")]
+[assembly: AssemblyDescription("zupitPDF Mail")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Andrew Hess // clawSoft")]
-[assembly: AssemblyProduct("clawPDF.Mail")]
-[assembly: AssemblyCopyright("Copyright © 2019 Andrew Hess // clawSoft")]
+[assembly: AssemblyCompany("Roberto Demozzi // zupit")]
+[assembly: AssemblyProduct("zupitPDF.Mail")]
+[assembly: AssemblyCopyright("Copyright © 2019 Roberto Demozzi // zupit")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

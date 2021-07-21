@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Text;
 using System.Threading;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Ghostscript;
-using clawSoft.clawPDF.Core.Ghostscript.OutputDevices;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.PDFProcessing;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Ghostscript;
+using zupit.zupitPDF.Core.Ghostscript.OutputDevices;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.PDFProcessing;
 using SystemInterface.IO;
 using SystemWrapper.IO;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     /// <summary>
     ///     The GhostscriptJob class processes a Job with Ghostscript.
@@ -27,7 +27,7 @@ namespace clawSoft.clawPDF.Core.Jobs
         /// <param name="profile">Profile that determines the conversion process</param>
         /// <param name="tempFolder">
         ///     TempFolderProvider that gives the full Temp path, i.e. C:\Users\Admin\Local
-        ///     Settings\Temp\clawPDF
+        ///     Settings\Temp\zupitPDF
         /// </param>
         /// <param name="jobTranslations">Translations needed for the job</param>
         public GhostscriptJob(IJobInfo jobInfo, ConversionProfile profile, ITempFolderProvider tempFolder,
@@ -43,7 +43,7 @@ namespace clawSoft.clawPDF.Core.Jobs
         /// <param name="profile">Profile that determines the conversion process</param>
         /// <param name="tempFolder">
         ///     TempFolderProvider that gives the full Temp path, i.e. C:\Users\Admin\Local
-        ///     Settings\Temp\clawPDF
+        ///     Settings\Temp\zupitPDF
         /// </param>
         /// <param name="jobTranslations">Translations needed for the job</param>
         /// <param name="fileWrap">Only for testing</param>

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.Views;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Views;
+using zupit.zupitPDF.Utilities;
 
-namespace clawSoft.clawPDF.Shared.Assistants
+namespace zupit.zupitPDF.Shared.Assistants
 {
     public class UacAssistant
     {
@@ -43,7 +43,7 @@ namespace clawSoft.clawPDF.Shared.Assistants
             {
                 var message = TranslationHelper.Instance.TranslatorInstance.GetFormattedTranslation("Application",
                     "SetupFileMissing",
-                    "An important clawPDF file is missing ('{0}'). Please reinstall clawPDF!",
+                    "An important zupitPDF file is missing ('{0}'). Please reinstall zupitPDF!",
                     Path.GetFileName(setupHelperPath));
                 var caption =
                     TranslationHelper.Instance.TranslatorInstance.GetTranslation("ApplicationSettingsWindow", "Error",
@@ -111,7 +111,7 @@ namespace clawSoft.clawPDF.Shared.Assistants
             {
                 var message = TranslationHelper.Instance.TranslatorInstance.GetFormattedTranslation("Application",
                     "SetupFileMissing",
-                    "An important clawPDF file is missing ('{0}'). Please reinstall clawPDF!",
+                    "An important zupitPDF file is missing ('{0}'). Please reinstall zupitPDF!",
                     Path.GetFileName(printerHelperPath));
                 var caption =
                     TranslationHelper.Instance.TranslatorInstance.GetTranslation("ApplicationSettingsWindow", "Error",

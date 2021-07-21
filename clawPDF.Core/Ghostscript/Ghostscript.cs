@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using clawSoft.clawPDF.Core.Ghostscript.OutputDevices;
+using zupit.zupitPDF.Core.Ghostscript.OutputDevices;
 using NLog;
 
-namespace clawSoft.clawPDF.Core.Ghostscript
+namespace zupit.zupitPDF.Core.Ghostscript
 {
     /// <summary>
     ///     Provides access to Ghostscript, either through DLL access or by calling the Ghostscript exe

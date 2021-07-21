@@ -1,7 +1,7 @@
 ﻿using System;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Utilities;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     public interface IVersionHelper
     {

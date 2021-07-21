@@ -1,4 +1,4 @@
-# clawPDF // PDFCreator 2.3 fork
+# zupitPDF // PDFCreator 2.3 fork
 
 Yet another PDF Printer? Yes! This PDF Printer has the intention to be completely open source.
 
@@ -51,12 +51,12 @@ Yet another PDF Printer? Yes! This PDF Printer has the intention to be completel
 
 # Screenshot
 
-![clawpdf1](clawPDF/docs/images/clawpdf1.png?raw=true "clawpdf1")
-![clawpdf2](clawPDF/docs/images/clawpdf2.png?raw=true "clawpdf2")
-![clawpdf3](clawPDF/docs/images/clawpdf3.png?raw=true "clawpdf3")
-![clawpdf4](clawPDF/docs/images/clawpdf4.png?raw=true "clawpdf4")
-![clawpdf5](clawPDF/docs/images/clawpdf5.png?raw=true "clawpdf5")
-![clawpdf6](clawPDF/docs/images/clawpdf6.png?raw=true "clawpdf6")
+![zupitPDF1](zupitPDF/docs/images/zupitPDF1.png?raw=true "zupitPDF1")
+![zupitPDF2](zupitPDF/docs/images/zupitPDF2.png?raw=true "zupitPDF2")
+![zupitPDF3](zupitPDF/docs/images/zupitPDF3.png?raw=true "zupitPDF3")
+![zupitPDF4](zupitPDF/docs/images/zupitPDF4.png?raw=true "zupitPDF4")
+![zupitPDF5](zupitPDF/docs/images/zupitPDF5.png?raw=true "zupitPDF5")
+![zupitPDF6](zupitPDF/docs/images/zupitPDF6.png?raw=true "zupitPDF6")
 
 
 # Roadmap
@@ -75,7 +75,7 @@ Yet another PDF Printer? Yes! This PDF Printer has the intention to be completel
 
 # Third-party
 
-## clawPDF uses the following licensed software or parts of the source code:
+## zupitPDF uses the following licensed software or parts of the source code:
 
 - main code: PDFCreator 2.3 (https://github.com/pdfforge/PDFCreator), licensed under AGPL v3 license.
 - PDF library: iTextSharp 5.5.13 (https://github.com/itext/itextsharp), licensed under AGPL v3 license.
@@ -96,5 +96,5 @@ Yet another PDF Printer? Yes! This PDF Printer has the intention to be completel
 
 # License
 
-clawPDF is licensed under AGPL v3 license<br>
-Copyright (C) 2019 // Andrew Hess // clawSoft
+zupitPDF is licensed under AGPL v3 license<br>
+Copyright (C) 2019 // Roberto Demozzi // zupit

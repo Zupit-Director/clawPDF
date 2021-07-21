@@ -1,9 +1,9 @@
 ﻿using System;
-using clawSoft.clawPDF.Utilities.WindowsApi;
+using zupit.zupitPDF.Utilities.WindowsApi;
 using SystemInterface.Microsoft.Win32;
 using SystemWrapper.Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Utilities.GUID
+namespace zupit.zupitPDF.Utilities.GUID
 {
     public class MachineId
     {

@@ -1,6 +1,6 @@
-﻿using clawSoft.clawPDF.Core.Settings;
+﻿using zupit.zupitPDF.Core.Settings;
 
-namespace clawSoft.clawPDF.Core.Actions
+namespace zupit.zupitPDF.Core.Actions
 {
     internal interface ICheckable
     {

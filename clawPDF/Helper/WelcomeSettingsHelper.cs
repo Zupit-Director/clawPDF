@@ -1,13 +1,13 @@
 ﻿using System;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper;
 using SystemInterface.Microsoft.Win32;
 using SystemWrapper.Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     internal class WelcomeSettingsHelper
     {
-        public const string RegistryKeyForWelcomeSettings = @"HKEY_CURRENT_USER\Software\clawSoft\clawPDF";
+        public const string RegistryKeyForWelcomeSettings = @"HKEY_CURRENT_USER\Software\clawSoft\zupitPDF";
         public const string RegistryValueForWelcomeVersion = @"LatestWelcomeVersion";
 
         private readonly IRegistry _registryWrap;

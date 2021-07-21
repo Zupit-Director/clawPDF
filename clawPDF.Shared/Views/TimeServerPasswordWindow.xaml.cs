@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
 
-namespace clawSoft.clawPDF.Shared.Views
+namespace zupit.zupitPDF.Shared.Views
 {
     public partial class TimeServerPasswordWindow : Window
     {

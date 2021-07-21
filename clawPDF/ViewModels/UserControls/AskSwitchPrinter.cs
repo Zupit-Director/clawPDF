@@ -1,4 +1,4 @@
-namespace clawSoft.clawPDF.ViewModels.UserControls
+namespace zupit.zupitPDF.ViewModels.UserControls
 {
     internal class AskSwitchPrinter
     {

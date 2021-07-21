@@ -1,8 +1,8 @@
 ﻿using System;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Shared.ViewModels;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Shared.ViewModels;
 
-namespace clawSoft.clawPDF.ViewModels
+namespace zupit.zupitPDF.ViewModels
 {
     internal class ApplicationSettingsViewModel : ViewModelBase
     {

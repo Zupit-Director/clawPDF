@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using clawSoft.clawPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Core.Settings.Enums;
 
-namespace clawSoft.clawPDF.Core
+namespace zupit.zupitPDF.Core
 {
     public class OutputFormatHelper
     {

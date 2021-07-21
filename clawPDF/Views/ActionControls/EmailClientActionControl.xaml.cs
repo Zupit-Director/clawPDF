@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Mail;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels.UserControls;
-using clawSoft.clawPDF.Shared.Views;
-using clawSoft.clawPDF.Shared.Views.ActionControls;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Mail;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels.UserControls;
+using zupit.zupitPDF.Shared.Views;
+using zupit.zupitPDF.Shared.Views.ActionControls;
 using NLog;
 
-namespace clawSoft.clawPDF.Views.ActionControls
+namespace zupit.zupitPDF.Views.ActionControls
 {
     internal partial class EmailClientActionControl : ActionControl
     {
@@ -72,9 +72,9 @@ namespace clawSoft.clawPDF.Views.ActionControls
             try
             {
                 var tempFolder = Path.GetTempPath();
-                var tmpTestFolder = Path.Combine(tempFolder, "clawPDF-Test\\SendSmtpTestmail");
+                var tmpTestFolder = Path.Combine(tempFolder, "zupitPDF-Test\\SendSmtpTestmail");
                 Directory.CreateDirectory(tmpTestFolder);
-                var tmpFile = Path.Combine(tmpTestFolder, "clawPDF Mail Client Test.pdf");
+                var tmpFile = Path.Combine(tmpTestFolder, "zupitPDF Mail Client Test.pdf");
                 File.WriteAllText(tmpFile, "");
                 eMail.Attachments.Add(new Attachment(tmpFile));
 

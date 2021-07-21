@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Properties;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Properties;
 
-namespace clawSoft.clawPDF.ViewModels.Wrapper
+namespace zupit.zupitPDF.ViewModels.Wrapper
 {
     internal class PrinterMappingWrapper : INotifyPropertyChanged
     {

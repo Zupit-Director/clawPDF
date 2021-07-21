@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Shared.Helper;
 
-namespace clawSoft.clawPDF.Workflow
+namespace zupit.zupitPDF.Workflow
 {
     internal class ComWorkflow : ConversionWorkflow
     {
-        public ComWorkflow(IJob job, clawPDFSettings settings)
+        public ComWorkflow(IJob job, zupitPDFSettings settings)
         {
             JobInfo = job.JobInfo;
             Job = job;

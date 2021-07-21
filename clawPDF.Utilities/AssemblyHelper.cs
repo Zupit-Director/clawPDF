@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using clawSoft.clawPDF.Utilities.IO;
+using zupit.zupitPDF.Utilities.IO;
 
-namespace clawSoft.clawPDF.Utilities
+namespace zupit.zupitPDF.Utilities
 {
     public interface IAssemblyHelper
     {

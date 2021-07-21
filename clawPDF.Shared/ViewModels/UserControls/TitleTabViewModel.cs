@@ -5,12 +5,12 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Data;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Shared.Helper;
 using pdfforge.DynamicTranslator;
 
-namespace clawSoft.clawPDF.Shared.ViewModels.UserControls
+namespace zupit.zupitPDF.Shared.ViewModels.UserControls
 {
     public class TitleTabViewModel : ViewModelBase
     {

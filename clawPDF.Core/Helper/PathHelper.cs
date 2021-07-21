@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
 
-namespace clawSoft.clawPDF.Core.Helper
+namespace zupit.zupitPDF.Core.Helper
 {
     public class PathHelper
     {

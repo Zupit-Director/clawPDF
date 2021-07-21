@@ -7,8 +7,8 @@
     <ProjectGuid>{94936199-C9C7-4A5F-A58E-6123158E84F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>clawSoft.clawPDF.Core.Settings</RootNamespace>
-    <AssemblyName>clawPDF.Settings</AssemblyName>
+    <RootNamespace>zupit.zupitPDF.Core.Settings</RootNamespace>
+    <AssemblyName>zupitPDF.Settings</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>

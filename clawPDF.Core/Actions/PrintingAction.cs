@@ -1,10 +1,10 @@
 ﻿using System;
-using clawSoft.clawPDF.Core.Ghostscript;
-using clawSoft.clawPDF.Core.Ghostscript.OutputDevices;
-using clawSoft.clawPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Ghostscript;
+using zupit.zupitPDF.Core.Ghostscript.OutputDevices;
+using zupit.zupitPDF.Core.Jobs;
 using NLog;
 
-namespace clawSoft.clawPDF.Core.Actions
+namespace zupit.zupitPDF.Core.Actions
 {
     /// <summary>
     ///     Implements the action to print the input files

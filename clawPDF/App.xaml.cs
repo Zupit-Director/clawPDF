@@ -4,20 +4,20 @@ using System.ServiceProcess;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
-using clawSoft.clawPDF.Assistants;
-using clawSoft.clawPDF.Core.Ghostscript;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.Helper.Logging;
-using clawSoft.clawPDF.Shared.Views;
-using clawSoft.clawPDF.Startup;
-using clawSoft.clawPDF.Threading;
-using clawSoft.clawPDF.Utilities.Communication;
+using zupit.zupitPDF.Assistants;
+using zupit.zupitPDF.Core.Ghostscript;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper.Logging;
+using zupit.zupitPDF.Shared.Views;
+using zupit.zupitPDF.Startup;
+using zupit.zupitPDF.Threading;
+using zupit.zupitPDF.Utilities.Communication;
 using NLog;
 using Application = System.Windows.Forms.Application;
 
-namespace clawSoft.clawPDF
+namespace zupit.zupitPDF
 {
     public partial class App
     {
@@ -32,7 +32,7 @@ namespace clawSoft.clawPDF
 
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
-            var globalMutex = new GlobalMutex("clawPDF-137a7751-1070-4db4-a407-83c1625762c7");
+            var globalMutex = new GlobalMutex("zupitPDF-137a7751-1070-4db4-a407-83c1625762c7");
             globalMutex.Acquire();
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -41,18 +41,18 @@ namespace clawSoft.clawPDF
 
             try
             {
-                LoggingHelper.InitFileLogger("clawPDF", LoggingLevel.Error);
+                LoggingHelper.InitFileLogger("zupitPDF", LoggingLevel.Error);
 
                 RunApplication(e.Args);
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, "There was an error while starting clawPDF");
+                Logger.Error(ex, "There was an error while starting zupitPDF");
             }
             finally
             {
                 globalMutex.Release();
-                Logger.Debug("Ending clawPDF");
+                Logger.Debug("Ending zupitPDF");
                 Shutdown();
             }
         }
@@ -77,7 +77,7 @@ namespace clawSoft.clawPDF
                 return;
             }
 
-            Logger.Debug("Starting clawPDF");
+            Logger.Debug("Starting zupitPDF");
 
             if (commandLineArguments.Length > 0)
                 Logger.Info("Command Line parameters: \r\n" + string.Join(" ", commandLineArguments));
@@ -100,7 +100,7 @@ namespace clawSoft.clawPDF
                 Logger.Error("Spooler service is not running. Exiting...");
                 var message =
                     "The Windows spooler service is not running. Please start the spooler first.\r\n\r\nProgram exiting now.";
-                const string caption = @"clawPDF";
+                const string caption = @"zupitPDF";
                 MessageBox.Show(message, caption, MessageBoxButton.OK, MessageBoxImage.Error);
                 Environment.Exit(1);
             }
@@ -123,7 +123,7 @@ namespace clawSoft.clawPDF
         {
             if (TranslationHelper.Instance.TranslationPath == null)
             {
-                MessageBox.Show(@"Could not find any translation. Please reinstall clawPDF.",
+                MessageBox.Show(@"Could not find any translation. Please reinstall zupitPDF.",
                     @"Translations missing");
                 Shutdown(1);
             }
@@ -131,7 +131,7 @@ namespace clawSoft.clawPDF
             // Verfiy that Ghostscript is installed and exit if not
             //EnsureGhoscriptIsInstalled();
 
-            // Verify that clawPDF printers are installed
+            // Verify that zupitPDF printers are installed
             EnsurePrinterIsInstalled();
         }
 
@@ -143,7 +143,7 @@ namespace clawSoft.clawPDF
                 var message = TranslationHelper.Instance.TranslatorInstance.GetTranslation("ConversionWorkflow",
                     "NoSupportedGSFound",
                     "Can't find a supported Ghostscript installation.\r\n\r\nProgram exiting now.");
-                const string caption = @"clawPDF";
+                const string caption = @"zupitPDF";
                 MessageWindow.ShowTopMost(message, caption, MessageWindowButtons.OK, MessageWindowIcon.Error);
                 Environment.Exit(1);
             }

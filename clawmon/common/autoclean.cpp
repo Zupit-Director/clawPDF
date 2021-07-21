@@ -1,6 +1,6 @@
 /*
 clawmon - print to file with automatic filename assignment
-Copyright (C) 2019 // Andrew Hess // clawSoft
+Copyright (C) 2019 // Roberto Demozzi // zupit
 
 MFILEMON - print to file with automatic filename assignment
 Copyright (C) 2007-2015 Monti Lorenzo

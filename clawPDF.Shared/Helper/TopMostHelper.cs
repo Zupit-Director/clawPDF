@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Interop;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     public static class TopMostHelper
     {

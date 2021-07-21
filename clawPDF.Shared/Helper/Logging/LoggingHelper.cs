@@ -1,8 +1,8 @@
 ﻿using System;
-using clawSoft.clawPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Core.Settings.Enums;
 using NLog;
 
-namespace clawSoft.clawPDF.Shared.Helper.Logging
+namespace zupit.zupitPDF.Shared.Helper.Logging
 {
     /// <summary>
     ///     LoggingUtil provides functionality for setting up and managing the logging behavior.

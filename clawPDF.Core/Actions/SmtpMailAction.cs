@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Net;
 using System.Net.Mail;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
 using NLog;
 
-namespace clawSoft.clawPDF.Core.Actions
+namespace zupit.zupitPDF.Core.Actions
 {
     public class SmtpMailAction : IAction, ICheckable
     {

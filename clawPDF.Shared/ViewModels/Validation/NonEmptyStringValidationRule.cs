@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows.Controls;
 
-namespace clawSoft.clawPDF.Shared.ViewModels.Validation
+namespace zupit.zupitPDF.Shared.ViewModels.Validation
 {
     /// <summary>
     ///     NonEmptyStringValidationRule ensures that a string is neither null nor empty

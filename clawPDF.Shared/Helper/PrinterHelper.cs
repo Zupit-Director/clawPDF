@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Drawing.Printing;
 using System.Runtime.InteropServices;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     public class PrinterHelper
     {
@@ -15,8 +15,8 @@ namespace clawSoft.clawPDF.Shared.Helper
         /// <summary>
         ///     List all printers that are connected to the CLAWMON: port
         /// </summary>
-        /// <returns>A Collection of clawPDF printers</returns>
-        public virtual ICollection<string> GetclawPDFPrinters()
+        /// <returns>A Collection of zupitPDF printers</returns>
+        public virtual ICollection<string> GetzupitPDFPrinters()
         {
             var printerInfos = EnumPrinters(PrinterEnumFlags.PRINTER_ENUM_LOCAL);
 
@@ -24,7 +24,7 @@ namespace clawSoft.clawPDF.Shared.Helper
 
             foreach (var printer in printerInfos)
                 //if (printer.pPortName.Equals("pdfcmon"))
-                if (printer.pDriverName.Equals("clawPDF Virtual Printer", StringComparison.OrdinalIgnoreCase))
+                if (printer.pDriverName.Equals("zupitPDF Virtual Printer", StringComparison.OrdinalIgnoreCase))
                     printers.Add(printer.pPrinterName);
 
             printers.Sort();
@@ -71,7 +71,7 @@ namespace clawSoft.clawPDF.Shared.Helper
         {
             var settings = new PrinterSettings();
             var defaultPrinter = settings.PrinterName;
-            var printer = GetApplicableclawPDFPrinter(primaryPrinter, defaultPrinter);
+            var printer = GetApplicablezupitPDFPrinter(primaryPrinter, defaultPrinter);
 
             var psi = new ProcessStartInfo("RUNDLL32.exe", "PRINTUI.DLL,PrintUIEntry /k /n \"" + printer + "\"");
             psi.CreateNoWindow = true;
@@ -79,12 +79,12 @@ namespace clawSoft.clawPDF.Shared.Helper
         }
 
         /// <summary>
-        ///     Prints a windows test page to the preferred printer. It searches all printers connected to the clawPDF port. If
-        ///     one of them is called "clawPDF", this one is used. If not, the first one will be used.
+        ///     Prints a windows test page to the preferred printer. It searches all printers connected to the zupitPDF port. If
+        ///     one of them is called "zupitPDF", this one is used. If not, the first one will be used.
         /// </summary>
         public void PrintWindowsTestPage()
         {
-            PrintWindowsTestPage("clawPDF");
+            PrintWindowsTestPage("zupitPDF");
         }
 
         /// <summary>
@@ -105,36 +105,36 @@ namespace clawSoft.clawPDF.Shared.Helper
         }
 
         /// <summary>
-        ///     Function that searches all printers connected to the clawPDF port and returns the most applicable. This is
+        ///     Function that searches all printers connected to the zupitPDF port and returns the most applicable. This is
         ///     either the requested printer,
-        ///     the default Printer, the one with the name "clawPDF" or the first one in alphabetical order.
+        ///     the default Printer, the one with the name "zupitPDF" or the first one in alphabetical order.
         /// </summary>
-        /// <param name="requestedPrinter">Name of the primary clawPDF printer</param>
+        /// <param name="requestedPrinter">Name of the primary zupitPDF printer</param>
         /// <param name="defaultPrinter">Name of the current default printer</param>
-        /// <returns>null if no clawPDF printer is installed, else the name of the most applicable clawPDF printer</returns>
-        public string GetApplicableclawPDFPrinter(string requestedPrinter, string defaultPrinter)
+        /// <returns>null if no zupitPDF printer is installed, else the name of the most applicable zupitPDF printer</returns>
+        public string GetApplicablezupitPDFPrinter(string requestedPrinter, string defaultPrinter)
         {
-            var printers = GetclawPDFPrinters();
+            var printers = GetzupitPDFPrinters();
 
             if (printers.Count == 0)
                 return null;
 
             // ReSharper disable once InconsistentNaming
-            string clawPDFPrinter = null;
+            string zupitPDFPrinter = null;
             var isDefaultPrinter = false;
 
             foreach (var printer in printers)
             {
-                if (clawPDFPrinter == null)
-                    clawPDFPrinter = printer;
+                if (zupitPDFPrinter == null)
+                    zupitPDFPrinter = printer;
 
                 if (!isDefaultPrinter)
-                    if (printer.Equals("clawPDF", StringComparison.OrdinalIgnoreCase))
-                        clawPDFPrinter = printer;
+                    if (printer.Equals("zupitPDF", StringComparison.OrdinalIgnoreCase))
+                        zupitPDFPrinter = printer;
 
                 if (printer.Equals(defaultPrinter, StringComparison.OrdinalIgnoreCase))
                 {
-                    clawPDFPrinter = printer;
+                    zupitPDFPrinter = printer;
                     isDefaultPrinter = true;
                 }
 
@@ -142,12 +142,12 @@ namespace clawSoft.clawPDF.Shared.Helper
                     return printer;
             }
 
-            return clawPDFPrinter;
+            return zupitPDFPrinter;
         }
 
-        public string GetApplicableclawPDFPrinter(string requestedPrinter)
+        public string GetApplicablezupitPDFPrinter(string requestedPrinter)
         {
-            return GetApplicableclawPDFPrinter(requestedPrinter, GetDefaultPrinter());
+            return GetApplicablezupitPDFPrinter(requestedPrinter, GetDefaultPrinter());
         }
 
         [DllImport("winspool.drv", CharSet = CharSet.Auto, SetLastError = true)]

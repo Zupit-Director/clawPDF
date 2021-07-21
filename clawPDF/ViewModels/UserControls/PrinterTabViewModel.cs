@@ -5,12 +5,12 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Data;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.ViewModels.Wrapper;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.ViewModels.Wrapper;
 
-namespace clawSoft.clawPDF.ViewModels.UserControls
+namespace zupit.zupitPDF.ViewModels.UserControls
 {
     internal class PrinterTabViewModel : ApplicationSettingsViewModel
     {
@@ -21,7 +21,7 @@ namespace clawSoft.clawPDF.ViewModels.UserControls
         };
 
         private readonly TranslationHelper _translationHelper;
-        private ICollection<string> _clawPdfPrinters;
+        private ICollection<string> _zupitPDFPrinters;
 
         private IEnumerable<ConversionProfile> _conversionProfiles;
         private ConversionProfile _defaultProfile;
@@ -36,7 +36,7 @@ namespace clawSoft.clawPDF.ViewModels.UserControls
             _translationHelper = translationHelper;
 
             var helper = new PrinterHelper();
-            GetPrinterListAction = fetchPrintersFunc ?? helper.GetclawPDFPrinters;
+            GetPrinterListAction = fetchPrintersFunc ?? helper.GetzupitPDFPrinters;
 
             ConversionProfiles = profiles;
             ApplicationSettings = applicationSettings;
@@ -77,13 +77,13 @@ namespace clawSoft.clawPDF.ViewModels.UserControls
             }
         }
 
-        public ICollection<string> ClawPdfPrinters
+        public ICollection<string> zupitPDFPrinters
         {
-            get => _clawPdfPrinters;
+            get => _zupitPDFPrinters;
             set
             {
-                _clawPdfPrinters = value;
-                RaisePropertyChanged("clawPDFPrinters");
+                _zupitPDFPrinters = value;
+                RaisePropertyChanged("zupitPDFPrinters");
             }
         }
 
@@ -114,7 +114,7 @@ namespace clawSoft.clawPDF.ViewModels.UserControls
                 {
                     var printerHelper = new PrinterHelper();
                     ApplicationSettings.PrimaryPrinter =
-                        printerHelper.GetApplicableclawPDFPrinter("clawPDF", "clawPDF");
+                        printerHelper.GetApplicablezupitPDFPrinter("zupitPDF", "zupitPDF");
                 }
 
                 return ApplicationSettings.PrimaryPrinter;
@@ -167,13 +167,13 @@ namespace clawSoft.clawPDF.ViewModels.UserControls
             if (GetPrinterListAction == null)
                 return;
 
-            if (_clawPdfPrinters == null)
-                _clawPdfPrinters = new List<string>();
+            if (_zupitPDFPrinters == null)
+                _zupitPDFPrinters = new List<string>();
 
-            _clawPdfPrinters.Clear();
-            foreach (var printer in GetPrinterListAction()) _clawPdfPrinters.Add(printer);
+            _zupitPDFPrinters.Clear();
+            foreach (var printer in GetPrinterListAction()) _zupitPDFPrinters.Add(printer);
 
-            RaisePropertyChanged("clawPDFPrinters");
+            RaisePropertyChanged("zupitPDFPrinters");
         }
 
         public void UpdatePrimaryPrinter(string printerName)
@@ -218,7 +218,7 @@ namespace clawSoft.clawPDF.ViewModels.UserControls
             if (currentMapping == null)
                 return false;
 
-            return ClawPdfPrinters.Contains(currentMapping.PrinterName);
+            return zupitPDFPrinters.Contains(currentMapping.PrinterName);
         }
 
         private void AddPrintercommandExecute(object o)
@@ -247,7 +247,7 @@ namespace clawSoft.clawPDF.ViewModels.UserControls
         {
             UpdatePrinterList();
             CollectionViewSource.GetDefaultView(ApplicationSettings.PrinterMappings).Refresh();
-            CollectionViewSource.GetDefaultView(ClawPdfPrinters).Refresh();
+            CollectionViewSource.GetDefaultView(zupitPDFPrinters).Refresh();
         }
 
         public void RefreshPrinterMappings()

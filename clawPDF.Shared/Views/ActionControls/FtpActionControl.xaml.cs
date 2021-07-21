@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Utilities.Tokens;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Utilities.Tokens;
 
-namespace clawSoft.clawPDF.Shared.Views.ActionControls
+namespace zupit.zupitPDF.Shared.Views.ActionControls
 {
     public partial class FtpActionControl : ActionControl
     {

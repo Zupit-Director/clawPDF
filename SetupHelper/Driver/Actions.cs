@@ -1,19 +1,19 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using clawSoft.clawPDF.SetupHelper.Helper;
+using zupit.zupitPDF.SetupHelper.Helper;
 
-namespace clawSoft.clawPDF.SetupHelper.Driver
+namespace zupit.zupitPDF.SetupHelper.Driver
 {
     internal class Actions
     {
         public static bool CheckIfPrinterNotInstalled()
         {
             bool resultCode;
-            clawPDFInstaller installer = new clawPDFInstaller();
+            zupitPDFInstaller installer = new zupitPDFInstaller();
             try
             {
-                if (installer.IsclawPDFPrinterInstalled())
+                if (installer.IszupitPDFPrinterInstalled())
                     resultCode = true;
                 else
                     resultCode = false;
@@ -26,10 +26,10 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         public static bool AddPrinter(string name)
         {
             bool resultCode;
-            clawPDFInstaller installer = new clawPDFInstaller();
+            zupitPDFInstaller installer = new zupitPDFInstaller();
             try
             {
-                if (installer.AddCustomclawPDFPrinter(name))
+                if (installer.AddCustomzupitPDFPrinter(name))
                 {
                     resultCode = true;
                     Spooler.stop();
@@ -46,10 +46,10 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         public static bool RemovePrinter(string name)
         {
             bool resultCode;
-            clawPDFInstaller installer = new clawPDFInstaller();
+            zupitPDFInstaller installer = new zupitPDFInstaller();
             try
             {
-                if (installer.DeleteCustomclawPDFPrinter(name))
+                if (installer.DeleteCustomzupitPDFPrinter(name))
                     resultCode = true;
                 else
                     resultCode = false;
@@ -59,11 +59,11 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
             return resultCode;
         }
 
-        public static bool InstallclawPDFPrinter()
+        public static bool InstallzupitPDFPrinter()
         {
             bool printerInstalled;
             string clawmonpath;
-            clawPDFInstaller installer = new clawPDFInstaller();
+            zupitPDFInstaller installer = new zupitPDFInstaller();
             try
             {
                 if (Environment.Is64BitOperatingSystem)
@@ -75,7 +75,7 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
                     clawmonpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\clawmon\x86\";
                 }
 
-                if (installer.InstallclawPDFPrinter(clawmonpath, "clawPDF.exe"))
+                if (installer.InstallzupitPDFPrinter(clawmonpath, "zupitPDF.exe"))
                     printerInstalled = true;
                 else
                     printerInstalled = false;
@@ -85,13 +85,13 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
             return printerInstalled;
         }
 
-        public static bool UninstallclawPDFPrinter()
+        public static bool UninstallzupitPDFPrinter()
         {
             bool printerUninstalled;
-            clawPDFInstaller installer = new clawPDFInstaller();
+            zupitPDFInstaller installer = new zupitPDFInstaller();
             try
             {
-                if (installer.UninstallclawPDFPrinter())
+                if (installer.UninstallzupitPDFPrinter())
                     printerUninstalled = true;
                 else
                     printerUninstalled = false;

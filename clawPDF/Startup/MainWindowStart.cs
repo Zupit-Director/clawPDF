@@ -1,7 +1,7 @@
-﻿using clawSoft.clawPDF.Threading;
+﻿using zupit.zupitPDF.Threading;
 using NLog;
 
-namespace clawSoft.clawPDF.Startup
+namespace zupit.zupitPDF.Startup
 {
     internal class MainWindowStart : MaybePipedStart
     {

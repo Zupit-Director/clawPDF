@@ -1,9 +1,9 @@
 ﻿using System;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Mail;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Mail;
 using NLog;
 
-namespace clawSoft.clawPDF.Core.Actions
+namespace zupit.zupitPDF.Core.Actions
 {
     public class EMailClientAction : IAction
     {

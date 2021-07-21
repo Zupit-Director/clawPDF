@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper;
 
-namespace clawSoft.clawPDF.Shared.Converter
+namespace zupit.zupitPDF.Shared.Converter
 {
     [ValueConversion(typeof(string), typeof(Visibility))]
     public sealed class TextWithTokenToVisibilityConverter : IValueConverter

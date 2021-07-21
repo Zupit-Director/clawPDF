@@ -1,13 +1,13 @@
 ﻿using System.Linq;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.Utilities.IO;
-using clawSoft.clawPDF.Utilities.Tokens;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.Utilities.IO;
+using zupit.zupitPDF.Utilities.Tokens;
 using SystemInterface;
 using SystemInterface.IO;
 using SystemWrapper;
 using SystemWrapper.IO;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     public class TokenReplacerFactory
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace clawSoft.clawPDF.Core.Settings
+namespace zupit.zupitPDF.Core.Settings
 {
     public class ProfileSorter : IComparer
     {

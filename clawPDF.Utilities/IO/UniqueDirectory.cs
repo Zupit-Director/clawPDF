@@ -2,7 +2,7 @@
 using SystemInterface.IO;
 using SystemWrapper.IO;
 
-namespace clawSoft.clawPDF.Utilities.IO
+namespace zupit.zupitPDF.Utilities.IO
 {
     /// <summary>
     ///     Creates a directory that does not exist yet. It takes a path and appends a counting number (_2, _3, etc) to ensure

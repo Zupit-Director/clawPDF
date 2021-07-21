@@ -1,32 +1,32 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using clawSoft.clawPDF.PrintFile;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.PrintFile;
+using zupit.zupitPDF.Shared.Helper;
 using NLog;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     /// <summary>
     ///     The PrintFileHelperBase class provides reusable functionality for printing files
     /// </summary>
     internal abstract class PrintFileHelperBase
     {
-        private readonly string _clawPdfPrinter;
+        private readonly string _zupitPDFPrinter;
         private readonly Logger _logger = LogManager.GetCurrentClassLogger();
         private readonly PrintCommandGroup _printCommands = new PrintCommandGroup();
         private readonly PrinterHelper _printerHelper = new PrinterHelper();
 
         protected PrintFileHelperBase()
         {
-            _clawPdfPrinter =
-                _printerHelper.GetApplicableclawPDFPrinter(
+            _zupitPDFPrinter =
+                _printerHelper.GetApplicablezupitPDFPrinter(
                     SettingsHelper.Settings.ApplicationSettings.PrimaryPrinter);
         }
 
         protected PrintFileHelperBase(string printerName)
         {
-            _clawPdfPrinter = printerName;
+            _zupitPDFPrinter = printerName;
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace clawSoft.clawPDF.Helper
         /// <returns>true, if all files are printable</returns>
         public bool AddFiles(IEnumerable<string> files)
         {
-            var printerName = _printerHelper.GetApplicableclawPDFPrinter(_clawPdfPrinter);
+            var printerName = _printerHelper.GetApplicablezupitPDFPrinter(_zupitPDFPrinter);
 
             foreach (var f in files) _printCommands.Add(new PrintCommand(f, printerName));
 
@@ -83,9 +83,9 @@ namespace clawSoft.clawPDF.Helper
         /// <returns>true, if all files could be printed</returns>
         public bool PrintAll()
         {
-            if (string.IsNullOrEmpty(_clawPdfPrinter))
+            if (string.IsNullOrEmpty(_zupitPDFPrinter))
             {
-                _logger.Error("No clawPDF is installed.");
+                _logger.Error("No zupitPDF is installed.");
                 return false;
             }
 
@@ -102,7 +102,7 @@ namespace clawSoft.clawPDF.Helper
                         if (!QuerySwitchDefaultPrinter())
                             return false;
 
-                    PrinterHelper.SetDefaultPrinter(_clawPdfPrinter);
+                    PrinterHelper.SetDefaultPrinter(_zupitPDFPrinter);
                 }
 
                 return _printCommands.PrintAll();

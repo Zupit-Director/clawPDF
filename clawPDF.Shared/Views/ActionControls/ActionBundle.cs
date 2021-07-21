@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
-using clawSoft.clawPDF.Shared.Properties;
+using zupit.zupitPDF.Shared.Properties;
 
-namespace clawSoft.clawPDF.Shared.Views.ActionControls
+namespace zupit.zupitPDF.Shared.Views.ActionControls
 {
     public class ActionBundle : INotifyPropertyChanged
     {

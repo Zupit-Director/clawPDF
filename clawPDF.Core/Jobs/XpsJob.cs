@@ -1,18 +1,18 @@
 ﻿using System;
 using System.IO;
 using System.Threading;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Xps;
-using clawSoft.clawPDF.Core.Xps.OutputFileMover;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Xps;
+using zupit.zupitPDF.Core.Xps.OutputFileMover;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     internal class XpsJob : AbstractJob
     {
         public XpsJob(IJobInfo jobInfo, ConversionProfile profile, JobTranslations jobTranslations)
             : base(jobInfo, profile, jobTranslations)
         {
-            JobTempFolder = Path.Combine(Path.Combine(Path.GetTempPath(), "clawPDF\\Temp"),
+            JobTempFolder = Path.Combine(Path.Combine(Path.GetTempPath(), "zupitPDF\\Temp"),
                 "Job_" + Path.GetFileNameWithoutExtension(Path.GetRandomFileName()));
             JobTempOutputFolder = Path.Combine(JobTempFolder, "tempoutput");
             Directory.CreateDirectory(JobTempFolder);

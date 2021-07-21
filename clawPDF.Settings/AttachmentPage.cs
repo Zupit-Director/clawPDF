@@ -10,7 +10,7 @@ using pdfforge.DataStorage;
 // ! Do not edit it outside the sections for custom code.
 // ! These changes will be deleted during the next generation run
 
-namespace clawSoft.clawPDF.Core.Settings
+namespace zupit.zupitPDF.Core.Settings
 {
     /// <summary>
     ///     Appends one or more pages at the end of the converted document

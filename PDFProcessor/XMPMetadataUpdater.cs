@@ -2,12 +2,12 @@
 using System.Globalization;
 using System.Text;
 using System.Xml;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
 using iTextSharp.text.pdf;
 using NLog;
 
-namespace clawSoft.clawPDF.PDFProcessing
+namespace zupit.zupitPDF.PDFProcessing
 {
     internal static class XmpMetadataUpdater
     {

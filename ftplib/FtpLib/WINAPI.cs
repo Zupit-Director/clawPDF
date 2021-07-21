@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace clawSoft.clawPDF.ftplib.FtpLib
+namespace zupit.zupitPDF.ftplib.FtpLib
 {
     public static class WINAPI
     {

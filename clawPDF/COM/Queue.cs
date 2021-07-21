@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Threading;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.Helper.Logging;
-using clawSoft.clawPDF.Threading;
-using clawSoft.clawPDF.Utilities.Communication;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper.Logging;
+using zupit.zupitPDF.Threading;
+using zupit.zupitPDF.Utilities.Communication;
 using NLog;
 
-namespace clawSoft.clawPDF.COM
+namespace zupit.zupitPDF.COM
 {
     [ComVisible(true)]
     [InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
@@ -42,7 +42,7 @@ namespace clawSoft.clawPDF.COM
     [ComVisible(true)]
     [ClassInterface(ClassInterfaceType.None)]
     [Guid("66A9CAB1-404A-4918-8DE2-29C26B9B271E")]
-    [ProgId("clawPDF.JobQueue")]
+    [ProgId("zupitPDF.JobQueue")]
     public class Queue : IQueue
     {
         private static readonly Logger ComLogger = LogManager.GetCurrentClassLogger();
@@ -65,9 +65,9 @@ namespace clawSoft.clawPDF.COM
 
             if (IsServerInstanceRunning)
                 throw new InvalidOperationException(
-                    "Access forbidden. An instance of clawPDF is currently running.");
+                    "Access forbidden. An instance of zupitPDF is currently running.");
 
-            LoggingHelper.InitFileLogger("clawPDF", LoggingLevel.Error);
+            LoggingHelper.InitFileLogger("zupitPDF", LoggingLevel.Error);
             SettingsHelper.Init();
 
             ComLogger.Trace("COM: Starting pipe server thread");

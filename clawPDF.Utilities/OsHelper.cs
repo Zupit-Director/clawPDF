@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
-namespace clawSoft.clawPDF.Utilities
+namespace zupit.zupitPDF.Utilities
 {
     public interface IOsHelper
     {

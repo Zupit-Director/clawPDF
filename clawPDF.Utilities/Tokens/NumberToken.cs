@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace clawSoft.clawPDF.Utilities.Tokens
+namespace zupit.zupitPDF.Utilities.Tokens
 {
     /// <summary>
     ///     Class for Token with Name of type string and Value of type integer.

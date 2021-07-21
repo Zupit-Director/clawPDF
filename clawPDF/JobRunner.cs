@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Threading;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Exceptions;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Threading;
-using clawSoft.clawPDF.Utilities.Threading;
-using clawSoft.clawPDF.Views;
-using clawSoft.clawPDF.Workflow;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Exceptions;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Threading;
+using zupit.zupitPDF.Utilities.Threading;
+using zupit.zupitPDF.Views;
+using zupit.zupitPDF.Workflow;
 using NLog;
 
-namespace clawSoft.clawPDF
+namespace zupit.zupitPDF
 {
     /// <summary>
     ///     The JobRunner class manages the thread that processes the print jobs. It listens for new jobs in the
-    ///     <see cref="clawSoft.clawPDF.JobInfoQueue" /> and creates the processing thread if required.
+    ///     <see cref="zupit.zupitPDF.JobInfoQueue" /> and creates the processing thread if required.
     /// </summary>
     internal class JobRunner
     {

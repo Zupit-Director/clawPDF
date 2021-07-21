@@ -5,7 +5,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace clawSoft.clawPDF.ftplib.FtpLib
+namespace zupit.zupitPDF.ftplib.FtpLib
 {
     public class FtpConnection : IDisposable
     {

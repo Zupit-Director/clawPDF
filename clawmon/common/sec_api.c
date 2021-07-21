@@ -1,6 +1,6 @@
 /*
 clawmon - print to file with automatic filename assignment
-Copyright (C) 2019 // Andrew Hess // clawSoft
+Copyright (C) 2019 // Roberto Demozzi // zupit
 
 MFILEMON - print to file with automatic filename assignment
 Copyright (C) 2007-2015 Monti Lorenzo
@@ -25,15 +25,15 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 static int dummy = 0;
 
 #ifdef __GNUC__
-#ifndef MINGW_HAS_SECURE_API
-int __cdecl swprintf_s(wchar_t *_Dst, size_t _SizeInWords, const wchar_t *_Format, ...)
-{
-	int ret;
-	va_list args;
-	va_start(args, _Format);
-	ret = vswprintf(_Dst, _Format, args);
-	va_end(args);
-	return ret;
-}
-#endif
+  #ifndef MINGW_HAS_SECURE_API
+	int __cdecl swprintf_s(wchar_t *_Dst,size_t _SizeInWords,const wchar_t *_Format,...)
+	{
+	  int ret;
+	  va_list args;
+	  va_start(args, _Format);
+	  ret = vswprintf(_Dst, _Format, args);
+	  va_end(args);
+	  return ret;
+	}
+  #endif
 #endif

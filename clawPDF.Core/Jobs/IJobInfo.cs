@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     public interface IJobInfo
     {

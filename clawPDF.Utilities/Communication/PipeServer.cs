@@ -6,7 +6,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Windows.Threading;
 
-namespace clawSoft.clawPDF.Utilities.Communication
+namespace zupit.zupitPDF.Utilities.Communication
 {
     /// <summary>
     ///     The PipeServer class handles all inter process communication via named pipes.

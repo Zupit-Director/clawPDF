@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     /// <summary>
     ///     Helper class to handle scaling for different screen resolutions

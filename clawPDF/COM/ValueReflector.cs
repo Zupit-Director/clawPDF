@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Reflection;
 
-namespace clawSoft.clawPDF.COM
+namespace zupit.zupitPDF.COM
 {
     internal class ValueReflector
     {

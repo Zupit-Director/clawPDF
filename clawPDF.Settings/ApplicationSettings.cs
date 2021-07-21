@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using clawSoft.clawPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Core.Settings.Enums;
 using pdfforge.DataStorage;
 
 // Custom Code starts here
@@ -14,10 +14,10 @@ using pdfforge.DataStorage;
 // ! Do not edit it outside the sections for custom code.
 // ! These changes will be deleted during the next generation run
 
-namespace clawSoft.clawPDF.Core.Settings
+namespace zupit.zupitPDF.Core.Settings
 {
     /// <summary>
-    ///     clawPDF application settings
+    ///     zupitPDF application settings
     /// </summary>
     public class ApplicationSettings
     {
@@ -50,7 +50,7 @@ namespace clawSoft.clawPDF.Core.Settings
             Language = "";
             LastUsedProfileGuid = "DefaultGuid";
             LoggingLevel = LoggingLevel.Error;
-            PrimaryPrinter = "clawPDF";
+            PrimaryPrinter = "zupitPDF";
             UpdateInterval = UpdateInterval.Weekly;
         }
 
@@ -141,7 +141,7 @@ namespace clawSoft.clawPDF.Core.Settings
             }
             catch
             {
-                PrimaryPrinter = "clawPDF";
+                PrimaryPrinter = "zupitPDF";
             }
 
             try

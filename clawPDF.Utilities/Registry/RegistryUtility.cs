@@ -1,6 +1,6 @@
 ﻿using SystemInterface.Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Utilities.Registry
+namespace zupit.zupitPDF.Utilities.Registry
 {
     /// <summary>
     ///     http://www.codeproject.com/Articles/16343/Copy-and-Rename-Registry-Keys

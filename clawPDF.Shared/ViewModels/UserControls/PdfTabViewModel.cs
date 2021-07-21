@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.PDFProcessing;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.PDFProcessing;
+using zupit.zupitPDF.Shared.Helper;
 using pdfforge.DynamicTranslator;
 
-namespace clawSoft.clawPDF.Shared.ViewModels.UserControls
+namespace zupit.zupitPDF.Shared.ViewModels.UserControls
 {
     public class PdfTabViewModel : CurrentProfileViewModel
     {

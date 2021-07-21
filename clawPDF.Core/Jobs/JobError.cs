@@ -1,4 +1,4 @@
-﻿namespace clawSoft.clawPDF.Core.Jobs
+﻿namespace zupit.zupitPDF.Core.Jobs
 {
     public enum JobError
     {

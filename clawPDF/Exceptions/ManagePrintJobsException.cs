@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace clawSoft.clawPDF.Exceptions
+namespace zupit.zupitPDF.Exceptions
 {
     /// <summary>
     ///     The sole purpose of the exception is to signal that the user wants to manage the print jobs and that the processing

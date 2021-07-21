@@ -8,7 +8,7 @@
     <ProjectGuid>{4BBD6F42-9111-4452-A2C1-9E02F65592D2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>clawSoft.clawPDF.SetupHelper</RootNamespace>
+    <RootNamespace>zupit.zupitPDF.SetupHelper</RootNamespace>
     <AssemblyName>SetupHelper</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -108,9 +108,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\clawPDF.Utilities\clawPDF.Utilities.csproj">
+    <ProjectReference Include="..\clawPDF.Utilities\zupitPDF.Utilities.csproj">
       <Project>{EA29538B-89A5-4FB3-AE0F-5E2370E852F8}</Project>
-      <Name>clawPDF.Utilities</Name>
+      <Name>zupitPDF.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

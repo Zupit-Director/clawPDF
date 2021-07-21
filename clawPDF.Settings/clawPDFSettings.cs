@@ -15,17 +15,17 @@ using pdfforge.DataStorage.Storage;
 // ! Do not edit it outside the sections for custom code.
 // ! These changes will be deleted during the next generation run
 
-namespace clawSoft.clawPDF.Core.Settings
+namespace zupit.zupitPDF.Core.Settings
 {
     /// <summary>
-    ///     Container class for clawPDF settings and profiles
+    ///     Container class for zupitPDF settings and profiles
     /// </summary>
-    public class clawPDFSettings
+    public class zupitPDFSettings
     {
         private readonly Data data = Data.CreateDataStorage();
         private readonly IStorage storage;
 
-        public clawPDFSettings(IStorage storage)
+        public zupitPDFSettings(IStorage storage)
         {
             Init();
 
@@ -36,7 +36,7 @@ namespace clawSoft.clawPDF.Core.Settings
         public ApplicationProperties ApplicationProperties { get; set; }
 
         /// <summary>
-        ///     clawPDF application settings
+        ///     zupitPDF application settings
         /// </summary>
         public ApplicationSettings ApplicationSettings { get; set; }
 
@@ -125,9 +125,9 @@ namespace clawSoft.clawPDF.Core.Settings
             data.SetValue(@"" + path + @"ConversionProfiles\numClasses", ConversionProfiles.Count.ToString());
         }
 
-        public clawPDFSettings Copy()
+        public zupitPDFSettings Copy()
         {
-            var copy = new clawPDFSettings(storage);
+            var copy = new zupitPDFSettings(storage);
 
             copy.ApplicationProperties = ApplicationProperties.Copy();
             copy.ApplicationSettings = ApplicationSettings.Copy();
@@ -141,8 +141,8 @@ namespace clawSoft.clawPDF.Core.Settings
 
         public override bool Equals(object o)
         {
-            if (!(o is clawPDFSettings)) return false;
-            var v = o as clawPDFSettings;
+            if (!(o is zupitPDFSettings)) return false;
+            var v = o as zupitPDFSettings;
 
             if (!ApplicationProperties.Equals(v.ApplicationProperties)) return false;
             if (!ApplicationSettings.Equals(v.ApplicationSettings)) return false;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace clawSoft.clawPDF.PDFProcessing
+namespace zupit.zupitPDF.PDFProcessing
 {
     public class ProcessingException : Exception
     {

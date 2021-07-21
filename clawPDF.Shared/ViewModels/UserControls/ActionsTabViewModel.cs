@@ -2,9 +2,9 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
-using clawSoft.clawPDF.Shared.Views.ActionControls;
+using zupit.zupitPDF.Shared.Views.ActionControls;
 
-namespace clawSoft.clawPDF.Shared.ViewModels.UserControls
+namespace zupit.zupitPDF.Shared.ViewModels.UserControls
 {
     public class ActionsTabViewModel : CurrentProfileViewModel
     {

@@ -1,6 +1,6 @@
 /*
 clawmon - print to file with automatic filename assignment
-Copyright (C) 2019 // Andrew Hess // clawSoft
+Copyright (C) 2019 // Roberto Demozzi // zupit
 
 MFILEMON - print to file with automatic filename assignment
 Copyright (C) 2007-2015 Monti Lorenzo
@@ -68,7 +68,7 @@ static BOOL EnablePrivilege(
 
 //-------------------------------------------------------------------------------------
 static BOOL GetPrimaryToken(LPWSTR lpszUsername, LPWSTR lpszDomain, LPWSTR lpszPassword,
-	PHANDLE phToken, BOOL* bRestrictedToken)
+	PHANDLE phToken, BOOL *bRestrictedToken)
 {
 	DWORD dwLength;
 	*bRestrictedToken = FALSE;
@@ -169,7 +169,7 @@ static BOOL GetPrimaryToken(LPWSTR lpszUsername, LPWSTR lpszDomain, LPWSTR lpszP
 		*/
 
 		bGotTcbPriv = EnablePrivilege(hMyToken, SE_TCB_NAME, TRUE, &TcbPrevState);
-		bSuccess = GetTokenInformation(*phToken, TokenLinkedToken, (VOID*)& hLinkedToken,
+		bSuccess = GetTokenInformation(*phToken, TokenLinkedToken, (VOID*)&hLinkedToken,
 			sizeof(HANDLE), &dwLength);
 
 		if (bGotTcbPriv)
@@ -391,6 +391,8 @@ BOOL CPort::StartJob(DWORD nJobId, LPWSTR szJobTitle, LPWSTR szPrinterName)
 {
 	UNREFERENCED_PARAMETER(szJobTitle);
 
+	_ASSERTE(m_pPattern != NULL);
+
 	if (!m_pPattern)
 		return FALSE;
 
@@ -504,7 +506,7 @@ BOOL CPort::StartJob(DWORD nJobId, LPWSTR szJobTitle, LPWSTR szPrinterName)
 	{
 		DWORD dwId = 0;
 		m_threadData.pPort = this;
-		if ((m_hWriteThread = CreateThread(NULL, 0, WriteThreadProc, (LPVOID)& m_threadData, 0, &dwId)) == NULL)
+		if ((m_hWriteThread = CreateThread(NULL, 0, WriteThreadProc, (LPVOID)&m_threadData, 0, &dwId)) == NULL)
 			return FALSE;
 		g_pLog->Log(LOGLEVEL_ALL, L"Worker thread started (id: 0x%0.8X)", dwId);
 	}
@@ -515,6 +517,8 @@ BOOL CPort::StartJob(DWORD nJobId, LPWSTR szJobTitle, LPWSTR szPrinterName)
 //-------------------------------------------------------------------------------------
 DWORD CPort::CreateOutputFile()
 {
+	_ASSERTE(m_pPattern != NULL);
+
 	if (!m_pPattern)
 		return ERROR_CAN_NOT_COMPLETE;
 
@@ -565,30 +569,19 @@ DWORD CPort::CreateOutputFile()
 		wcscat_s(m_szFileName, LENGTHOF(m_szFileName), szFileName);
 		wcscat_s(szSearchPath, LENGTHOF(szSearchPath), szSearchName);
 
-		LPWSTR username = (LPWSTR)(LPCWSTR)UserName();
-		HANDLE utoken = get_token_for_user(username);
-
-		SetHomeDirectory(utoken);
-
 		/*check if parent directory exists*/
-		//GetFileParent(m_szFileName, m_szParent, LENGTHOF(m_szParent));
+		GetFileParent(m_szFileName, m_szParent, LENGTHOF(m_szParent));
 
-		//if ((dwRet = RecursiveCreateFolder(m_szParent)) != ERROR_SUCCESS)
-		//{
-		//	g_pLog->Log(LOGLEVEL_ERRORS, this, L"CPort::CreateOutputFile: can't create output directory (%i)", dwRet);
-		//	dwRet = ERROR_DIRECTORY;
-		//	goto cleanup;
-		//}
+		if ((dwRet = RecursiveCreateFolder(m_szParent)) != ERROR_SUCCESS)
+		{
+			g_pLog->Log(LOGLEVEL_ERRORS, this, L"CPort::CreateOutputFile: can't create output directory (%i)", dwRet);
+			dwRet = ERROR_DIRECTORY;
+			goto cleanup;
+		}
 
 		//is this file name usable?
 		if (!m_bOverwrite && FilePatternExists(szSearchPath))
 			continue;
-
-		CreateOutputPath();
-		GenerateHash();
-		SetFileName();
-		SetInfPath();
-		SetPsPath();
 
 		//ok we got a valid filename, create it
 		if (m_bPipeData)
@@ -643,20 +636,20 @@ DWORD CPort::CreateOutputFile()
 			LPWSTR username = (LPWSTR)(LPCWSTR)UserName();
 			HANDLE utoken = get_token_for_user(username);
 
-			static void* environment = NULL;
+			static void *environment = NULL;
 			CreateEnvironmentBlock(&environment, utoken, FALSE);
 
 			//create child process - give up in case of failure since we need to write to process
 			BOOL bRes;
-			//if (m_hToken && !m_bRunAsPUser)
-			//	bRes = CreateProcessAsUser(m_hToken, NULL, m_pUserCommand->Value(), NULL, NULL,
-			//		TRUE, CREATE_UNICODE_ENVIRONMENT, environment, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
-			//else if (m_bRunAsPUser)
-			//	bRes = CreateProcessAsUser(utoken, NULL, m_pUserCommand->Value(), NULL, NULL,
-			//		TRUE, CREATE_UNICODE_ENVIRONMENT, environment, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
-			//else
-			bRes = CreateProcessW(NULL, m_pUserCommand->Value(), NULL, NULL,
-				TRUE, 0, NULL, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
+			if (m_hToken && !m_bRunAsPUser)
+				bRes = CreateProcessAsUser(m_hToken, NULL, m_pUserCommand->Value(), NULL, NULL,
+					TRUE, CREATE_UNICODE_ENVIRONMENT, environment, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
+			else if (m_bRunAsPUser)
+				bRes = CreateProcessAsUser(utoken, NULL, m_pUserCommand->Value(), NULL, NULL,
+					TRUE, CREATE_UNICODE_ENVIRONMENT, environment, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
+			else
+				bRes = CreateProcessW(NULL, m_pUserCommand->Value(), NULL, NULL,
+					TRUE, 0, NULL, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
 
 			DWORD dwErr = GetLastError();
 
@@ -784,6 +777,9 @@ DWORD WINAPI CPort::WriteThreadProc(LPVOID lpParam)
 {
 	LPTHREADDATA pData = (LPTHREADDATA)lpParam;
 
+	_ASSERTE(pData != NULL);
+	_ASSERTE(pData->pPort != NULL);
+
 	for (;;)
 	{
 		//wait signal from main thread
@@ -814,6 +810,8 @@ DWORD WINAPI CPort::ReadThreadProc(LPVOID lpParam)
 {
 	HANDLE hStdoutR = (HANDLE)lpParam;
 
+	_ASSERTE(hStdoutR != NULL);
+
 	char buf[512];
 	DWORD dwRead;
 
@@ -835,6 +833,8 @@ DWORD WINAPI CPort::ReadThreadProc(LPVOID lpParam)
 //-------------------------------------------------------------------------------------
 BOOL CPort::EndJob()
 {
+	_ASSERTE(m_pPattern != NULL);
+
 	if (!m_pPattern)
 		return FALSE;
 
@@ -862,25 +862,19 @@ BOOL CPort::EndJob()
 		LPWSTR username = (LPWSTR)(LPCWSTR)UserName();
 		HANDLE utoken = get_token_for_user(username);
 
-		static void* environment = NULL;
+		static void *environment = NULL;
 		CreateEnvironmentBlock(&environment, utoken, FALSE);
 
-		WriteControlFile();
-
-		wchar_t* t1UserCommand = wcscat(m_pUserCommand->Value(), L" /INFODATAFILE=\"");
-		wchar_t* t2UserCommand = wcscat(t1UserCommand, infpath);
-		wchar_t* UserCommand = wcscat(t2UserCommand, L"\"");
-
 		//we're not going to give up in case of failure
-		//if (m_hToken && !m_bRunAsPUser)
-		//	CreateProcessAsUser(m_hToken, NULL, m_pUserCommand->Value(), NULL, NULL,
-		//		FALSE, CREATE_UNICODE_ENVIRONMENT, environment, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
-		//else if (m_bRunAsPUser)
-		//	CreateProcessAsUser(utoken, NULL, UserCommand, NULL, NULL,
-		//		TRUE, CREATE_UNICODE_ENVIRONMENT, environment, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
-		//else
-		CreateProcessW(NULL, UserCommand, NULL, NULL,
-			FALSE, 0, NULL, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
+		if (m_hToken && !m_bRunAsPUser)
+			CreateProcessAsUser(m_hToken, NULL, m_pUserCommand->Value(), NULL, NULL,
+				FALSE, CREATE_UNICODE_ENVIRONMENT, environment, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
+		else if (m_bRunAsPUser)
+			CreateProcessAsUser(utoken, NULL, m_pUserCommand->Value(), NULL, NULL,
+				TRUE, CREATE_UNICODE_ENVIRONMENT, environment, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
+		else
+			CreateProcessW(NULL, m_pUserCommand->Value(), NULL, NULL,
+				FALSE, 0, NULL, (*m_szExecPath) ? m_szExecPath : NULL, &si, &m_procInfo);
 	}
 
 	//maybe wait and close handles to child process
@@ -927,28 +921,6 @@ LPCWSTR CPort::UserName() const
 	return m_pJobInfo1
 		? m_pJobInfo1->pUserName
 		: (LPWSTR)L"";
-}
-
-//-------------------------------------------------------------------------------------
-DWORD CPort::TotalPages() const
-{
-	m_pJobInfo1 ? m_pJobInfo1->TotalPages : 1;
-	if (m_pJobInfo1->TotalPages == 0)
-	{
-		return 1;
-	}
-	else
-	{
-		return  m_pJobInfo1->TotalPages;
-	}
-}
-
-//-------------------------------------------------------------------------------------
-DWORD CPort::TotalCopies() const
-{
-	return m_pJobInfo2
-		? m_pJobInfo2->pDevMode->dmCopies
-		: 0;
 }
 
 //-------------------------------------------------------------------------------------
@@ -1210,105 +1182,4 @@ HANDLE CPort::get_token_for_user(LPCTSTR pUsername)
 
 	/* When we got here, there's either a user token or NULL */
 	return hFullToken;
-}
-
-void CPort::WriteToIniFile(LPCWSTR section, LPCWSTR key, LPCWSTR value, LPCTSTR path)
-{
-	WritePrivateProfileStringW(section, key, value, path);
-}
-
-wchar_t* CPort::convertCharArrayToLPCWSTR(const char* charArray)
-{
-	wchar_t* wString = new wchar_t[4096];
-	MultiByteToWideChar(CP_ACP, 0, charArray, -1, wString, 4096);
-	return wString;
-}
-
-void CPort::GenerateHash()
-{
-	MD5 md5;
-	char tJobTitel[500];
-	wcstombs(tJobTitel, JobTitle(), 500);
-	char tUsername[50];
-	wcstombs(tUsername, UserName(), 50);
-	wchar_t tJobId[10];
-	_itow_s(JobId(), tJobId, 10);
-	char t2JobId[500];
-	wcstombs(t2JobId, tJobId, 500);
-	wchar_t* tmd5 = convertCharArrayToLPCWSTR(md5.digestString(strcat(strcat(tJobTitel, t2JobId), tUsername)));
-	wcscpy(m_uniqFileName, tmd5);
-}
-
-void CPort::SetFileName()
-{
-	wcscpy(m_nszFileName, m_uniqFileName);
-}
-
-void CPort::SetInfPath()
-{
-	WCHAR t1[261];
-	WCHAR t2[261];
-	WCHAR t3[261];
-	wcscpy(t1, m_nszFileName);
-	wcscat(t1, L".inf");
-	wcscpy(t2, m_szOutputPath);
-	wcscat(t2, L"\\");
-	wcscat(t2, t1);
-	wcscpy(infpath, t2);
-}
-
-void CPort::SetPsPath()
-{
-	WCHAR t1[261];
-	WCHAR t2[261];
-	WCHAR t3[261];
-	wcscpy(t1, m_nszFileName);
-	wcscat(t1, L".ps");
-	wcscpy(t2, m_szOutputPath);
-	wcscat(t2, L"\\");
-	wcscat(t2, t1);
-	wcscpy(pspath, t2);
-	wcscpy(m_szFileName, pspath);
-}
-
-void CPort::WriteControlFile()
-{
-	WORD wBOM = 0xFEFF;
-	DWORD NumberOfBytesWritten;
-	HANDLE hFile = ::CreateFile(infpath, GENERIC_WRITE, 0, NULL, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
-	WriteFile(hFile, &wBOM, sizeof(WORD), &NumberOfBytesWritten, NULL);
-	CloseHandle(hFile);
-
-	WriteToIniFile(_T("0"), _T("SessionId"), _T("1"), infpath);
-	WriteToIniFile(_T("0"), _T("WinStation"), _T("Console"), infpath);
-	WriteToIniFile(_T("0"), _T("Username"), UserName(), infpath);
-	WriteToIniFile(_T("0"), _T("ClientComputer"), ComputerName(), infpath);
-	WCHAR ps[261];
-	wcscpy(ps, m_nszFileName);
-	wcscat(ps, L".ps");
-	WriteToIniFile(_T("0"), _T("SpoolFileName"), ps, infpath);
-	WriteToIniFile(_T("0"), _T("PinterName"), m_szPrinterName, infpath);
-	wchar_t bJobId[100];
-	_itow_s(JobId(), bJobId, 10);
-	WriteToIniFile(_T("0"), _T("JobId"), bJobId, infpath);
-	WriteToIniFile(_T("0"), _T("DocumentTitle"), JobTitle(), infpath);
-	wchar_t bTotalPages[10];
-	_itow_s(TotalPages(), bTotalPages, 10);
-	WriteToIniFile(_T("0"), _T("TotalPages"), bTotalPages, infpath);
-	wchar_t bTotalCopies[10];
-	_itow_s(TotalCopies(), bTotalCopies, 10);
-	WriteToIniFile(_T("0"), _T("Copies"), bTotalCopies, infpath);
-	WriteToIniFile(_T("0"), _T("Typ"), _T("ps"), infpath);
-	WriteToIniFile(_T("0"), _T("JobCounter"), _T("0"), infpath);
-}
-
-void CPort::SetHomeDirectory(HANDLE hToken)
-{
-	TCHAR szHomeDirBuf[MAX_PATH] = { 0 };
-	DWORD BufSize = MAX_PATH;
-	GetUserProfileDirectory(hToken, szHomeDirBuf, &BufSize);
-	wcscat(szHomeDirBuf, L"\\AppData\\Local\\Temp\\clawPDF\\Spool");
-	wcscpy(m_szOutputPath, szHomeDirBuf);
-	wcscpy(m_nszOutputPath, szHomeDirBuf);
-	g_pLog->Log(LOGLEVEL_ALL, L" TempDirectory:         %s", szHomeDirBuf);
 }

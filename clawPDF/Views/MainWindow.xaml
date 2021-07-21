@@ -1,14 +1,14 @@
-﻿<Window x:Class="clawSoft.clawPDF.Views.MainWindow"
+﻿<Window x:Class="zupit.zupitPDF.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="clawPDF" Height="344" Width="513"
+        Title="zupitPDF" Height="344" Width="513"
         Background="{x:Static SystemColors.ControlBrush}"
         Loaded="MainWindow_OnLoaded"
         AllowDrop="True"
         DragEnter="MainWindow_OnDragEnter"
         Drop="MainWindow_OnDrop"
         ResizeMode="CanMinimize"
-        Icon="../clawPDF.ico"
+        Icon="../zupitPDF.ico"
         WindowStartupLocation="CenterScreen" x:ClassModifier="internal">
     <Grid>
         <Grid.Resources>
@@ -24,18 +24,18 @@
         <DockPanel Background="{StaticResource TitleBarGrayBrush}" Height="64" VerticalAlignment="Top"
                    LastChildFill="True">
             <ContentControl Margin="10" Content="" Height="45" IsTabStop="False" />
-            <TextBlock Name="ApplicationNameText" Text="clawPDF" HorizontalAlignment="Left"
+            <TextBlock Name="ApplicationNameText" Text="zupitPDF" HorizontalAlignment="Left"
                        VerticalAlignment="Center" FontWeight="Bold" FontSize="24" Foreground="#FFFAFAFA"
                        FontFamily="Calibri"
                        x:FieldModifier="private" />
         </DockPanel>
         <StackPanel Height="140" Margin="30 20">
             <TextBlock Name="IntroductionText" TextWrapping="Wrap" Margin="0 0 0 10">
-                clawPDF allows to create PDF files from any application that is able to print.
+                zupitPDF allows to create PDF files from any application that is able to print.
                 Creating a PDF file is easy:
             </TextBlock>
             <TextBlock Name="IntroductionStep1Text" Margin="20 3">1. Set up your profiles and settings here.</TextBlock>
-            <TextBlock Name="IntroductionStep2Text" Margin="20 3">2. Print any document to the printer "clawPDF".</TextBlock>
+            <TextBlock Name="IntroductionStep2Text" Margin="20 3">2. Print any document to the printer "zupitPDF".</TextBlock>
             <TextBlock Name="IntroductionStep3Text" Margin="20 3">3. Save your PDF or send it as mail.</TextBlock>
             <TextBlock Name="IntroductionGetHelpText" Margin="0 10 0 0">To get help, hit F1 or the question mark.</TextBlock>
         </StackPanel>

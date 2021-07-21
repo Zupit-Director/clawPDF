@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using clawSoft.clawPDF.Utilities.Process;
+using zupit.zupitPDF.Utilities.Process;
 
-namespace clawSoft.clawPDF.PrintFile
+namespace zupit.zupitPDF.PrintFile
 {
     /// <summary>
     ///     The PrintCommandGroup provides a way to call multiple PrintCommands at the same time.

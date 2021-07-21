@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace clawSoft.clawPDF.Shared.ViewModels.Wrapper
+namespace zupit.zupitPDF.Shared.ViewModels.Wrapper
 {
     /// <summary>
     ///     SynchronizedCollection is a wrapper that binds an IList and an ObserverableCollection. All changes that happen

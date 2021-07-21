@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using clawSoft.clawPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings;
 using pdfforge.DataStorage;
 using pdfforge.DataStorage.Storage;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     /// <summary>
     ///     The JobInfo class holds all information about the job, like the source files, metadata and such.

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Utilities.Tokens;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Utilities.Tokens;
 
-namespace clawSoft.clawPDF.Shared.Converter
+namespace zupit.zupitPDF.Shared.Converter
 {
     [ValueConversion(typeof(string), typeof(string))]
     public class TokenReplacerConverter : IValueConverter

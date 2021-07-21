@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper;
 
-namespace clawSoft.clawPDF.Views
+namespace zupit.zupitPDF.Views
 {
     internal partial class AboutWindow : Window
     {

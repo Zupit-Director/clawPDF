@@ -2,13 +2,13 @@
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Navigation;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.ViewModels.UserControls;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.ViewModels.UserControls;
 using pdfforge.DynamicTranslator;
 
-namespace clawSoft.clawPDF.Views.UserControls
+namespace zupit.zupitPDF.Views.UserControls
 {
     internal partial class GeneralTab
     {

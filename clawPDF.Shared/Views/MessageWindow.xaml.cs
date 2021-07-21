@@ -5,11 +5,11 @@ using System.Media;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
 using Image = System.Windows.Controls.Image;
 
-namespace clawSoft.clawPDF.Shared.Views
+namespace zupit.zupitPDF.Shared.Views
 {
     public partial class MessageWindow : Window
     {
@@ -191,7 +191,7 @@ namespace clawSoft.clawPDF.Shared.Views
 
     public enum MessageWindowIcon
     {
-        clawPDF,
+        zupitPDF,
         clawSoft,
         Warning,
         Error,

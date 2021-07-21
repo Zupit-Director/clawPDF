@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels.UserControls;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels.UserControls;
 
-namespace clawSoft.clawPDF.Shared.Views.UserControls
+namespace zupit.zupitPDF.Shared.Views.UserControls
 {
     public partial class ActionsTab : UserControl
     {

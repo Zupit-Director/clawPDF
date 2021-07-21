@@ -1,4 +1,4 @@
-namespace clawSoft.clawPDF.Utilities.IO
+namespace zupit.zupitPDF.Utilities.IO
 {
     public interface IPathSafe
     {

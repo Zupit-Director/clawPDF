@@ -2,11 +2,11 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.ViewModels;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.ViewModels;
 
-namespace clawSoft.clawPDF.Views
+namespace zupit.zupitPDF.Views
 {
     internal partial class ManagePrintJobsWindow : Window
     {

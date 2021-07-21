@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using clawSoft.clawPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Core.Settings.Enums;
 using pdfforge.DataStorage;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     /// <summary>
-    ///     The SettingsUpgrader class performs updates to the clawPDF settings.
+    ///     The SettingsUpgrader class performs updates to the zupitPDF settings.
     ///     This is done after loading the raw data and before loading them into the DataStorage classes.
     ///     There is one update method from each version to the next (0 to 1, 1 to 2 etc.) and they are called subsequently, if
     ///     required.

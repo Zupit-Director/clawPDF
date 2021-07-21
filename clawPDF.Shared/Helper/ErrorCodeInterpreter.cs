@@ -1,8 +1,8 @@
 ﻿using System.Globalization;
 using System.Text;
-using clawSoft.clawPDF.Core.Actions;
+using zupit.zupitPDF.Core.Actions;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     public static class ErrorCodeInterpreter
     {

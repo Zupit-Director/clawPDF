@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using clawSoft.clawPDF.Assistants;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Assistants;
+using zupit.zupitPDF.Shared.Helper;
 using NLog;
 using SystemInterface.IO;
 using SystemWrapper.IO;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     public static class DragAndDropHelper
     {

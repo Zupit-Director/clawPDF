@@ -3,9 +3,9 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyCompany("Andrew Hess // clawSoft")]
+[assembly: AssemblyCompany("Roberto Demozzi // zupit")]
 [assembly: AssemblyProduct("clawSoft.FTPLib")]
-[assembly: AssemblyCopyright("Copyright © 2019 Andrew Hess // clawSoft")]
+[assembly: AssemblyCopyright("Copyright © 2019 Roberto Demozzi // zupit")]
 [assembly: AssemblyTitle("clawSoft.FTPLib")]
 [assembly: AssemblyDescription("clawSoft FTPLib")]
 [assembly: AssemblyConfiguration("")]

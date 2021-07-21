@@ -1,6 +1,6 @@
-﻿using clawSoft.clawPDF.Utilities;
+﻿using zupit.zupitPDF.Utilities;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     /// <summary>
     ///     The Metadata class holds information about the printed document
@@ -47,7 +47,7 @@ namespace clawSoft.clawPDF.Core.Jobs
         /// <summary>
         ///     Name of the application that produced the document
         /// </summary>
-        public string Producer => "clawPDF " + _assemblyHelper.GetCurrentAssemblyVersion();
+        public string Producer => "zupitPDF " + _assemblyHelper.GetCurrentAssemblyVersion();
 
         /// <summary>
         ///     Create an exact copy of this object. Changes to the copy will not affect the original and vice versa

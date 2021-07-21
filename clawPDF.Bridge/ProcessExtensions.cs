@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace clawPDF.Bridge
+namespace zupitPDF.Bridge
 {
     public static class ProcessExtensions
     {

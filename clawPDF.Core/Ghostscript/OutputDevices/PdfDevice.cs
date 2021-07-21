@@ -1,16 +1,16 @@
-﻿// Andrew Hess 2019.01.01
+﻿// Roberto Demozzi 2019.01.01
 // Replaced with the following code to make it compatible with newer Ghostscript versions
 // https://raw.githubusercontent.com/pdfforge/PDFCreator/master/Source/Application/Conversn/Ghostscript/OutputDevices/PdfDevice.cs
 
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Utilities;
 using SystemInterface.IO;
 
-namespace clawSoft.clawPDF.Core.Ghostscript.OutputDevices
+namespace zupit.zupitPDF.Core.Ghostscript.OutputDevices
 {
     /// <summary>
     ///     Extends OutputDevice to create PDF files

@@ -1,12 +1,12 @@
 ﻿using System.Linq;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Utilities;
 using NLog;
 using SystemInterface.IO;
 using SystemWrapper.IO;
 
-namespace clawSoft.clawPDF.Startup
+namespace zupit.zupitPDF.Startup
 {
     internal class AppStartFactory
     {
@@ -105,7 +105,7 @@ namespace clawSoft.clawPDF.Startup
             if (!commandLineParser.HasArgument("InfoDataFile"))
                 return null;
 
-            _logger.Info("Launched clawPDF with InfoDataFile parameter.");
+            _logger.Info("Launched zupitPDF with InfoDataFile parameter.");
             infFile = commandLineParser.GetArgument("InfoDataFile");
 
             _logger.Debug("Recevied \"" + infFile + "\" as command line parameter.");
@@ -120,7 +120,7 @@ namespace clawSoft.clawPDF.Startup
             if (!commandlineParser.HasArgument("PsFile"))
                 return null;
 
-            _logger.Info("Launched clawPDF with PsFile parameter.");
+            _logger.Info("Launched zupitPDF with PsFile parameter.");
             psFile = commandlineParser.GetArgument("PsFile");
 
             _logger.Debug("Recevied \"" + psFile + "\" as command line parameter.");
@@ -135,7 +135,7 @@ namespace clawSoft.clawPDF.Startup
             if (!commandlineParser.HasArgument("PdfFile"))
                 return null;
 
-            _logger.Info("Launched clawPDF with PdfFile parameter.");
+            _logger.Info("Launched zupitPDF with PdfFile parameter.");
             pdfFile = commandlineParser.GetArgument("PdfFile");
 
             _logger.Debug("Recevied \"" + pdfFile + "\" as command line parameter.");

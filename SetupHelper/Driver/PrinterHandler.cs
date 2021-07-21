@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 using System.Windows.Forms;
-using clawSoft.clawPDF.SetupHelper.Helper;
+using zupit.zupitPDF.SetupHelper.Helper;
 using Microsoft.Win32;
 
-namespace clawSoft.clawPDF.SetupHelper.Driver
+namespace zupit.zupitPDF.SetupHelper.Driver
 {
-    public class clawPDFInstaller
+    public class zupitPDFInstaller
     {
         #region Printer Driver Win32 API Constants
 
@@ -35,16 +35,16 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         #endregion Printer Driver Win32 API Constants
 
         private const string ENVIRONMENT = null;
-        private const string PRINTERNAME = "clawPDF";
-        private const string DRIVERNAME = "clawPDF Virtual Printer";
-        private const string HARDWAREID = "clawPDF_Driver";
+        private const string PRINTERNAME = "zupitPDF";
+        private const string DRIVERNAME = "zupitPDF Virtual Printer";
+        private const string HARDWAREID = "zupitPDF_Driver";
         private const string PORTMONITOR = "CLAWMON";
         private const string MONITORDLL = "clawmon.dll";
         private const string MONITORUIDLL = "clawmonui.dll";
         private const string PORTNAME = "CLAWMON:";
         private const string PRINTPROCESOR = "winprint";
 
-        private const string DRIVERMANUFACTURER = "Andrew Hess // clawSoft";
+        private const string DRIVERMANUFACTURER = "Roberto Demozzi // zupit";
 
         private const string DRIVERFILE = "PSCRIPT5.DLL";
         private const string DRIVERUIFILE = "PS5UI.DLL";
@@ -93,7 +93,7 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
 
         #region Constructors
 
-        public clawPDFInstaller()
+        public zupitPDFInstaller()
         {
         }
 
@@ -102,13 +102,13 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         #region Port operations
 
 #if DEBUG
-        public bool AddclawPDFPort_Test()
+        public bool AddzupitPDFPort_Test()
         {
-            return AddclawPDFPort();
+            return AddzupitPDFPort();
         }
 #endif
 
-        private bool AddclawPDFPort()
+        private bool AddzupitPDFPort()
         {
             bool portAdded = false;
 
@@ -123,7 +123,7 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
             return portAdded;
         }
 
-        public bool DeleteclawPDFPort()
+        public bool DeletezupitPDFPort()
         {
             bool portDeleted = false;
 
@@ -190,11 +190,11 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         #region Port Monitor
 
         /// <summary>
-        /// Adds the clawPDF port monitor
+        /// Adds the zupitPDF port monitor
         /// </summary>
         /// <param name="monitorFilePath">Directory where the uninstalled monitor dll is located</param>
         /// <returns>true if the monitor is installed, false if install failed</returns>
-        public bool AddclawPDFPortMonitor(String monitorFilePath)
+        public bool AddzupitPDFPortMonitor(String monitorFilePath)
         {
             bool monitorAdded = false;
 
@@ -291,17 +291,17 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         }
 
         /// <summary>
-        /// Removes the clawPDF port monitor
+        /// Removes the zupitPDF port monitor
         /// </summary>
         /// <returns>true if monitor successfully removed, false if removal failed</returns>
-        public bool RemoveclawPDFPortMonitor()
+        public bool RemovezupitPDFPortMonitor()
         {
             bool monitorRemoved = false;
             if ((NativeMethods.DeleteMonitor(null, ENVIRONMENT, PORTMONITOR)) != 0)
             {
                 monitorRemoved = true;
                 // Try to remove the monitor DLL now
-                if (!DeleteclawPDFPortMonitorDll())
+                if (!DeletezupitPDFPortMonitorDll())
                 {
                     Console.WriteLine("Could not remove port monitor dll.");
                 }
@@ -309,7 +309,7 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
             return monitorRemoved;
         }
 
-        private bool DeleteclawPDFPortMonitorDll()
+        private bool DeletezupitPDFPortMonitorDll()
         {
             return DeletePortMonitorDll(MONITORDLL, MONITORUIDLL);
         }
@@ -474,13 +474,13 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
 
         /// <summary>
         /// Installs the port monitor, port,
-        /// printer drivers, and clawPDF virtual printer
+        /// printer drivers, and zupitPDF virtual printer
         /// </summary>
         /// <param name="driverSourceDirectory">Directory where the uninstalled printer driver files are located</param>
         /// <param name="driverFilesToCopy">An array containing the printer driver's filenames</param>
         /// <param name="dependentFilesToCopy">An array containing dependent filenames</param>
         /// <returns>true if installation suceeds, false if failed</returns>
-        public bool InstallclawPDFPrinter(String driverSourceDirectory,
+        public bool InstallzupitPDFPrinter(String driverSourceDirectory,
                                             String outputHandlerCommand)
         {
             bool printerInstalled = false;
@@ -488,29 +488,29 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
             Stack<undoInstall> undoInstallActions = new Stack<undoInstall>();
 
             String driverDirectory = RetrievePrinterDriverDirectory();
-            undoInstallActions.Push(this.DeleteclawPDFPortMonitorDll);
-            ConfigureclawPDFPort(outputHandlerCommand);
-            if (AddclawPDFPortMonitor(driverSourceDirectory))
+            undoInstallActions.Push(this.DeletezupitPDFPortMonitorDll);
+            ConfigurezupitPDFPort(outputHandlerCommand);
+            if (AddzupitPDFPortMonitor(driverSourceDirectory))
             {
                 Console.WriteLine("Port monitor successfully installed.");
-                undoInstallActions.Push(this.RemoveclawPDFPortMonitor);
+                undoInstallActions.Push(this.RemovezupitPDFPortMonitor);
                 if (CopyPrinterDriverFiles(driverSourceDirectory, printerDriverFiles.Concat(printerDriverDependentFiles).ToArray()))
                 {
                     Console.WriteLine("Printer drivers copied or already exist.");
-                    undoInstallActions.Push(this.RemoveclawPDFPortMonitor);
-                    if (AddclawPDFPort())
+                    undoInstallActions.Push(this.RemovezupitPDFPortMonitor);
+                    if (AddzupitPDFPort())
                     {
                         Console.WriteLine("Redirection port added.");
-                        undoInstallActions.Push(this.RemoveclawPDFPrinterDriver);
-                        if (InstallclawPDFPrinterDriver())
+                        undoInstallActions.Push(this.RemovezupitPDFPrinterDriver);
+                        if (InstallzupitPDFPrinterDriver())
                         {
                             Console.WriteLine("Printer driver installed.");
-                            undoInstallActions.Push(this.DeleteclawPDFPrinter);
-                            if (AddclawPDFPrinter())
+                            undoInstallActions.Push(this.DeletezupitPDFPrinter);
+                            if (AddzupitPDFPrinter())
                             {
                                 Console.WriteLine("Virtual printer installed.");
-                                undoInstallActions.Push(this.RemoveclawPDFPortConfig);
-                                if (ConfigureclawPDFPort(outputHandlerCommand))
+                                undoInstallActions.Push(this.RemovezupitPDFPortConfig);
+                                if (ConfigurezupitPDFPort(outputHandlerCommand))
                                 {
                                     Console.WriteLine("Printer configured.");
                                     printerInstalled = true;
@@ -567,21 +567,21 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         ///
         /// </summary>
         /// <returns></returns>
-        public bool UninstallclawPDFPrinter()
+        public bool UninstallzupitPDFPrinter()
         {
             bool printerUninstalledCleanly = true;
 
-            if (!DeleteclawPDFPrinter())
+            if (!DeletezupitPDFPrinter())
                 printerUninstalledCleanly = false;
-            if (!RemoveclawPDFPrinterDriver())
+            if (!RemovezupitPDFPrinterDriver())
                 printerUninstalledCleanly = false;
-            if (!DeleteclawPDFPort())
+            if (!DeletezupitPDFPort())
                 printerUninstalledCleanly = false;
-            if (!RemoveclawPDFPortMonitor())
+            if (!RemovezupitPDFPortMonitor())
                 printerUninstalledCleanly = false;
-            if (!RemoveclawPDFPortConfig())
+            if (!RemovezupitPDFPortConfig())
                 printerUninstalledCleanly = false;
-            DeleteclawPDFPortMonitorDll();
+            DeletezupitPDFPortMonitorDll();
             return printerUninstalledCleanly;
         }
 
@@ -719,9 +719,9 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
             return installedPrinterDrivers;
         }
 
-        private bool InstallclawPDFPrinterDriver()
+        private bool InstallzupitPDFPrinterDriver()
         {
-            bool clawPDFPrinterDriverInstalled = false;
+            bool zupitPDFPrinterDriverInstalled = false;
 
             if (!IsPrinterDriverInstalled(DRIVERNAME))
             {
@@ -760,14 +760,14 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
                 printerDriverInfo.pszHardwareID = HARDWAREID;
                 printerDriverInfo.pszProvider = DRIVERMANUFACTURER;
 
-                clawPDFPrinterDriverInstalled = InstallPrinterDriver(ref printerDriverInfo);
+                zupitPDFPrinterDriverInstalled = InstallPrinterDriver(ref printerDriverInfo);
             }
             else
             {
-                clawPDFPrinterDriverInstalled = true; // Driver is already installed, we'll just use the installed driver
+                zupitPDFPrinterDriverInstalled = true; // Driver is already installed, we'll just use the installed driver
             }
 
-            return clawPDFPrinterDriverInstalled;
+            return zupitPDFPrinterDriverInstalled;
         }
 
         private bool InstallPrinterDriver(ref DRIVER_INFO_6 printerDriverInfo)
@@ -777,7 +777,7 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
             printerDriverInstalled = NativeMethods.AddPrinterDriver(null, 6, ref printerDriverInfo);
             if (printerDriverInstalled == false)
             {
-                Console.WriteLine("Could not add clawPDF printer driver. " +
+                Console.WriteLine("Could not add zupitPDF printer driver. " +
                                           String.Format(WIN32ERROR, Marshal.GetLastWin32Error().ToString()));
             }
             return printerDriverInstalled;
@@ -787,155 +787,155 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         ///
         /// </summary>
         /// <returns></returns>
-        public bool RemoveclawPDFPrinterDriver()
+        public bool RemovezupitPDFPrinterDriver()
         {
             bool driverRemoved = NativeMethods.DeletePrinterDriverEx(null, ENVIRONMENT, DRIVERNAME, DPD_DELETE_UNUSED_FILES, 3);
             if (!driverRemoved)
             {
-                Console.WriteLine("Could not remove clawPDF printer driver. " +
+                Console.WriteLine("Could not remove zupitPDF printer driver. " +
                                           String.Format(WIN32ERROR, Marshal.GetLastWin32Error().ToString()));
             }
             return driverRemoved;
         }
 
-        private bool AddclawPDFPrinter()
+        private bool AddzupitPDFPrinter()
         {
             bool printerAdded = false;
-            PRINTER_INFO_2 clawPDFPrinter = new PRINTER_INFO_2();
+            PRINTER_INFO_2 zupitPDFPrinter = new PRINTER_INFO_2();
 
-            clawPDFPrinter.pServerName = null;
-            clawPDFPrinter.pPrinterName = PRINTERNAME;
-            clawPDFPrinter.pPortName = PORTNAME;
-            clawPDFPrinter.pDriverName = DRIVERNAME;
-            clawPDFPrinter.pPrintProcessor = PRINTPROCESOR;
-            clawPDFPrinter.pDatatype = "RAW";
-            clawPDFPrinter.Attributes = 0x00000002;
+            zupitPDFPrinter.pServerName = null;
+            zupitPDFPrinter.pPrinterName = PRINTERNAME;
+            zupitPDFPrinter.pPortName = PORTNAME;
+            zupitPDFPrinter.pDriverName = DRIVERNAME;
+            zupitPDFPrinter.pPrintProcessor = PRINTPROCESOR;
+            zupitPDFPrinter.pDatatype = "RAW";
+            zupitPDFPrinter.Attributes = 0x00000002;
 
-            int clawPDFPrinterHandle = NativeMethods.AddPrinter(null, 2, ref clawPDFPrinter);
-            if (clawPDFPrinterHandle != 0)
+            int zupitPDFPrinterHandle = NativeMethods.AddPrinter(null, 2, ref zupitPDFPrinter);
+            if (zupitPDFPrinterHandle != 0)
             {
                 // Added ok
-                int closeCode = NativeMethods.ClosePrinter((IntPtr)clawPDFPrinterHandle);
+                int closeCode = NativeMethods.ClosePrinter((IntPtr)zupitPDFPrinterHandle);
                 printerAdded = true;
             }
             else
             {
-                Console.WriteLine("Could not add clawPDF virtual printer. " +
+                Console.WriteLine("Could not add zupitPDF virtual printer. " +
                                           String.Format(WIN32ERROR, Marshal.GetLastWin32Error().ToString()));
             }
             return printerAdded;
         }
 
-        public bool AddCustomclawPDFPrinter(string name)
+        public bool AddCustomzupitPDFPrinter(string name)
         {
             bool printerAdded = false;
-            PRINTER_INFO_2 clawPDFPrinter = new PRINTER_INFO_2();
+            PRINTER_INFO_2 zupitPDFPrinter = new PRINTER_INFO_2();
 
-            clawPDFPrinter.pServerName = null;
-            clawPDFPrinter.pPrinterName = name;
-            clawPDFPrinter.pPortName = PORTNAME;
-            clawPDFPrinter.pDriverName = DRIVERNAME;
-            clawPDFPrinter.pPrintProcessor = PRINTPROCESOR;
-            clawPDFPrinter.pDatatype = "RAW";
-            clawPDFPrinter.Attributes = 0x00000002;
+            zupitPDFPrinter.pServerName = null;
+            zupitPDFPrinter.pPrinterName = name;
+            zupitPDFPrinter.pPortName = PORTNAME;
+            zupitPDFPrinter.pDriverName = DRIVERNAME;
+            zupitPDFPrinter.pPrintProcessor = PRINTPROCESOR;
+            zupitPDFPrinter.pDatatype = "RAW";
+            zupitPDFPrinter.Attributes = 0x00000002;
 
-            int clawPDFPrinterHandle = NativeMethods.AddPrinter(null, 2, ref clawPDFPrinter);
-            if (clawPDFPrinterHandle != 0)
+            int zupitPDFPrinterHandle = NativeMethods.AddPrinter(null, 2, ref zupitPDFPrinter);
+            if (zupitPDFPrinterHandle != 0)
             {
                 // Added ok
-                int closeCode = NativeMethods.ClosePrinter((IntPtr)clawPDFPrinterHandle);
+                int closeCode = NativeMethods.ClosePrinter((IntPtr)zupitPDFPrinterHandle);
                 printerAdded = true;
             }
             else
             {
-                Console.WriteLine("Could not add clawPDF virtual printer. " +
+                Console.WriteLine("Could not add zupitPDF virtual printer. " +
                                   String.Format(WIN32ERROR, Marshal.GetLastWin32Error().ToString()));
             }
             return printerAdded;
         }
 
-        private bool DeleteclawPDFPrinter()
+        private bool DeletezupitPDFPrinter()
         {
             bool printerDeleted = false;
 
-            PRINTER_DEFAULTS clawPDFDefaults = new PRINTER_DEFAULTS();
-            clawPDFDefaults.DesiredAccess = 0x000F000C; // All access
-            clawPDFDefaults.pDatatype = null;
-            clawPDFDefaults.pDevMode = IntPtr.Zero;
+            PRINTER_DEFAULTS zupitPDFDefaults = new PRINTER_DEFAULTS();
+            zupitPDFDefaults.DesiredAccess = 0x000F000C; // All access
+            zupitPDFDefaults.pDatatype = null;
+            zupitPDFDefaults.pDevMode = IntPtr.Zero;
 
-            IntPtr clawPDFHandle = IntPtr.Zero;
+            IntPtr zupitPDFHandle = IntPtr.Zero;
             try
             {
-                if (NativeMethods.OpenPrinter(PRINTERNAME, ref clawPDFHandle, clawPDFDefaults) != 0)
+                if (NativeMethods.OpenPrinter(PRINTERNAME, ref zupitPDFHandle, zupitPDFDefaults) != 0)
                 {
-                    if (NativeMethods.DeletePrinter(clawPDFHandle))
+                    if (NativeMethods.DeletePrinter(zupitPDFHandle))
                         printerDeleted = true;
                 }
                 else
                 {
-                    Console.WriteLine("Could not delete clawPDF virtual printer. " +
+                    Console.WriteLine("Could not delete zupitPDF virtual printer. " +
                                               String.Format(WIN32ERROR, Marshal.GetLastWin32Error().ToString()));
                 }
             }
             finally
             {
-                if (clawPDFHandle != IntPtr.Zero) NativeMethods.ClosePrinter(clawPDFHandle);
+                if (zupitPDFHandle != IntPtr.Zero) NativeMethods.ClosePrinter(zupitPDFHandle);
             }
             return printerDeleted;
         }
 
-        public bool DeleteCustomclawPDFPrinter(string name)
+        public bool DeleteCustomzupitPDFPrinter(string name)
         {
             bool printerDeleted = false;
 
-            PRINTER_DEFAULTS clawPDFDefaults = new PRINTER_DEFAULTS();
-            clawPDFDefaults.DesiredAccess = 0x000F000C; // All access
-            clawPDFDefaults.pDatatype = null;
-            clawPDFDefaults.pDevMode = IntPtr.Zero;
+            PRINTER_DEFAULTS zupitPDFDefaults = new PRINTER_DEFAULTS();
+            zupitPDFDefaults.DesiredAccess = 0x000F000C; // All access
+            zupitPDFDefaults.pDatatype = null;
+            zupitPDFDefaults.pDevMode = IntPtr.Zero;
 
-            IntPtr clawPDFHandle = IntPtr.Zero;
+            IntPtr zupitPDFHandle = IntPtr.Zero;
             try
             {
-                if (NativeMethods.OpenPrinter(name, ref clawPDFHandle, clawPDFDefaults) != 0)
+                if (NativeMethods.OpenPrinter(name, ref zupitPDFHandle, zupitPDFDefaults) != 0)
                 {
-                    if (NativeMethods.DeletePrinter(clawPDFHandle))
+                    if (NativeMethods.DeletePrinter(zupitPDFHandle))
                         printerDeleted = true;
                 }
                 else
                 {
-                    Console.WriteLine("Could not delete clawPDF virtual printer. " +
+                    Console.WriteLine("Could not delete zupitPDF virtual printer. " +
                                       String.Format(WIN32ERROR, Marshal.GetLastWin32Error().ToString()));
                 }
             }
             finally
             {
-                if (clawPDFHandle != IntPtr.Zero) NativeMethods.ClosePrinter(clawPDFHandle);
+                if (zupitPDFHandle != IntPtr.Zero) NativeMethods.ClosePrinter(zupitPDFHandle);
             }
             return printerDeleted;
         }
 
-        public bool IsclawPDFPrinterInstalled()
+        public bool IszupitPDFPrinterInstalled()
         {
-            bool clawPDFInstalled = false;
+            bool zupitPDFInstalled = false;
 
-            PRINTER_DEFAULTS clawPDFDefaults = new PRINTER_DEFAULTS();
-            clawPDFDefaults.DesiredAccess = 0x00008; // Use access
-            clawPDFDefaults.pDatatype = null;
-            clawPDFDefaults.pDevMode = IntPtr.Zero;
+            PRINTER_DEFAULTS zupitPDFDefaults = new PRINTER_DEFAULTS();
+            zupitPDFDefaults.DesiredAccess = 0x00008; // Use access
+            zupitPDFDefaults.pDatatype = null;
+            zupitPDFDefaults.pDevMode = IntPtr.Zero;
 
-            IntPtr clawPDFHandle = IntPtr.Zero;
-            if (NativeMethods.OpenPrinter(PRINTERNAME, ref clawPDFHandle, clawPDFDefaults) != 0)
+            IntPtr zupitPDFHandle = IntPtr.Zero;
+            if (NativeMethods.OpenPrinter(PRINTERNAME, ref zupitPDFHandle, zupitPDFDefaults) != 0)
             {
-                clawPDFInstalled = true;
+                zupitPDFInstalled = true;
             }
             else
             {
                 int errorCode = Marshal.GetLastWin32Error();
-                if (errorCode == 0x5) clawPDFInstalled = true; // Printer is installed, but user
+                if (errorCode == 0x5) zupitPDFInstalled = true; // Printer is installed, but user
                                                                // has no privileges to use it
             }
 
-            return clawPDFInstalled;
+            return zupitPDFInstalled;
         }
 
         #endregion Printer Install
@@ -943,18 +943,18 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
         #region Configuration and Registry changes
 
 #if DEBUG
-        public bool ConfigureclawPDFPort_Test()
+        public bool ConfigurezupitPDFPort_Test()
         {
-            return ConfigureclawPDFPort();
+            return ConfigurezupitPDFPort();
         }
 #endif
 
-        private bool ConfigureclawPDFPort()
+        private bool ConfigurezupitPDFPort()
         {
-            return ConfigureclawPDFPort(String.Empty);
+            return ConfigurezupitPDFPort(String.Empty);
         }
 
-        private bool ConfigureclawPDFPort(String commandValue)
+        private bool ConfigurezupitPDFPort(String commandValue)
         {
             bool registryChangesMade = false;
             // Add all the registry info
@@ -977,8 +977,8 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
                 portConfiguration.SetValue("User", "", RegistryValueKind.String);
                 portConfiguration.SetValue("WaitTermination", 0, RegistryValueKind.DWord);
                 portConfiguration.SetValue("WaitTimeout", 0, RegistryValueKind.DWord);
-                portConfiguration.SetValue("Description", "clawPDF", RegistryValueKind.String);
-                portConfiguration.SetValue("UserCommand", Path.GetDirectoryName(Application.ExecutablePath) + @"\clawPDF.Bridge.exe", RegistryValueKind.String);
+                portConfiguration.SetValue("Description", "zupitPDF", RegistryValueKind.String);
+                portConfiguration.SetValue("UserCommand", Path.GetDirectoryName(Application.ExecutablePath) + @"\zupitPDF.Bridge.exe", RegistryValueKind.String);
                 portConfiguration.SetValue("Printer", PRINTERNAME, RegistryValueKind.String);
                 registryChangesMade = true;
             }
@@ -994,7 +994,7 @@ namespace clawSoft.clawPDF.SetupHelper.Driver
             return registryChangesMade;
         }
 
-        private bool RemoveclawPDFPortConfig()
+        private bool RemovezupitPDFPortConfig()
         {
             bool registryEntriesRemoved = false;
 

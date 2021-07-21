@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Shared.Helper;
 using pdfforge.DynamicTranslator;
 
-namespace clawSoft.clawPDF.ViewModels.UserControls
+namespace zupit.zupitPDF.ViewModels.UserControls
 {
     internal class DebugTabViewModel : ApplicationSettingsViewModel
     {

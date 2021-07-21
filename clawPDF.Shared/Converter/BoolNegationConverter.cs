@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace clawSoft.clawPDF.Shared.Converter
+namespace zupit.zupitPDF.Shared.Converter
 {
     public class BoolNegationConverter : IValueConverter
     {

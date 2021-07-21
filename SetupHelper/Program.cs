@@ -2,11 +2,11 @@
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using clawSoft.clawPDF.SetupHelper.Driver;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.SetupHelper.Driver;
+using zupit.zupitPDF.Utilities;
 using Microsoft.Win32;
 
-namespace clawSoft.clawPDF.SetupHelper
+namespace zupit.zupitPDF.SetupHelper
 {
     internal class Program
     {
@@ -24,11 +24,11 @@ namespace clawSoft.clawPDF.SetupHelper
                     switch (clp.GetArgument("Driver"))
                     {
                         case "Add":
-                            Actions.InstallclawPDFPrinter();
+                            Actions.InstallzupitPDFPrinter();
                             break;
 
                         case "Remove":
-                            Actions.UninstallclawPDFPrinter();
+                            Actions.UninstallzupitPDFPrinter();
                             break;
 
                         default:
@@ -160,22 +160,22 @@ namespace clawSoft.clawPDF.SetupHelper
 
         private static void AddExplorerIntegration(bool wow6432)
         {
-            CallRegAsmForShell(wow6432, "clawPDFShell.dll", "/codebase");
+            CallRegAsmForShell(wow6432, "zupitPDFShell.dll", "/codebase");
         }
 
         private static void RemoveExplorerIntegration(bool wow6432)
         {
-            CallRegAsmForShell(wow6432, "clawPDFShell.dll", "/unregister");
+            CallRegAsmForShell(wow6432, "zupitPDFShell.dll", "/unregister");
         }
 
         private static void RegisterComInterface(bool wow6432)
         {
-            CallRegAsmForShell(wow6432, "clawPDF.exe", "/codebase /tlb");
+            CallRegAsmForShell(wow6432, "zupitPDF.exe", "/codebase /tlb");
         }
 
         private static void UnregisterComInterface(bool wow6432)
         {
-            CallRegAsmForShell(wow6432, "clawPDF.exe", "/unregister");
+            CallRegAsmForShell(wow6432, "zupitPDF.exe", "/unregister");
         }
 
         private static void CallRegAsmForShell(bool wow6432, string fileName, string parameters)

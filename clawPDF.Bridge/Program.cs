@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 
-namespace clawPDF.Bridge
+namespace zupitPDF.Bridge
 {
     internal class Program
     {
@@ -24,7 +24,7 @@ namespace clawPDF.Bridge
         {
             INIFile iniFile = new INIFile(infFile);
             string username = iniFile.Read("0", "Username");
-            ProcessExtensions.StartProcessAsUser(username, Path.GetDirectoryName(Application.ExecutablePath) + @"\" + "clawPDF.exe", Path.GetDirectoryName(Application.ExecutablePath) + @"\" + "clawPDF.exe" + " /INFODATAFILE=" + infFile, Path.GetDirectoryName(Application.ExecutablePath), true);
+            ProcessExtensions.StartProcessAsUser(username, Path.GetDirectoryName(Application.ExecutablePath) + @"\" + "zupitPDF.exe", Path.GetDirectoryName(Application.ExecutablePath) + @"\" + "zupitPDF.exe" + " /INFODATAFILE=" + infFile, Path.GetDirectoryName(Application.ExecutablePath), true);
         }
     }
 }

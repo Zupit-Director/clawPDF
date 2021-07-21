@@ -1,12 +1,12 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using clawSoft.clawPDF.Shared.Assistants;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.ViewModels.UserControls;
-using clawSoft.clawPDF.ViewModels.Wrapper;
+using zupit.zupitPDF.Shared.Assistants;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.ViewModels.UserControls;
+using zupit.zupitPDF.ViewModels.Wrapper;
 
-namespace clawSoft.clawPDF.Views.UserControls
+namespace zupit.zupitPDF.Views.UserControls
 {
     internal partial class PrinterTab
     {
@@ -56,12 +56,12 @@ namespace clawSoft.clawPDF.Views.UserControls
         private void DeletePrinterAction(PrinterMappingWrapper printerMapping)
         {
             var helper = new PrinterActionsAssistant();
-            var success = helper.DeletePrinter(printerMapping.PrinterName, ViewModel.ClawPdfPrinters.Count);
+            var success = helper.DeletePrinter(printerMapping.PrinterName, ViewModel.zupitPDFPrinters.Count);
 
             if (success)
             {
                 ViewModel.PrinterMappings.Remove(printerMapping);
-                ViewModel.ClawPdfPrinters = _printerHelper.GetclawPDFPrinters();
+                ViewModel.zupitPDFPrinters = _printerHelper.GetzupitPDFPrinters();
                 PrimaryPrinterBox.SelectedValue = ViewModel.PrimaryPrinter;
             }
         }

@@ -6,16 +6,16 @@ using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.Utilities.IO;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.Utilities.IO;
 using NLog;
 using SystemInterface.IO;
 using SystemWrapper.IO;
 
-namespace clawSoft.clawPDF.Core.Ghostscript.OutputDevices
+namespace zupit.zupitPDF.Core.Ghostscript.OutputDevices
 {
     /// <summary>
     ///     The abstract class OutputDevice holds methods and properties that handle the Ghostscript parameters. The device

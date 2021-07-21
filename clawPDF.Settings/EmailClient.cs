@@ -10,7 +10,7 @@ using pdfforge.DataStorage;
 // ! Do not edit it outside the sections for custom code.
 // ! These changes will be deleted during the next generation run
 
-namespace clawSoft.clawPDF.Core.Settings
+namespace zupit.zupitPDF.Core.Settings
 {
     /// <summary>
     ///     Opens the default E-mail client with the converted document as attachment
@@ -23,7 +23,7 @@ namespace clawSoft.clawPDF.Core.Settings
         }
 
         /// <summary>
-        ///     Add the clawPDF signature to the mail
+        ///     Add the zupitPDF signature to the mail
         /// </summary>
         public bool AddSignature { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace clawSoft.clawPDF.Core.Helper
+namespace zupit.zupitPDF.Core.Helper
 {
     internal class EncodingHelper
     {

@@ -1,19 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Threading;
-using clawSoft.clawPDF.Utilities.Communication;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Threading;
+using zupit.zupitPDF.Utilities.Communication;
 
-namespace clawSoft.clawPDF.COM
+namespace zupit.zupitPDF.COM
 {
     [ComVisible(true)]
     [InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     [Guid("A1F6647E-8C19-4A3E-89DF-7FDFAD2A0C30")]
-    public interface IClawPdf
+    public interface IzupitPDF
     {
-        Printers GetclawPdfPrinters { get; }
+        Printers GetzupitPDFPrinters { get; }
         bool IsInstanceRunning { get; }
 
         void PrintFile(string path);
@@ -26,21 +26,21 @@ namespace clawSoft.clawPDF.COM
     [ComVisible(true)]
     [ClassInterface(ClassInterfaceType.None)]
     [Guid("69189C58-70C4-4DF2-B94D-5D786E9AD513")]
-    [ProgId("clawPDF.clawPDFObj")]
-    public class ClawPdfObj : IClawPdf
+    [ProgId("zupitPDF.zupitPDFObj")]
+    public class zupitPDFObj : IzupitPDF
     {
         /// <summary>
         ///     Returns a new PrinterDevices object
         /// </summary>
-        public Printers GetclawPdfPrinters => new Printers();
+        public Printers GetzupitPDFPrinters => new Printers();
 
         /// <summary>
-        ///     Checks if clawPDF is running
+        ///     Checks if zupitPDF is running
         /// </summary>
         public bool IsInstanceRunning => PipeServer.SessionServerInstanceRunning(ThreadManager.PipeName);
 
         /// <summary>
-        ///     Prints a file to the clawPDF printer without switching the default printer.
+        ///     Prints a file to the zupitPDF printer without switching the default printer.
         /// </summary>
         /// <param name="path">Path of the file to be printed</param>
         public void PrintFile(string path)
@@ -49,7 +49,7 @@ namespace clawSoft.clawPDF.COM
         }
 
         /// <summary>
-        ///     Prints a file to the clawPDF printer, where the user of the COM Interface can decide,
+        ///     Prints a file to the zupitPDF printer, where the user of the COM Interface can decide,
         ///     if the default printer should be temporally changed or not. In case of not, the file
         ///     will not be printed.
         /// </summary>

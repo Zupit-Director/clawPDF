@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Controls;
 using Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     public static class FileDialogHelper
     {

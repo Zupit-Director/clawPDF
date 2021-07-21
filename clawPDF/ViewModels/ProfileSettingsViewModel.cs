@@ -1,22 +1,22 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Data;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Helper;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.ViewModels.Wrapper;
-using clawSoft.clawPDF.Shared.Views;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Helper;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.ViewModels.Wrapper;
+using zupit.zupitPDF.Shared.Views;
 
-namespace clawSoft.clawPDF.ViewModels
+namespace zupit.zupitPDF.ViewModels
 {
     internal class ProfileSettingsViewModel : ViewModelBase
     {
         private ICollectionView _conversionProfilesView;
         private SynchronizedCollection<ConversionProfile> _profileCollection;
-        private clawPDFSettings _settings;
-        private clawPDFSettings _unchangedOriginalSettings;
+        private zupitPDFSettings _settings;
+        private zupitPDFSettings _unchangedOriginalSettings;
         public ButtonClickedToClose ButtonClickedToClose;
         public string InvalidProfileMessage;
 
@@ -31,7 +31,7 @@ namespace clawSoft.clawPDF.ViewModels
             SaveButtonCommand = new DelegateCommand(SaveExcecute);
         }
 
-        public ProfileSettingsViewModel(clawPDFSettings settings,
+        public ProfileSettingsViewModel(zupitPDFSettings settings,
             TranslationHelper translationHelper)
             : this()
         {
@@ -39,7 +39,7 @@ namespace clawSoft.clawPDF.ViewModels
             _unchangedOriginalSettings = _settings.Copy();
         }
 
-        public ProfileSettingsViewModel(clawPDFSettings settings)
+        public ProfileSettingsViewModel(zupitPDFSettings settings)
             : this(settings, TranslationHelper.Instance)
         {
         }
@@ -65,7 +65,7 @@ namespace clawSoft.clawPDF.ViewModels
             }
         }
 
-        public clawPDFSettings Settings
+        public zupitPDFSettings Settings
         {
             get => _settings;
             set

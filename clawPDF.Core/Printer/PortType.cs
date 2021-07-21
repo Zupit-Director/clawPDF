@@ -1,4 +1,4 @@
-﻿namespace clawSoft.clawPDF.Core.Printer
+﻿namespace zupit.zupitPDF.Core.Printer
 {
     public enum PortType
     {

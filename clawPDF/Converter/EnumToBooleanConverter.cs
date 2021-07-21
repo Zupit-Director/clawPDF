@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace clawSoft.clawPDF.Converter
+namespace zupit.zupitPDF.Converter
 {
     internal class EnumToBooleanConverter : IValueConverter
     {

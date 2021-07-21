@@ -1,7 +1,7 @@
 ﻿using System;
-using clawSoft.clawPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings;
 
-namespace clawSoft.clawPDF.Shared.ViewModels.UserControls
+namespace zupit.zupitPDF.Shared.ViewModels.UserControls
 {
     public class CurrentProfileViewModel : ViewModelBase
     {

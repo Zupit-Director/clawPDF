@@ -2,14 +2,14 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels.UserControls;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels.UserControls;
 using pdfforge.DynamicTranslator;
 using ComboBox = System.Windows.Controls.ComboBox;
 using TextBox = System.Windows.Controls.TextBox;
 
-namespace clawSoft.clawPDF.Views.UserControls
+namespace zupit.zupitPDF.Views.UserControls
 {
     internal partial class SaveTab
     {

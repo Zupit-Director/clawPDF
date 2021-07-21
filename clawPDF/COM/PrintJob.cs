@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Utilities.Threading;
-using clawSoft.clawPDF.Workflow;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Utilities.Threading;
+using zupit.zupitPDF.Workflow;
 using NLog;
 
-namespace clawSoft.clawPDF.COM
+namespace zupit.zupitPDF.COM
 {
     [ComVisible(true)]
     public delegate void JobFinishedDelegate();

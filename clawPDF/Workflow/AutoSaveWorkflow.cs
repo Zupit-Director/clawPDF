@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Utilities;
 
-namespace clawSoft.clawPDF.Workflow
+namespace zupit.zupitPDF.Workflow
 {
     /// <summary>
     ///     The autosave workflow implements the workflow steps with auto save. Most interaction requests are answered with
@@ -18,7 +18,7 @@ namespace clawSoft.clawPDF.Workflow
         /// </summary>
         /// <param name="job">Job to use for the conversion</param>
         /// <param name="settings">Settings to use during the conversion workflow</param>
-        public AutoSaveWorkflow(IJob job, clawPDFSettings settings)
+        public AutoSaveWorkflow(IJob job, zupitPDFSettings settings)
         {
             WorkflowStep = WorkflowStep.Init;
 

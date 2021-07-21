@@ -1,7 +1,7 @@
 using System;
-using clawSoft.clawPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Jobs;
 
-namespace clawSoft.clawPDF
+namespace zupit.zupitPDF
 {
     /// <summary>
     ///     EventArgs class that contains the new JobInfo

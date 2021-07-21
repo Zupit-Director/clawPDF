@@ -2,12 +2,12 @@
 using System.ComponentModel;
 using System.IO;
 using System.Text.RegularExpressions;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.ftplib.FtpLib;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.ftplib.FtpLib;
 using NLog;
 
-namespace clawSoft.clawPDF.Core.Actions
+namespace zupit.zupitPDF.Core.Actions
 {
     public class FtpAction : IAction, ICheckable
     {

@@ -1,9 +1,9 @@
-﻿using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.Views;
+﻿using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Views;
 using pdfforge.DynamicTranslator;
 
-namespace clawSoft.clawPDF.Shared.Assistants
+namespace zupit.zupitPDF.Shared.Assistants
 {
     public class PrinterActionsAssistant
     {
@@ -11,7 +11,7 @@ namespace clawSoft.clawPDF.Shared.Assistants
 
         public bool AddPrinter(out string newPrinterName)
         {
-            newPrinterName = CreateValidPrinterName("clawPDF");
+            newPrinterName = CreateValidPrinterName("zupitPDF");
             var questionText = _translator.GetTranslation("InputBoxWindow", "EnterPrintername",
                 "Please enter printer name:");
             newPrinterName = RequestPrinternameFromUser(questionText, newPrinterName);
@@ -40,8 +40,8 @@ namespace clawSoft.clawPDF.Shared.Assistants
             if (numPrinters < 2)
             {
                 var message = _translator.GetTranslation("ApplicationSettingsWindow", "DontDeleteLastPrinter",
-                    "You may not delete the last printer. Uninstall clawPDF if you really want to remove all related printers.");
-                const string caption = @"clawPDF";
+                    "You may not delete the last printer. Uninstall zupitPDF if you really want to remove all related printers.");
+                const string caption = @"zupitPDF";
                 MessageWindow.ShowTopMost(message, caption, MessageWindowButtons.OK, MessageWindowIcon.Error);
                 return false;
             }

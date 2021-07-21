@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="clawSoft.clawPDF.Shared.Views.UserControls.PdfTab"
+﻿<UserControl x:Class="zupit.zupitPDF.Shared.Views.UserControls.PdfTab"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
-             xmlns:enums="clr-namespace:clawSoft.clawPDF.Core.Settings.Enums;assembly=clawPDF.Settings"
-             xmlns:userControls="clr-namespace:clawSoft.clawPDF.Shared.ViewModels.UserControls"
-             xmlns:converter="clr-namespace:clawSoft.clawPDF.Shared.Converter"
+             xmlns:enums="clr-namespace:zupit.zupitPDF.Core.Settings.Enums;assembly=zupitPDF.Settings"
+             xmlns:userControls="clr-namespace:zupit.zupitPDF.Shared.ViewModels.UserControls"
+             xmlns:converter="clr-namespace:zupit.zupitPDF.Shared.Converter"
              mc:Ignorable="d">
     <UserControl.DataContext>
         <userControls:PdfTabViewModel />
@@ -39,7 +39,7 @@
                             <TextBlock Name="CurrentPdfVersionTextBlock" Margin="0 0 5 0">Current PDF version:</TextBlock>
                             <TextBlock Name="PdfVersionTextBlock" FontWeight="Bold" Text="{Binding PdfVersion}" />
                         </StackPanel>
-                        <TextBlock Name="PdfVersionNoteTextBlock" TextWrapping="Wrap">For best compatibility clawPDF uses the lowest version that is possible with the current settings.</TextBlock>
+                        <TextBlock Name="PdfVersionNoteTextBlock" TextWrapping="Wrap">For best compatibility zupitPDF uses the lowest version that is possible with the current settings.</TextBlock>
                     </StackPanel>
                 </HeaderedContentControl>
                 <HeaderedContentControl Name="PageOrientationControl" HorizontalAlignment="Left"

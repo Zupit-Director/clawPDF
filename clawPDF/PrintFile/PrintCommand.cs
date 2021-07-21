@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.Utilities.Process;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.Utilities.Process;
 using NLog;
 
-namespace clawSoft.clawPDF.PrintFile
+namespace zupit.zupitPDF.PrintFile
 {
     internal enum PrintType
     {
@@ -16,7 +16,7 @@ namespace clawSoft.clawPDF.PrintFile
     }
 
     /// <summary>
-    ///     The PrintCommand class provides a way to print a file with clawPDF
+    ///     The PrintCommand class provides a way to print a file with zupitPDF
     /// </summary>
     internal class PrintCommand
     {

@@ -1,12 +1,12 @@
 ﻿using System;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.Utilities.IO;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.Utilities.IO;
 using SystemInterface.IO;
 using SystemInterface.Microsoft.Win32;
 using SystemWrapper.IO;
 using SystemWrapper.Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Core.Ghostscript
+namespace zupit.zupitPDF.Core.Ghostscript
 {
     public class GhostscriptDiscovery
     {

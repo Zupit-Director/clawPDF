@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <LangVersion>7.2</LangVersion>
-    <AssemblyName>clawSoft.ftplib</AssemblyName>
+    <AssemblyName>zupit.ftplib</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -39,7 +39,7 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>clawSoft.clawPDF.ftplib</RootNamespace>
+    <RootNamespace>zupit.zupitPDF.ftplib</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">

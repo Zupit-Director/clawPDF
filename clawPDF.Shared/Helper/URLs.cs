@@ -1,4 +1,4 @@
-﻿namespace clawSoft.clawPDF.Shared.Helper
+﻿namespace zupit.zupitPDF.Shared.Helper
 {
     public static class Urls
     {
@@ -8,6 +8,6 @@
 
         public const string clawSoftWebsiteUrl = "http://www.clawSoft.org";
 
-        public const string clawPDFDownloadUrl = "http://go.clawSoft.org/clawPDF/download";
+        public const string zupitPDFDownloadUrl = "http://go.clawSoft.org/zupitPDF/download";
     }
 }

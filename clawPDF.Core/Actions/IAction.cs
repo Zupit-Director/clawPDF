@@ -1,6 +1,6 @@
-﻿using clawSoft.clawPDF.Core.Jobs;
+﻿using zupit.zupitPDF.Core.Jobs;
 
-namespace clawSoft.clawPDF.Core.Actions
+namespace zupit.zupitPDF.Core.Actions
 {
     /// <summary>
     ///     The interface Action defines actions that can process a set of files (i.e. encrypt, send as mail)

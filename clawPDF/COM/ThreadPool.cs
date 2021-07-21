@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using clawSoft.clawPDF.Utilities.Threading;
+using zupit.zupitPDF.Utilities.Threading;
 using NLog;
 
-namespace clawSoft.clawPDF.COM
+namespace zupit.zupitPDF.COM
 {
     public class ThreadPool
     {

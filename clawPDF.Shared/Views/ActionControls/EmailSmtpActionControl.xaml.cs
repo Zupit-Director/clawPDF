@@ -1,15 +1,15 @@
 ﻿using System.IO;
 using System.Text;
 using System.Windows;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.ViewModels.UserControls;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.ViewModels.UserControls;
 using NLog;
 
-namespace clawSoft.clawPDF.Shared.Views.ActionControls
+namespace zupit.zupitPDF.Shared.Views.ActionControls
 {
     public partial class EmailSmtpActionControl : ActionControl
     {
@@ -114,7 +114,7 @@ namespace clawSoft.clawPDF.Shared.Views.ActionControls
             #region create job
 
             var tempFolder = Path.GetTempPath();
-            var tmpTestFolder = Path.Combine(tempFolder, "clawPDFTest\\SendSmtpTestmail");
+            var tmpTestFolder = Path.Combine(tempFolder, "zupitPDFTest\\SendSmtpTestmail");
             Directory.CreateDirectory(tmpTestFolder);
             var tmpInfFile = Path.Combine(tmpTestFolder, "SmtpTest.inf");
 
@@ -124,7 +124,7 @@ namespace clawSoft.clawPDF.Shared.Views.ActionControls
             sb.AppendLine("WinStation=Console");
             sb.AppendLine("UserName=SampleUser1234");
             sb.AppendLine("ClientComputer=\\PC1");
-            sb.AppendLine("PrinterName=clawPDF");
+            sb.AppendLine("PrinterName=zupitPDF");
             sb.AppendLine("JobId=1");
             sb.AppendLine("DocumentTitle=SmtpTest");
             sb.AppendLine("");
@@ -134,7 +134,7 @@ namespace clawSoft.clawPDF.Shared.Views.ActionControls
             var jobTranslations = new JobTranslations();
             jobTranslations.EmailSignature = MailSignatureHelper.ComposeMailSignature(true);
 
-            var tempFolderProvider = new StaticTempFolderProvider(Path.Combine(Path.GetTempPath(), "clawPDF"));
+            var tempFolderProvider = new StaticTempFolderProvider(Path.Combine(Path.GetTempPath(), "zupitPDF"));
 
             var job = new GhostscriptJob(new JobInfo(tmpInfFile), new ConversionProfile(), tempFolderProvider,
                 jobTranslations);
@@ -167,7 +167,7 @@ namespace clawSoft.clawPDF.Shared.Views.ActionControls
             #region add testfile
 
             var testFile = Path.Combine(tmpTestFolder, "testfile.txt");
-            File.WriteAllText(testFile, @"clawPDF", Encoding.GetEncoding("Unicode"));
+            File.WriteAllText(testFile, @"zupitPDF", Encoding.GetEncoding("Unicode"));
             job.OutputFiles.Add(testFile);
 
             #endregion add testfile

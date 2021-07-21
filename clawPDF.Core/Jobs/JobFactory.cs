@@ -1,6 +1,6 @@
-﻿using clawSoft.clawPDF.Core.Settings;
+﻿using zupit.zupitPDF.Core.Settings;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     public static class JobFactory
     {

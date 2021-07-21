@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using SystemInterface.IO;
 
-namespace clawSoft.clawPDF.Utilities.IO
+namespace zupit.zupitPDF.Utilities.IO
 {
     [Serializable]
     [ComVisible(true)]

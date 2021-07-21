@@ -5,18 +5,18 @@ using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Printer;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Properties;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Threading;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.Utilities.Communication;
-using clawSoft.clawPDF.Utilities.IO;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Printer;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Properties;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Threading;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.Utilities.Communication;
+using zupit.zupitPDF.Utilities.IO;
 using NLog;
 
-namespace clawSoft.clawPDF
+namespace zupit.zupitPDF
 {
     /// <summary>
     ///     The JobInfoQueue manages the pending JobInfos that are waiting to be converted
@@ -190,7 +190,7 @@ namespace clawSoft.clawPDF
             sb.AppendLine("Username=" + Environment.UserName);
             sb.AppendLine("ClientComputer=" + Environment.MachineName);
             sb.AppendLine("SpoolFileName=testpage.ps");
-            sb.AppendLine("PrinterName=clawPDF");
+            sb.AppendLine("PrinterName=zupitPDF");
             sb.AppendLine("JobId=1");
             sb.AppendLine("TotalPages=1");
             sb.AppendLine("Copies=1");
@@ -228,7 +228,7 @@ namespace clawSoft.clawPDF
             var printerPort = portReader.ReadPrinterPort(PrinterPortName);
 
             if (printerPort == null)
-                return "clawPDF";
+                return "zupitPDF";
 
             return printerPort.TempFolderName;
         }

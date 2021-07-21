@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="clawSoft.clawPDF.Views.UserControls.AutosaveTab"
+﻿<UserControl x:Class="zupit.zupitPDF.Views.UserControls.AutosaveTab"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:userControls1="clr-namespace:clawSoft.clawPDF.Shared.ViewModels.UserControls;assembly=clawPDF.Shared"
-             xmlns:converter="clr-namespace:clawSoft.clawPDF.Shared.Converter;assembly=clawPDF.Shared"
-             xmlns:userControls="clr-namespace:clawSoft.clawPDF.Shared.Views.UserControls;assembly=clawPDF.Shared"
+             xmlns:userControls1="clr-namespace:zupit.zupitPDF.Shared.ViewModels.UserControls;assembly=zupitPDF.Shared"
+             xmlns:converter="clr-namespace:zupit.zupitPDF.Shared.Converter;assembly=zupitPDF.Shared"
+             xmlns:userControls="clr-namespace:zupit.zupitPDF.Shared.Views.UserControls;assembly=zupitPDF.Shared"
              mc:Ignorable="d" x:ClassModifier="internal">
     <UserControl.DataContext>
         <userControls1:CurrentProfileViewModel />
@@ -57,7 +57,7 @@
                          IsReadOnly="True"
                          Text="{Binding Text, ElementName=TargetFolderTextBox, Converter={StaticResource TokenReplacerConverterForFolders}}" />
                 <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2">
-                    <TextBlock TextWrapping="Wrap" Margin="0 10 0 0" Name="AutomaticSavingHintText">Edit profiles without print dialog by opening clawPDF in Windows Explorer</TextBlock>
+                    <TextBlock TextWrapping="Wrap" Margin="0 10 0 0" Name="AutomaticSavingHintText">Edit profiles without print dialog by opening zupitPDF in Windows Explorer</TextBlock>
                 </Label>
             </Grid>
         </StackPanel>

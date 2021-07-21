@@ -1,25 +1,25 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.Views;
-using clawSoft.clawPDF.Shared.Views.ActionControls;
-using clawSoft.clawPDF.Utilities.Tokens;
-using clawSoft.clawPDF.ViewModels;
-using clawSoft.clawPDF.Views.ActionControls;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Views;
+using zupit.zupitPDF.Shared.Views.ActionControls;
+using zupit.zupitPDF.Utilities.Tokens;
+using zupit.zupitPDF.ViewModels;
+using zupit.zupitPDF.Views.ActionControls;
 
-namespace clawSoft.clawPDF.Views
+namespace zupit.zupitPDF.Views
 {
     internal partial class ProfileSettingsWindow
     {
         private static readonly TranslationHelper TranslationHelper = TranslationHelper.Instance;
         private readonly TokenReplacer _tokenReplacer = TokenHelper.TokenReplacerWithPlaceHolders;
 
-        public ProfileSettingsWindow(clawPDFSettings settings)
+        public ProfileSettingsWindow(zupitPDFSettings settings)
         {
             InitializeComponent();
             ViewModel = CreateViewModel(settings);
@@ -41,9 +41,9 @@ namespace clawSoft.clawPDF.Views
             set => DataContext = value;
         }
 
-        public clawPDFSettings Settings => ViewModel.Settings;
+        public zupitPDFSettings Settings => ViewModel.Settings;
 
-        private ProfileSettingsViewModel CreateViewModel(clawPDFSettings settings)
+        private ProfileSettingsViewModel CreateViewModel(zupitPDFSettings settings)
         {
             var viewModel = new ProfileSettingsViewModel(settings);
 

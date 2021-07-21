@@ -1,6 +1,6 @@
-﻿using clawSoft.clawPDF.Core.Settings;
+﻿using zupit.zupitPDF.Core.Settings;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     public static class MailSignatureHelper
     {

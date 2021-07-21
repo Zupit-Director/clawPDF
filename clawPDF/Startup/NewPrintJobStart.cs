@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Utilities.IO;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Utilities.IO;
 using NLog;
 
-namespace clawSoft.clawPDF.Startup
+namespace zupit.zupitPDF.Startup
 {
     internal class NewPrintJobStart : MaybePipedStart
     {

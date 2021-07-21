@@ -1,6 +1,6 @@
 /*
 clawmon - print to file with automatic filename assignment
-Copyright (C) 2019 // Andrew Hess // clawSoft
+Copyright (C) 2019 // Roberto Demozzi // zupit
 
 MFILEMON - print to file with automatic filename assignment
 Copyright (C) 2007-2015 Monti Lorenzo
@@ -44,7 +44,7 @@ BOOL Is_CorrectProcessorArchitecture()
 //-------------------------------------------------------------------------------------
 BOOL Is_Win2000()
 {
-	OSVERSIONINFOEXW osvi = { 0 };
+	OSVERSIONINFOEXW osvi = {0};
 
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 
@@ -59,7 +59,7 @@ BOOL Is_Win2000()
 //-------------------------------------------------------------------------------------
 BOOL Is_WinXP()
 {
-	OSVERSIONINFOEXW osvi = { 0 };
+	OSVERSIONINFOEXW osvi = {0};
 
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 
@@ -75,7 +75,7 @@ BOOL Is_WinXP()
 //-------------------------------------------------------------------------------------
 BOOL Is_WinXPOrAbove()
 {
-	OSVERSIONINFOEXW osvi = { 0 };
+	OSVERSIONINFOEXW osvi = {0};
 
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 
@@ -91,7 +91,7 @@ BOOL Is_WinXPOrAbove()
 //-------------------------------------------------------------------------------------
 BOOL Is_Win2003()
 {
-	OSVERSIONINFOEXW osvi = { 0 };
+	OSVERSIONINFOEXW osvi = {0};
 
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 
@@ -107,7 +107,7 @@ BOOL Is_Win2003()
 //-------------------------------------------------------------------------------------
 BOOL Is_WinVista()
 {
-	OSVERSIONINFOEXW osvi = { 0 };
+	OSVERSIONINFOEXW osvi = {0};
 
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 
@@ -123,7 +123,7 @@ BOOL Is_WinVista()
 //-------------------------------------------------------------------------------------
 BOOL Is_WinVistaOrAbove()
 {
-	OSVERSIONINFOEXW osvi = { 0 };
+	OSVERSIONINFOEXW osvi = {0};
 
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 
@@ -135,7 +135,7 @@ BOOL Is_WinVistaOrAbove()
 //-------------------------------------------------------------------------------------
 BOOL Is_Win2008()
 {
-	OSVERSIONINFOEXW osvi = { 0 };
+	OSVERSIONINFOEXW osvi = {0};
 
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 
@@ -151,7 +151,7 @@ BOOL Is_Win2008()
 //-------------------------------------------------------------------------------------
 BOOL Is_Win7()
 {
-	OSVERSIONINFOEXW osvi = { 0 };
+	OSVERSIONINFOEXW osvi = {0};
 
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 

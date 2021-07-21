@@ -1,7 +1,7 @@
 ﻿using SystemInterface.Microsoft.Win32;
 using SystemWrapper.Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Mail
+namespace zupit.zupitPDF.Mail
 {
     public class EmailClientFactory : IEmailClientFactory
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace clawSoft.clawPDF.Utilities.IO
+namespace zupit.zupitPDF.Utilities.IO
 {
     /// <summary>
     ///     Helper class to clean a folder with files older then a specific date

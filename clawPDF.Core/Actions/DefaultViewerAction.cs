@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Utilities;
 using NLog;
 
-namespace clawSoft.clawPDF.Core.Actions
+namespace zupit.zupitPDF.Core.Actions
 {
     /// <summary>
     ///     DefaultViewerAction opens the output files in the default viewer

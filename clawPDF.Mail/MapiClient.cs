@@ -6,7 +6,7 @@ using System.Threading;
 using NLog;
 using SystemInterface.Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Mail
+namespace zupit.zupitPDF.Mail
 {
     public class MapiClient : IEmailClient
     {

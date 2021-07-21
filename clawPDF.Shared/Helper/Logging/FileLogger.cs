@@ -5,7 +5,7 @@ using NLog.Config;
 using NLog.Layouts;
 using NLog.Targets;
 
-namespace clawSoft.clawPDF.Shared.Helper.Logging
+namespace zupit.zupitPDF.Shared.Helper.Logging
 {
     internal class FileLogger : ILogger
     {

@@ -1,6 +1,6 @@
 ﻿using System.Drawing.Printing;
 
-namespace clawSoft.clawPDF.Utilities
+namespace zupit.zupitPDF.Utilities
 {
     public class PrinterWrapper
     {

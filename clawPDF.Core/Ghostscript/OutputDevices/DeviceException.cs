@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace clawSoft.clawPDF.Core.Ghostscript.OutputDevices
+namespace zupit.zupitPDF.Core.Ghostscript.OutputDevices
 {
     public class DeviceException : Exception
     {

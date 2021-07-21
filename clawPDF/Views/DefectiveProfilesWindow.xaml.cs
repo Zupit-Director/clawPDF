@@ -5,10 +5,10 @@ using System.Text;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Shared.Helper;
 
-namespace clawSoft.clawPDF.Views
+namespace zupit.zupitPDF.Views
 {
     internal partial class DefectiveProfilesWindow : Window
     {

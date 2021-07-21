@@ -1,7 +1,7 @@
 ﻿using System;
-using clawSoft.clawPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Jobs;
 
-namespace clawSoft.clawPDF.Core.Xps
+namespace zupit.zupitPDF.Core.Xps
 {
     public class XpsConverter
     {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.Views;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Views;
+using zupit.zupitPDF.Utilities;
 using NLog;
 
-namespace clawSoft.clawPDF.Assistants
+namespace zupit.zupitPDF.Assistants
 {
     internal class RepairSpoolFolderAssistant
     {
@@ -15,7 +15,7 @@ namespace clawSoft.clawPDF.Assistants
         public bool TryRepairSpoolPath()
         {
             Logger.Error(
-                "The spool folder is not accessible due to a permission problem. clawPDF will not work this way");
+                "The spool folder is not accessible due to a permission problem. zupitPDF will not work this way");
 
             var tempFolder = Path.GetFullPath(Path.Combine(JobInfoQueue.Instance.SpoolFolder, ".."));
             var username = Environment.UserName;
@@ -26,7 +26,7 @@ namespace clawSoft.clawPDF.Assistants
                 "SpoolFolderAccessDenied", "Access Denied");
             var message = TranslationHelper.Instance.TranslatorInstance.GetFormattedTranslation("Application",
                 "SpoolFolderAskToRepair",
-                "The temporary path where clawPDF stores the print jobs can't be accessed. This is a configuration problem on your machine and needs to be fixed. Do you want clawPDF to attempt repairing it?\r\nYour spool folder is: {0}",
+                "The temporary path where zupitPDF stores the print jobs can't be accessed. This is a configuration problem on your machine and needs to be fixed. Do you want zupitPDF to attempt repairing it?\r\nYour spool folder is: {0}",
                 tempFolder);
 
             Logger.Debug("Asking to start repair..");
@@ -48,7 +48,7 @@ namespace clawSoft.clawPDF.Assistants
                         "RepairToolNotFound", "RepairTool not found");
                     message = TranslationHelper.Instance.TranslatorInstance.GetFormattedTranslation("Application",
                         "SetupFileMissing",
-                        "An important clawPDF file is missing ('{0}'). Please reinstall clawPDF!",
+                        "An important zupitPDF file is missing ('{0}'). Please reinstall zupitPDF!",
                         Path.GetFileName(repairToolPath));
 
                     MessageWindow.ShowTopMost(message, title, MessageWindowButtons.OK, MessageWindowIcon.Error);
@@ -69,7 +69,7 @@ namespace clawSoft.clawPDF.Assistants
                     "SpoolFolderAccessDenied", "Access Denied");
                 message = TranslationHelper.Instance.TranslatorInstance.GetFormattedTranslation("Application",
                     "SpoolFolderUnableToRepair",
-                    "clawPDF was not able to repair your spool folder. Please contact your administrator or the support to assist you in changing the permissions of the path '{0}'.",
+                    "zupitPDF was not able to repair your spool folder. Please contact your administrator or the support to assist you in changing the permissions of the path '{0}'.",
                     tempFolder);
 
                 MessageWindow.ShowTopMost(message, title, MessageWindowButtons.OK, MessageWindowIcon.Exclamation);

@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace clawSoft.clawPDF.Utilities.WindowsApi
+namespace zupit.zupitPDF.Utilities.WindowsApi
 {
     internal static class Kernel32
     {

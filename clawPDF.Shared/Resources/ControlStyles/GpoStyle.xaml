@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converter="clr-namespace:clawSoft.clawPDF.Shared.Converter">
+                    xmlns:converter="clr-namespace:zupit.zupitPDF.Shared.Converter">
     <Style x:Key="GpoStyle" TargetType="FrameworkElement" x:Shared="False">
         <Style.Resources>
             <converter:TranslatorConverter

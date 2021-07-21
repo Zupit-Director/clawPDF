@@ -1,7 +1,7 @@
-﻿<Window x:Class="clawSoft.clawPDF.Views.ManagePrintJobsWindow"
+﻿<Window x:Class="zupit.zupitPDF.Views.ManagePrintJobsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:viewModels="clr-namespace:clawSoft.clawPDF.ViewModels"
+        xmlns:viewModels="clr-namespace:zupit.zupitPDF.ViewModels"
         Title="Manage Print Jobs"
         Height="319" Width="623"
         WindowStartupLocation="CenterScreen"
@@ -11,7 +11,7 @@
         Drop="OnDrop"
         Background="{x:Static SystemColors.ControlBrush}"
         Activated="OnActivated"
-        Icon="../clawPDF.ico"
+        Icon="../zupitPDF.ico"
         KeyDown="ManagePrintJobsWindow_OnKeyDown" x:ClassModifier="internal">
     <Window.DataContext>
         <viewModels:ManagePrintJobsViewModel />
@@ -31,7 +31,7 @@
                    LastChildFill="True" Margin="0 0 0 10">
             <ContentControl Margin="10" Content="" Height="45" />
             <TextBlock
-                Text="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}, FallbackValue=clawPDF}"
+                Text="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}, FallbackValue=zupitPDF}"
                 HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="24"
                 Foreground="#FFFAFAFA" FontFamily="Calibri" />
         </DockPanel>

@@ -25,9 +25,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <windows.h>
 #include <userenv.h>
 #include <LMCons.h>
-#include <wchar.h>
 #include "pattern.h"
-#include "md5.h"
 #include "..\common\config.h"
 #include "..\common\defs.h"
 
@@ -56,15 +54,6 @@ public:
 	DWORD Logon();
 	DWORD CreateOutputPath();
 	HANDLE get_token_for_user(LPCTSTR pUsername);
-	void WriteToIniFile(LPCWSTR section, LPCWSTR key, LPCWSTR value, LPCTSTR path);
-	wchar_t* convertCharArrayToLPCWSTR(const char* charArray);
-	void WriteControlFile();
-	char* CTime();
-	void GenerateHash();
-	void SetInfPath();
-	void SetPsPath();
-	void SetFileName();
-	void SetHomeDirectory(HANDLE hToken);
 
 public:
 	LPCWSTR PortName() const { return m_szPortName; }
@@ -82,8 +71,6 @@ public:
 	DWORD JobId() const { return m_nJobId; }
 	LPWSTR JobTitle() const;
 	LPCWSTR UserName() const;
-	DWORD TotalPages() const;
-	DWORD TotalCopies() const;
 	LPCWSTR ComputerName() const;
 	LPWSTR FileName() const { return (LPWSTR)m_szFileName; }
 	LPWSTR Path() const { return (LPWSTR)m_szParent; }
@@ -113,14 +100,13 @@ private:
 	HANDLE m_hDoneEvt;
 	WCHAR m_szPortName[MAX_PATH + 1];
 	WCHAR m_szOutputPath[MAX_PATH + 1];
-	WCHAR m_nszOutputPath[MAX_PATH + 1];
 	WCHAR m_szExecPath[MAX_PATH + 1];
 	LPWSTR m_szPrinterName;
 	DWORD m_cchPrinterName;
 	CPattern* m_pPattern;
 	CPattern* m_pUserCommand;
 	BOOL m_bOverwrite;
-	//	WCHAR m_szUserCommand[MAXUSERCOMMMAND];
+//	WCHAR m_szUserCommand[MAXUSERCOMMMAND];
 	BOOL m_bWaitTermination;
 	DWORD m_dwWaitTimeout;
 	BOOL m_bPipeData;
@@ -128,11 +114,9 @@ private:
 	BOOL m_bHideProcess;
 	BOOL m_bRunAsPUser;
 	WCHAR m_szFileName[MAX_PATH + 1];
-	WCHAR m_nszFileName[MAX_PATH + 1];
-	WCHAR m_uniqFileName[MAX_PATH + 1];
 	HANDLE m_hFile;
 	PROCESS_INFORMATION m_procInfo;
-	//	LPWSTR m_szCommandLine;
+//	LPWSTR m_szCommandLine;
 	DWORD m_nJobId;
 	JOB_INFO_1W* m_pJobInfo1;
 	JOB_INFO_2W* m_pJobInfo2;
@@ -146,8 +130,6 @@ private:
 	HANDLE m_hToken;
 	BOOL m_bRestrictedToken;
 	BOOL m_bLogonInvalidated;
-	WCHAR infpath[MAX_PATH + 1];
-	WCHAR pspath[MAX_PATH + 1];
 };
 
 #endif

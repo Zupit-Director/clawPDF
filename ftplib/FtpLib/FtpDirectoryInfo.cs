@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace clawSoft.clawPDF.ftplib.FtpLib
+namespace zupit.zupitPDF.ftplib.FtpLib
 {
     public class FtpDirectoryInfo : FileSystemInfo
     {

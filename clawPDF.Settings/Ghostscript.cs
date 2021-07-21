@@ -10,7 +10,7 @@ using pdfforge.DataStorage;
 // ! Do not edit it outside the sections for custom code.
 // ! These changes will be deleted during the next generation run
 
-namespace clawSoft.clawPDF.Core.Settings
+namespace zupit.zupitPDF.Core.Settings
 {
     /// <summary>
     ///     Ghostscript settings
@@ -23,7 +23,7 @@ namespace clawSoft.clawPDF.Core.Settings
         }
 
         /// <summary>
-        ///     These parameters will be provided to Ghostscript in addition to the clawPDF parameters
+        ///     These parameters will be provided to Ghostscript in addition to the zupitPDF parameters
         /// </summary>
         public string AdditionalGsParameters { get; set; }
 

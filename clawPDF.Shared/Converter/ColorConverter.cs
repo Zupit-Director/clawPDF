@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace clawSoft.clawPDF.Shared.Converter
+namespace zupit.zupitPDF.Shared.Converter
 {
     internal class ColorConverter : IValueConverter
     {

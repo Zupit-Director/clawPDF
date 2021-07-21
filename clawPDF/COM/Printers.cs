@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper;
 
-namespace clawSoft.clawPDF.COM
+namespace zupit.zupitPDF.COM
 {
     [ComVisible(true)]
     [InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
@@ -30,7 +30,7 @@ namespace clawSoft.clawPDF.COM
         /// <summary>
         ///     Gets the number of actual printer
         /// </summary>
-        public int Count => _printerHelper.GetclawPDFPrinters().Count;
+        public int Count => _printerHelper.GetzupitPDFPrinters().Count;
 
         /// <summary>
         ///     Get the name of the indexed printer of the list
@@ -39,7 +39,7 @@ namespace clawSoft.clawPDF.COM
         /// <returns>Name of the printer</returns>
         public string GetPrinterByIndex(int index)
         {
-            var printerList = (IList<string>)_printerHelper.GetclawPDFPrinters();
+            var printerList = (IList<string>)_printerHelper.GetzupitPDFPrinters();
 
             if (index >= printerList.Count)
                 throw new ArgumentException("Index must not be greater than the actual number of printers available");

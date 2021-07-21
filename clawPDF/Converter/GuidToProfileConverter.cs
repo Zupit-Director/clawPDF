@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Data;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Helper;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Helper;
 
-namespace clawSoft.clawPDF.Converter
+namespace zupit.zupitPDF.Converter
 {
     [ValueConversion(typeof(string), typeof(string))]
     internal class GuidToProfileConverter : IValueConverter

@@ -8,8 +8,8 @@
     <ProjectGuid>{28A624EA-10C1-4178-BB3A-6A2BB6AA159D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>clawSoft.clawPDF</RootNamespace>
-    <AssemblyName>clawPDF</AssemblyName>
+    <RootNamespace>zupit.zupitPDF</RootNamespace>
+    <AssemblyName>zupitPDF</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -42,7 +42,7 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>clawPDF.ico</ApplicationIcon>
+    <ApplicationIcon>zupitPDF.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\pdfforge.snk</AssemblyOriginatorKeyFile>
@@ -70,7 +70,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>clawSoft.clawPDF.App</StartupObject>
+    <StartupObject>zupit.zupitPDF.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DataStorage">
@@ -99,7 +99,7 @@
     <Compile Include="COM\PrintFileHelperCom.cs" />
     <Compile Include="COM\PrintJob.cs" />
     <Compile Include="COM\OutputFiles.cs" />
-    <Compile Include="COM\clawPDF.cs" />
+    <Compile Include="COM\zupitPDF.cs" />
     <Compile Include="COM\Printers.cs" />
     <Compile Include="COM\PrintJobInfo.cs" />
     <Compile Include="COM\ThreadPool.cs" />
@@ -320,7 +320,7 @@
     <Content Include="README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="clawPDF.ico" />
+    <Resource Include="zupitPDF.ico" />
     <Content Include="docs\licenses\Attribution-NoDerivs 3.0 Unported.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -362,25 +362,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\clawPDF.Core\clawPDF.Core.csproj">
+    <ProjectReference Include="..\clawPDF.Core\zupitPDF.Core.csproj">
       <Project>{18354054-45F6-4F51-8730-D05643A400A3}</Project>
-      <Name>clawPDF.Core</Name>
+      <Name>zupitPDF.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\clawPDF.Mail\clawPDF.Mail.csproj">
+    <ProjectReference Include="..\clawPDF.Mail\zupitPDF.Mail.csproj">
       <Project>{884d14eb-6d78-41d8-b022-968209dd6ce4}</Project>
-      <Name>clawPDF.Mail</Name>
+      <Name>zupitPDF.Mail</Name>
     </ProjectReference>
-    <ProjectReference Include="..\clawPDF.Settings\clawPDF.Settings.csproj">
+    <ProjectReference Include="..\clawPDF.Settings\zupitPDF.Settings.csproj">
       <Project>{94936199-c9c7-4a5f-a58e-6123158e84f3}</Project>
-      <Name>clawPDF.Settings</Name>
+      <Name>zupitPDF.Settings</Name>
     </ProjectReference>
-    <ProjectReference Include="..\clawPDF.Shared\clawPDF.Shared.csproj">
+    <ProjectReference Include="..\clawPDF.Shared\zupitPDF.Shared.csproj">
       <Project>{6d3f11f7-2163-40ff-bab7-9970a297ed47}</Project>
-      <Name>clawPDF.Shared</Name>
+      <Name>zupitPDF.Shared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\clawPDF.Utilities\clawPDF.Utilities.csproj">
+    <ProjectReference Include="..\clawPDF.Utilities\zupitPDF.Utilities.csproj">
       <Project>{EA29538B-89A5-4FB3-AE0F-5E2370E852F8}</Project>
-      <Name>clawPDF.Utilities</Name>
+      <Name>zupitPDF.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\PDFProcessor\PDFProcessing.csproj">
       <Project>{35cb4221-e0ff-46ab-b30c-a414095821ac}</Project>

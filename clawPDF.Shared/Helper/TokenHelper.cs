@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using clawSoft.clawPDF.Utilities.Tokens;
+using zupit.zupitPDF.Utilities.Tokens;
 using SystemWrapper;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     public static class TokenHelper
     {
@@ -43,7 +43,7 @@ namespace clawSoft.clawPDF.Shared.Helper
                         "OutputFilename3.jpg")
                 }));
             tr.AddToken(new StringToken("OutputFilePath", @"C:\Temp"));
-            tr.AddToken(new StringToken("PrinterName", "clawPDF"));
+            tr.AddToken(new StringToken("PrinterName", "zupitPDF"));
             tr.AddToken(new NumberToken("SessionID", 0));
             tr.AddToken(new StringToken("Title",
                 TranslationHelper.Instance.TranslatorInstance.GetTranslation("TokenPlaceHolders", "TitleFromSettings",

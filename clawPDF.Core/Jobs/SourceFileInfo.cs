@@ -3,7 +3,7 @@ using System.Globalization;
 using System.IO;
 using pdfforge.DataStorage;
 
-namespace clawSoft.clawPDF.Core.Jobs
+namespace zupit.zupitPDF.Core.Jobs
 {
     /// <summary>
     ///     SourceFileInfo holds data stored about a single source file, like name of the input file, printer name etc.

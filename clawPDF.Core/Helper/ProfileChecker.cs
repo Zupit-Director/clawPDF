@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
 using NLog;
 
-namespace clawSoft.clawPDF.Core.Helper
+namespace zupit.zupitPDF.Core.Helper
 {
     public static class ProfileChecker
     {

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace clawSoft.clawPDF.Shared.Views.UserControls
+namespace zupit.zupitPDF.Shared.Views.UserControls
 {
     public partial class TabHeaderControl : UserControl
     {

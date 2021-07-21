@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace clawSoft.clawPDF.Shared.ViewModels.Wrapper
+namespace zupit.zupitPDF.Shared.ViewModels.Wrapper
 {
     public class DataGridComboBoxColumnWithBindingHack : DataGridComboBoxColumn
     {

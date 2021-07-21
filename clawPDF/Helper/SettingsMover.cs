@@ -1,21 +1,21 @@
 ﻿using System.Security;
-using clawSoft.clawPDF.Utilities.Registry;
+using zupit.zupitPDF.Utilities.Registry;
 using SystemInterface.Microsoft.Win32;
 using SystemWrapper.Microsoft.Win32;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     /// <summary>
     ///     It is good practice to store Registry settings under HKEY_CURRENT_USER\Software\CompanyName\ProductName
-    ///     In the past, we stored them under HKEY_CURRENT_USER\Software\clawPDF.net
-    ///     They are now stored under HKEY_CURRENT_USER\Software\clawSoft\clawPDF
+    ///     In the past, we stored them under HKEY_CURRENT_USER\Software\zupitPDF.net
+    ///     They are now stored under HKEY_CURRENT_USER\Software\clawSoft\zupitPDF
     ///     This class checks if old settings exist, if they need to be moved to the new location
     ///     and performs the move if required.
     /// </summary>
     public class SettingsMover
     {
-        private const string OldRegistryPath = @"Software\clawPDF.Net";
-        private const string NewRegistryPath = @"Software\clawSoft\clawPDF";
+        private const string OldRegistryPath = @"Software\zupitPDF.Net";
+        private const string NewRegistryPath = @"Software\clawSoft\zupitPDF";
         private readonly RegistryUtility _registryUtility;
         private readonly IRegistry _registryWrap;
 

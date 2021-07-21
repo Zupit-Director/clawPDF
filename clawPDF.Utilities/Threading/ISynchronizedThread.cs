@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace clawSoft.clawPDF.Utilities.Threading
+namespace zupit.zupitPDF.Utilities.Threading
 {
     public interface ISynchronizedThread
     {

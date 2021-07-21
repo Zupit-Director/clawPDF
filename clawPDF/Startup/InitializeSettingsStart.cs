@@ -1,6 +1,6 @@
-﻿using clawSoft.clawPDF.Helper;
+﻿using zupit.zupitPDF.Helper;
 
-namespace clawSoft.clawPDF.Startup
+namespace zupit.zupitPDF.Startup
 {
     internal class InitializeSettingsStart : IAppStart
     {

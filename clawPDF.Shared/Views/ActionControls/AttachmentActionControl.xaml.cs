@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper;
 
-namespace clawSoft.clawPDF.Shared.Views.ActionControls
+namespace zupit.zupitPDF.Shared.Views.ActionControls
 {
     public partial class AttachmentActionControl : ActionControl
     {

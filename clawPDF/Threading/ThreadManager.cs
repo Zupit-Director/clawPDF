@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Utilities.Communication;
-using clawSoft.clawPDF.Utilities.Threading;
-using clawSoft.clawPDF.Views;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Utilities.Communication;
+using zupit.zupitPDF.Utilities.Threading;
+using zupit.zupitPDF.Views;
 using NLog;
 
-namespace clawSoft.clawPDF.Threading
+namespace zupit.zupitPDF.Threading
 {
     /// <summary>
     ///     The ThreadManager class handles and watches all applications threads. If all registered threads are finished, the
@@ -19,7 +19,7 @@ namespace clawSoft.clawPDF.Threading
         /// <summary>
         ///     The name of the pipe
         /// </summary>
-        public const string PipeName = "clawPDF";
+        public const string PipeName = "zupitPDF";
 
         private static readonly object LockObject = new object();
 

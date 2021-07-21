@@ -1,4 +1,4 @@
-﻿namespace clawSoft.clawPDF.Core.Settings.Enums
+﻿namespace zupit.zupitPDF.Core.Settings.Enums
 {
     public enum SelectPrinter
     {

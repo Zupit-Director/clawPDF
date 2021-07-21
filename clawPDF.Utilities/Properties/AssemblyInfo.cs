@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 
-[assembly: AssemblyTitle("clawPDF.Utilities")]
-[assembly: AssemblyDescription("clawPDF Utilities")]
+[assembly: AssemblyTitle("zupitPDF.Utilities")]
+[assembly: AssemblyDescription("zupitPDF Utilities")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Andrew Hess // clawSoft")]
-[assembly: AssemblyProduct("clawPDF.Utilities")]
-[assembly: AssemblyCopyright("Copyright © 2019 Andrew Hess // clawSoft")]
+[assembly: AssemblyCompany("Roberto Demozzi // zupit")]
+[assembly: AssemblyProduct("zupitPDF.Utilities")]
+[assembly: AssemblyCopyright("Copyright © 2019 Roberto Demozzi // zupit")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

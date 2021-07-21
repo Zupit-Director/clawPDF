@@ -1,15 +1,15 @@
 ﻿using System.Windows;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.ViewModels;
-using clawSoft.clawPDF.WindowsApi;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.ViewModels;
+using zupit.zupitPDF.WindowsApi;
 
-namespace clawSoft.clawPDF.Views
+namespace zupit.zupitPDF.Views
 {
     internal partial class PrintJobWindow
     {
-        private clawPDFSettings _settings = SettingsHelper.Settings;
+        private zupitPDFSettings _settings = SettingsHelper.Settings;
 
         public PrintJobWindow()
         {

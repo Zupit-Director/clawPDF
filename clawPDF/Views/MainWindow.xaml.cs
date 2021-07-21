@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.Helper.Logging;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper.Logging;
 
-namespace clawSoft.clawPDF.Views
+namespace zupit.zupitPDF.Views
 {
     internal partial class MainWindow
     {
@@ -54,7 +54,7 @@ namespace clawSoft.clawPDF.Views
         {
             TranslationHelper.Instance.TranslatorInstance.Translate(this);
 
-            ApplicationNameText.Text = "clawPDF " + VersionHelper.Instance.FormatWithTwoDigits();
+            ApplicationNameText.Text = "zupitPDF " + VersionHelper.Instance.FormatWithTwoDigits();
 
             var welcomeSettingsHelper = new WelcomeSettingsHelper();
             if (welcomeSettingsHelper.IsFirstRun())

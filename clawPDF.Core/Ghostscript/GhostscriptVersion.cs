@@ -1,4 +1,4 @@
-﻿namespace clawSoft.clawPDF.Core.Ghostscript
+﻿namespace zupit.zupitPDF.Core.Ghostscript
 {
     /// <summary>
     ///     Specifies information on Ghostscript installations

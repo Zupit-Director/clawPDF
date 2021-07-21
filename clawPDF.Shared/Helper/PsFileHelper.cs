@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Utilities.IO;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Utilities.IO;
 using NLog;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     public static class PsFileHelper
     {
@@ -17,7 +17,7 @@ namespace clawSoft.clawPDF.Shared.Helper
         ///     Create inf file from ps file.
         /// </summary>
         /// <returns>inf file in spool folder</returns>
-        public static string TransformToInfFile(string psFile, string spoolFolder, string printerName = "clawPDF")
+        public static string TransformToInfFile(string psFile, string spoolFolder, string printerName = "zupitPDF")
         {
             if (string.IsNullOrEmpty(psFile) || !File.Exists(psFile))
             {

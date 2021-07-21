@@ -5,7 +5,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Xml;
 
-namespace clawSoft.clawPDF.Converter
+namespace zupit.zupitPDF.Converter
 {
     internal class ColorWithFactorConverter : IValueConverter
     {

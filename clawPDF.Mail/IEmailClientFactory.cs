@@ -1,4 +1,4 @@
-﻿namespace clawSoft.clawPDF.Mail
+﻿namespace zupit.zupitPDF.Mail
 {
     public interface IEmailClientFactory
     {

@@ -1,4 +1,4 @@
-﻿namespace clawSoft.clawPDF.Startup
+﻿namespace zupit.zupitPDF.Startup
 {
     internal interface IAppStart
     {

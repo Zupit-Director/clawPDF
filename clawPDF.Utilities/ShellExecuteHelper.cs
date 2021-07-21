@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace clawSoft.clawPDF.Utilities
+namespace zupit.zupitPDF.Utilities
 {
     public enum ShellExecuteResult
     {

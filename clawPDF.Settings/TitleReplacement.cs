@@ -1,6 +1,6 @@
 using System;
 using System.Text;
-using clawSoft.clawPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Core.Settings.Enums;
 using pdfforge.DataStorage;
 
 // Custom Code starts here
@@ -13,7 +13,7 @@ using pdfforge.DataStorage;
 // ! Do not edit it outside the sections for custom code.
 // ! These changes will be deleted during the next generation run
 
-namespace clawSoft.clawPDF.Core.Settings
+namespace zupit.zupitPDF.Core.Settings
 {
     /// <summary>
     ///     TitleReplacements are used to automatically replace text in the print job name for the final document's title.

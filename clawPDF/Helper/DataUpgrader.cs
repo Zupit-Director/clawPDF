@@ -1,7 +1,7 @@
 ﻿using System;
 using pdfforge.DataStorage;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     internal class DataUpgrader
     {

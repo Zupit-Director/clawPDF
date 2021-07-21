@@ -2,12 +2,12 @@
 
 <datastorage>
   <options>
-    <namespace>clawSoft.clawPDF.Core.Settings</namespace>
+    <namespace>zupit.zupitPDF.Core.Settings</namespace>
     <generatorVersion>0.6.0.0</generatorVersion>
   </options>
   <classes>
-    <class name="clawPDFSettings" propertyName="clawPDFSettings" readonly="False" classtype="Class">
-      <comment>Container class for clawPDF settings and profiles</comment>
+    <class name="zupitPDFSettings" propertyName="zupitPDFSettings" readonly="False" classtype="Class">
+      <comment>Container class for zupitPDF settings and profiles</comment>
       <class name="ApplicationProperties" propertyName="ApplicationProperties" readonly="False" classtype="Class">
         <comment />
         <value name="NextUpdate" type="value" datatype="DateTime" enumname="" defaultvalue="DateTime.Now">
@@ -18,7 +18,7 @@
         </value>
       </class>
       <class name="ApplicationSettings" propertyName="ApplicationSettings" readonly="False" classtype="Class">
-        <comment>clawPDF application settings</comment>
+        <comment>zupitPDF application settings</comment>
         <classarray name="ApiAccess" propertyName="ApiAccess" readonly="False" classtype="Class">
           <comment />
           <value name="AccountName" type="value" datatype="String" enumname="" defaultvalue="">
@@ -73,7 +73,7 @@
                defaultvalue="LoggingLevel.Error">
           <comment />
         </value>
-        <value name="PrimaryPrinter" type="value" datatype="String" enumname="" defaultvalue="clawPDF">
+        <value name="PrimaryPrinter" type="value" datatype="String" enumname="" defaultvalue="zupitPDF">
           <comment />
         </value>
         <value name="UpdateInterval" type="value" datatype="Enum" enumname="UpdateInterval"
@@ -135,7 +135,7 @@
         <class name="EmailClient" propertyName="EmailClient" readonly="False" classtype="Class">
           <comment>Opens the default E-mail client with the converted document as attachment</comment>
           <value name="AddSignature" type="value" datatype="Bool" enumname="" defaultvalue="true">
-            <comment>Add the clawPDF signature to the mail</comment>
+            <comment>Add the zupitPDF signature to the mail</comment>
           </value>
           <value name="Content" type="value" datatype="String" enumname="" defaultvalue="">
             <comment>Body text of the E-mail</comment>
@@ -153,7 +153,7 @@
         <class name="EmailSmtp" propertyName="EmailSmtp" readonly="False" classtype="Class">
           <comment>Sends a mail without user interaction through SMTP</comment>
           <value name="AddSignature" type="value" datatype="Bool" enumname="" defaultvalue="true">
-            <comment>Add the clawPDF signature to the mail</comment>
+            <comment>Add the zupitPDF signature to the mail</comment>
           </value>
           <value name="Address" type="value" datatype="String" enumname="" defaultvalue="">
             <comment>E-mail address that is displayed as sender</comment>
@@ -213,7 +213,7 @@
         <class name="Ghostscript" propertyName="Ghostscript" readonly="False" classtype="Class">
           <comment>Ghostscript settings</comment>
           <value name="AdditionalGsParameters" type="value" datatype="String" enumname="" defaultvalue="">
-            <comment>These parameters will be provided to Ghostscript in addition to the clawPDF parameters</comment>
+            <comment>These parameters will be provided to Ghostscript in addition to the zupitPDF parameters</comment>
           </value>
         </class>
         <class name="JpegSettings" propertyName="JpegSettings" readonly="False" classtype="Class">
@@ -405,7 +405,7 @@
           <value name="Enabled" type="value" datatype="Bool" enumname="" defaultvalue="false">
             <comment>If enabled, the document will be printed to a physical printer</comment>
           </value>
-          <value name="PrinterName" type="value" datatype="String" enumname="" defaultvalue="clawPDF">
+          <value name="PrinterName" type="value" datatype="String" enumname="" defaultvalue="zupitPDF">
             <comment>Name of the printer that will be used, if SelectedPrinter is set.</comment>
           </value>
           <value name="SelectPrinter" type="value" datatype="Enum" enumname="SelectPrinter"

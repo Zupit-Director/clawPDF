@@ -1,11 +1,11 @@
 ﻿using System;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Shared.Helper;
 using NLog;
 
-namespace clawSoft.clawPDF.Workflow
+namespace zupit.zupitPDF.Workflow
 {
     internal static class WorkflowFactory
     {
@@ -19,7 +19,7 @@ namespace clawSoft.clawPDF.Workflow
         /// <param name="jobInfo">The jobinfo used for the decision</param>
         /// <param name="settings">The settings used for the decision</param>
         /// <returns>A ConversionWorkflow either for AutoSave or interactive use</returns>
-        public static ConversionWorkflow CreateWorkflow(IJobInfo jobInfo, clawPDFSettings settings)
+        public static ConversionWorkflow CreateWorkflow(IJobInfo jobInfo, zupitPDFSettings settings)
         {
             Logger.Trace("Creating Workflow");
 
@@ -49,7 +49,7 @@ namespace clawSoft.clawPDF.Workflow
         /// <param name="jobInfo">The jobinfo used for the decision</param>
         /// <param name="settings">The settings used for the decision</param>
         /// <returns>The profile that is associated with the printer or the default profile</returns>
-        private static ConversionProfile PreselectedProfile(IJobInfo jobInfo, clawPDFSettings settings)
+        private static ConversionProfile PreselectedProfile(IJobInfo jobInfo, zupitPDFSettings settings)
         {
             foreach (var mapping in settings.ApplicationSettings.PrinterMappings)
                 if (mapping.PrinterName.Equals(jobInfo.SourceFiles[0].PrinterName, StringComparison.OrdinalIgnoreCase))

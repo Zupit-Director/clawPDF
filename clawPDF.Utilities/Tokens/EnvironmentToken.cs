@@ -2,7 +2,7 @@
 using SystemInterface;
 using SystemWrapper;
 
-namespace clawSoft.clawPDF.Utilities.Tokens
+namespace zupit.zupitPDF.Utilities.Tokens
 {
     public class EnvironmentToken : IToken
     {

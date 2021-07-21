@@ -1,7 +1,7 @@
 ﻿using System;
-using clawSoft.clawPDF.Core.Actions;
+using zupit.zupitPDF.Core.Actions;
 
-namespace clawSoft.clawPDF.Shared.ViewModels
+namespace zupit.zupitPDF.Shared.ViewModels
 {
     public class SignaturePasswordViewModel : ViewModelBase
     {

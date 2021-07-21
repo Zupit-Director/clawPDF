@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace clawSoft.clawPDF.Utilities.Process
+namespace zupit.zupitPDF.Utilities.Process
 {
     public class ProcessWrapper
     {

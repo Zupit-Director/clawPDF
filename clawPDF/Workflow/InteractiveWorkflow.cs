@@ -1,21 +1,21 @@
 ﻿using System.IO;
 using System.Windows.Forms;
-using clawSoft.clawPDF.Core;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Exceptions;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels;
-using clawSoft.clawPDF.Shared.Views;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.Utilities.IO;
-using clawSoft.clawPDF.ViewModels;
-using clawSoft.clawPDF.Views;
+using zupit.zupitPDF.Core;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Exceptions;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels;
+using zupit.zupitPDF.Shared.Views;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.Utilities.IO;
+using zupit.zupitPDF.ViewModels;
+using zupit.zupitPDF.Views;
 using pdfforge.DynamicTranslator;
 
-namespace clawSoft.clawPDF.Workflow
+namespace zupit.zupitPDF.Workflow
 {
     /// <summary>
     ///     The interactive workflow implements the workflow steps where user interaction is required.
@@ -30,7 +30,7 @@ namespace clawSoft.clawPDF.Workflow
         /// </summary>
         /// <param name="job">Job to use for the conversion</param>
         /// <param name="settings">Settigns to use during the conversion workflow</param>
-        public InteractiveWorkflow(IJob job, clawPDFSettings settings)
+        public InteractiveWorkflow(IJob job, zupitPDFSettings settings)
         {
             WorkflowStep = WorkflowStep.Init;
 
@@ -337,7 +337,7 @@ namespace clawSoft.clawPDF.Workflow
 
             var caption = _translator.GetTranslation("InteractiveWorkflow", "Error", "Error");
             var opener = _translator.GetFormattedTranslation("InteractiveWorkflow", "ErrorWhileConverting",
-                "clawPDF was not able to convert the document, because an error occured:\r\n{0}\r\n\r\nYou can find additional information in the log file.",
+                "zupitPDF was not able to convert the document, because an error occured:\r\n{0}\r\n\r\nYou can find additional information in the log file.",
                 errorText);
 
             MessageWindow.ShowTopMost(opener, caption, MessageWindowButtons.OK, MessageWindowIcon.Error);
@@ -380,7 +380,7 @@ namespace clawSoft.clawPDF.Workflow
 
         private void RetypeOutputFilename(object sender, QueryFilenameEventArgs e)
         {
-            var caption = "clawPDF";
+            var caption = "zupitPDF";
             var message = e.Job.OutputFilenameTemplate + "\r\n";
             message += _translator.GetTranslation("InteractiveWorkflow", "RetypeFilenameMessage",
                 "The file could not be saved. Maybe the file is currently in use or you do not have the required permissions.\r\nPlease select another filename and try again.");

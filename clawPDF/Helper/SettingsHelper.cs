@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.Helper.Logging;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Helper.Logging;
 using Microsoft.Win32;
 using NLog;
 using pdfforge.DataStorage;
 using pdfforge.DataStorage.Storage;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     /// <summary>
     ///     SettingsHelper provides static methods and properties to handle the settings.
     /// </summary>
     internal class SettingsHelper
     {
-        private static clawPDFSettings _settings;
+        private static zupitPDFSettings _settings;
 
         /// <summary>
         ///     Gets the current application-wide settings instance. The settings will be loaded if required.
         ///     If the settings have not been written before, a default set of settings with one default conversion profile will be
         ///     created.
         /// </summary>
-        public static clawPDFSettings Settings
+        public static zupitPDFSettings Settings
         {
             get
             {
@@ -99,7 +99,7 @@ namespace clawSoft.clawPDF.Helper
         private static void CheckPrinterMappings()
         {
             var printerHelper = new PrinterHelper();
-            var printers = printerHelper.GetclawPDFPrinters();
+            var printers = printerHelper.GetzupitPDFPrinters();
 
             // if there are no printers, something is broken and we need to fix that first
             if (!printers.Any())
@@ -118,7 +118,7 @@ namespace clawSoft.clawPDF.Helper
             if (Settings.ApplicationSettings.PrinterMappings.All(o =>
                 o.PrinterName != Settings.ApplicationSettings.PrimaryPrinter))
                 Settings.ApplicationSettings.PrimaryPrinter =
-                    printerHelper.GetApplicableclawPDFPrinter("clawPDF", "clawPDF") ?? "";
+                    printerHelper.GetApplicablezupitPDFPrinter("zupitPDF", "zupitPDF") ?? "";
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace clawSoft.clawPDF.Helper
         ///     Applies a new set of settings to make it globally available
         /// </summary>
         /// <param name="settings">The new setting class</param>
-        public static void ApplySettings(clawPDFSettings settings)
+        public static void ApplySettings(zupitPDFSettings settings)
         {
             _settings = settings;
         }
@@ -152,7 +152,7 @@ namespace clawSoft.clawPDF.Helper
         /// </summary>
         /// <param name="settings">The settings to inspect</param>
         /// <returns>true, if they appear valid.</returns>
-        public static bool CheckValidSettings(clawPDFSettings settings)
+        public static bool CheckValidSettings(zupitPDFSettings settings)
         {
             return settings.ConversionProfiles.Count > 0;
         }
@@ -195,7 +195,7 @@ namespace clawSoft.clawPDF.Helper
         /// <summary>
         ///     Functions checks, if a default profile exists and adds one.
         /// </summary>
-        private static void CheckAndAddMissingDefaultProfile(clawPDFSettings settings)
+        private static void CheckAndAddMissingDefaultProfile(zupitPDFSettings settings)
         {
             var defaultProfile = settings.GetProfileByGuid(ProfileGuids.DEFAULT_PROFILE_GUID);
             if (defaultProfile == null)
@@ -213,7 +213,7 @@ namespace clawSoft.clawPDF.Helper
         ///     Creates a settings object with default settings and profiles
         /// </summary>
         /// <returns>The initialized settings object</returns>
-        private static clawPDFSettings CreateDefaultSettings()
+        private static zupitPDFSettings CreateDefaultSettings()
         {
             var settings = CreateEmptySettings();
 
@@ -482,7 +482,7 @@ namespace clawSoft.clawPDF.Helper
         /// </summary>
         /// <returns>
         ///     The name of the printer that was defined in the setup. If it is empty or does not exist, the return value is
-        ///     "clawPDF"
+        ///     "zupitPDF"
         /// </returns>
         private static string FindPrimaryPrinter()
         {
@@ -506,14 +506,14 @@ namespace clawSoft.clawPDF.Helper
                     }
                 }
 
-            return "clawPDF";
+            return "zupitPDF";
         }
 
         /// <summary>
         ///     Create an empty settings class with the proper registry storage attached
         /// </summary>
         /// <returns>An empty settings object</returns>
-        public static clawPDFSettings CreateEmptySettings()
+        public static zupitPDFSettings CreateEmptySettings()
         {
             var storage = new RegistryStorage(RegistryHive.CurrentUser, SETTINGS_REG_PATH);
             storage.ClearOnWrite = true;
@@ -526,9 +526,9 @@ namespace clawSoft.clawPDF.Helper
         ///     Create an empty settings class with the proper registry storage attached
         /// </summary>
         /// <returns>An empty settings object</returns>
-        public static clawPDFSettings CreateSettings(IStorage storage)
+        public static zupitPDFSettings CreateSettings(IStorage storage)
         {
-            return new clawPDFSettings(storage);
+            return new zupitPDFSettings(storage);
         }
 
         private static bool UserSettingsExist()
@@ -572,8 +572,8 @@ namespace clawSoft.clawPDF.Helper
         // ReSharper disable InconsistentNaming
         private const string APP_GUID = "{0001B4FD-9EA3-4D90-A79E-FD14BA3AB01D}";
 
-        public const string clawPDF_REG_PATH = @"Software\clawSoft\clawPDF";
-        private const string SETTINGS_REG_PATH = clawPDF_REG_PATH + @"\Settings";
+        public const string zupitPDF_REG_PATH = @"Software\clawSoft\zupitPDF";
+        private const string SETTINGS_REG_PATH = zupitPDF_REG_PATH + @"\Settings";
         public const string LAST_USED_PROFILE_GUID = "";
         public const int SETTINGS_VERSION = 5;
 

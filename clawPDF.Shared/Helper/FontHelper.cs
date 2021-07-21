@@ -4,7 +4,7 @@ using System.IO;
 using Microsoft.Win32;
 using TrueTypeFontInfo;
 
-namespace clawSoft.clawPDF.Shared.Helper
+namespace zupit.zupitPDF.Shared.Helper
 {
     internal static class FontHelper
     {

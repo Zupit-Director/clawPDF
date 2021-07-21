@@ -8,8 +8,8 @@
     <ProjectGuid>{18354054-45F6-4F51-8730-D05643A400A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>clawSoft.clawPDF.Core</RootNamespace>
-    <AssemblyName>clawPDF.Core</AssemblyName>
+    <RootNamespace>zupit.zupitPDF.Core</RootNamespace>
+    <AssemblyName>zupitPDF.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>
@@ -111,17 +111,17 @@
     <Compile Include="Xps\XpsConverter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\clawPDF.Mail\clawPDF.Mail.csproj">
+    <ProjectReference Include="..\clawPDF.Mail\zupitPDF.Mail.csproj">
       <Project>{884d14eb-6d78-41d8-b022-968209dd6ce4}</Project>
-      <Name>clawPDF.Mail</Name>
+      <Name>zupitPDF.Mail</Name>
     </ProjectReference>
-    <ProjectReference Include="..\clawPDF.Settings\clawPDF.Settings.csproj">
+    <ProjectReference Include="..\clawPDF.Settings\zupitPDF.Settings.csproj">
       <Project>{94936199-c9c7-4a5f-a58e-6123158e84f3}</Project>
-      <Name>clawPDF.Settings</Name>
+      <Name>zupitPDF.Settings</Name>
     </ProjectReference>
-    <ProjectReference Include="..\clawPDF.Utilities\clawPDF.Utilities.csproj">
+    <ProjectReference Include="..\clawPDF.Utilities\zupitPDF.Utilities.csproj">
       <Project>{EA29538B-89A5-4FB3-AE0F-5E2370E852F8}</Project>
-      <Name>clawPDF.Utilities</Name>
+      <Name>zupitPDF.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\ftplib\ftplib.csproj">
       <Project>{79b8051d-505d-49b4-82d8-9951f204ceb6}</Project>

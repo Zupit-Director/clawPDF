@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using clawSoft.clawPDF.Helper;
+using zupit.zupitPDF.Helper;
 using NLog;
 
-namespace clawSoft.clawPDF.Startup
+namespace zupit.zupitPDF.Startup
 {
     internal class DragAndDropStart : MaybePipedStart
     {

@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
-using clawSoft.clawPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Jobs;
 
-namespace clawSoft.clawPDF.COM
+namespace zupit.zupitPDF.COM
 {
     [ComVisible(true)]
     [InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]

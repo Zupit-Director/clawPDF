@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using clawSoft.clawPDF.Utilities.IO;
+using zupit.zupitPDF.Utilities.IO;
 using NLog;
 using SystemInterface.IO;
 using SystemWrapper.IO;
 
-namespace clawSoft.clawPDF.Core.Xps.OutputFileMover
+namespace zupit.zupitPDF.Core.Xps.OutputFileMover
 {
     public class SingleFileMover
     {

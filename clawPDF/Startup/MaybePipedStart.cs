@@ -1,10 +1,10 @@
 ﻿using System;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.Threading;
-using clawSoft.clawPDF.Utilities.Communication;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.Threading;
+using zupit.zupitPDF.Utilities.Communication;
 using NLog;
 
-namespace clawSoft.clawPDF.Startup
+namespace zupit.zupitPDF.Startup
 {
     internal abstract class MaybePipedStart : IAppStart
     {
@@ -42,7 +42,7 @@ namespace clawSoft.clawPDF.Startup
 
         private bool TrySendPipeMessage()
         {
-            _logger.Debug("Found another running instance of clawPDF, so we send our data there");
+            _logger.Debug("Found another running instance of zupitPDF, so we send our data there");
 
             var message = ComposePipeMessage();
 

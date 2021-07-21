@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="clawSoft.clawPDF.Views.UserControls.GeneralTab"
+﻿<UserControl x:Class="zupit.zupitPDF.Views.UserControls.GeneralTab"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:viewModels="clr-namespace:clawSoft.clawPDF.ViewModels.UserControls"
-             xmlns:helper="clr-namespace:clawSoft.clawPDF.Shared.Helper;assembly=clawPDF.Shared"
+             xmlns:viewModels="clr-namespace:zupit.zupitPDF.ViewModels.UserControls"
+             xmlns:helper="clr-namespace:zupit.zupitPDF.Shared.Helper;assembly=zupitPDF.Shared"
              mc:Ignorable="d"
              x:Name="This"
              x:ClassModifier="internal">
@@ -38,7 +38,7 @@
                                 Template="{StaticResource HeaderPanelTemplate}" Header="Default Printer">
             <StackPanel>
                 <Label>
-                    <TextBlock Name="ChangeDefaultPrinterLabel" TextWrapping="Wrap">Allow clawPDF to temporarily change the default printer</TextBlock>
+                    <TextBlock Name="ChangeDefaultPrinterLabel" TextWrapping="Wrap">Allow zupitPDF to temporarily change the default printer</TextBlock>
                 </Label>
                 <ComboBox Name="ChangeDefaultPrinterComboBox" Width="200" HorizontalAlignment="Left"
                           SelectedValue="{Binding ApplicationSettings.AskSwitchDefaultPrinter}"

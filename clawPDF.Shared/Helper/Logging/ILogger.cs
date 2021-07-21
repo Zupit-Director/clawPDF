@@ -1,6 +1,6 @@
 ﻿using NLog;
 
-namespace clawSoft.clawPDF.Shared.Helper.Logging
+namespace zupit.zupitPDF.Shared.Helper.Logging
 {
     internal interface ILogger
     {

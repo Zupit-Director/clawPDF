@@ -1,6 +1,6 @@
 /*
 clawmon - print to file with automatic filename assignment
-Copyright (C) 2019 // Andrew Hess // clawSoft
+Copyright (C) 2019 // Roberto Demozzi // zupit
 
 MFILEMON - print to file with automatic filename assignment
 Copyright (C) 2007-2015 Monti Lorenzo
@@ -31,7 +31,7 @@ static const unsigned short int BOM = 0xFEFF;
 CMfmLog* g_pLog = NULL;
 
 CMfmLog::CMfmLog()
-	: m_nLogLevel(LOGLEVEL_NONE)
+: m_nLogLevel(LOGLEVEL_NONE)
 {
 	m_hLogFile = CreateFileW(L"clawmon.log", GENERIC_READ | GENERIC_WRITE,
 		FILE_SHARE_READ, NULL, CREATE_ALWAYS, 0, NULL);

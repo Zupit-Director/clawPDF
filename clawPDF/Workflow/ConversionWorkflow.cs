@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Threading;
-using clawSoft.clawPDF.Core.Actions;
-using clawSoft.clawPDF.Core.Helper;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
-using clawSoft.clawPDF.Exceptions;
-using clawSoft.clawPDF.PDFProcessing;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Threading;
-using clawSoft.clawPDF.Utilities;
-using clawSoft.clawPDF.Utilities.Threading;
-using clawSoft.clawPDF.Views;
+using zupit.zupitPDF.Core.Actions;
+using zupit.zupitPDF.Core.Helper;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Exceptions;
+using zupit.zupitPDF.PDFProcessing;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Threading;
+using zupit.zupitPDF.Utilities;
+using zupit.zupitPDF.Utilities.Threading;
+using zupit.zupitPDF.Views;
 using NLog;
 
-namespace clawSoft.clawPDF.Workflow
+namespace zupit.zupitPDF.Workflow
 {
     /// <summary>
     ///     Defines the different stats the workflow can be in
@@ -45,7 +45,7 @@ namespace clawSoft.clawPDF.Workflow
         /// <summary>
         ///     Settings for the conversion process
         /// </summary>
-        public clawPDFSettings Settings { get; set; }
+        public zupitPDFSettings Settings { get; set; }
 
         /// <summary>
         ///     JobInfo of the current job
@@ -130,7 +130,7 @@ namespace clawSoft.clawPDF.Workflow
             WorkflowStep = WorkflowStep.Init;
 
             Logger.Debug("Starting conversion...");
-            Logger.Debug("clawPDF Version: " + VersionHelper.Instance.FormatWithBuildNumber());
+            Logger.Debug("zupitPDF Version: " + VersionHelper.Instance.FormatWithBuildNumber());
             Logger.Debug("OSVersion: " + new OsHelper().GetWindowsVersion());
 
             var originalMetadata = JobInfo.Metadata.Copy();

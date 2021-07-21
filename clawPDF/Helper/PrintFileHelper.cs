@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using clawSoft.clawPDF.PrintFile;
+using zupit.zupitPDF.PrintFile;
 
-namespace clawSoft.clawPDF.Helper
+namespace zupit.zupitPDF.Helper
 {
     /// <summary>
     ///     The PrintFileHelper implements the  PrintFileHelperBase functionalities without user interaction

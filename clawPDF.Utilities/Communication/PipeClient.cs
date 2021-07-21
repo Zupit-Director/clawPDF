@@ -2,7 +2,7 @@
 using System.IO;
 using System.IO.Pipes;
 
-namespace clawSoft.clawPDF.Utilities.Communication
+namespace zupit.zupitPDF.Utilities.Communication
 {
     public class PipeClient
     {

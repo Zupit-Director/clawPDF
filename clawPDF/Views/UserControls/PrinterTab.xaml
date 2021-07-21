@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="clawSoft.clawPDF.Views.UserControls.PrinterTab"
+﻿<UserControl x:Class="zupit.zupitPDF.Views.UserControls.PrinterTab"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:userControls="clr-namespace:clawSoft.clawPDF.ViewModels.UserControls"
-             xmlns:wrapper="clr-namespace:clawSoft.clawPDF.Shared.ViewModels.Wrapper;assembly=clawPDF.Shared"
+             xmlns:userControls="clr-namespace:zupit.zupitPDF.ViewModels.UserControls"
+             xmlns:wrapper="clr-namespace:zupit.zupitPDF.Shared.ViewModels.Wrapper;assembly=zupitPDF.Shared"
              mc:Ignorable="d"
              d:DesignHeight="400"
              d:DesignWidth="500"
@@ -92,7 +92,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <ComboBox Margin="0 5" Name="PrimaryPrinterBox" SelectedValue="{Binding PrimaryPrinter, Mode=TwoWay}"
-                          ItemsSource="{Binding ClawPdfPrinters}"
+                          ItemsSource="{Binding zupitPDFPrinters}"
                           SelectionChanged="PrimaryPrinterBox_OnSelectionChanged" />
             </Grid>
         </HeaderedContentControl>

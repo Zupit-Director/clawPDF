@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
-using clawSoft.clawPDF.Shared.Properties;
+using zupit.zupitPDF.Shared.Properties;
 
-namespace clawSoft.clawPDF.Shared.ViewModels
+namespace zupit.zupitPDF.Shared.ViewModels
 {
     /// <summary>
     ///     DelegateCommand implements the <see cref="System.Windows.Input.ICommand" /> interface and uses delegates for the

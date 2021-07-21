@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.ViewModels;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.ViewModels;
 
-namespace clawSoft.clawPDF.Views
+namespace zupit.zupitPDF.Views
 {
     internal partial class ApplicationSettingsWindow : Window
     {
@@ -30,7 +30,7 @@ namespace clawSoft.clawPDF.Views
 
         private ApplicationSettingsViewModel ViewModel => (ApplicationSettingsViewModel)DataContext;
 
-        private void UpdateSettingsAction(clawPDFSettings settings)
+        private void UpdateSettingsAction(zupitPDFSettings settings)
         {
             GeneralTabUserControl.ViewModel.ApplicationSettings = settings.ApplicationSettings;
             GeneralTabUserControl.ViewModel.ApplicationProperties = settings.ApplicationProperties;

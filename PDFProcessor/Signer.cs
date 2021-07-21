@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Core.Settings.Enums;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Core.Settings.Enums;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using NLog;
@@ -13,7 +13,7 @@ using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Security;
 using X509Certificate = Org.BouncyCastle.X509.X509Certificate;
 
-namespace clawSoft.clawPDF.PDFProcessing
+namespace zupit.zupitPDF.PDFProcessing
 {
     internal class Signer
     {
@@ -112,7 +112,7 @@ namespace clawSoft.clawPDF.PDFProcessing
                 psa.SetCrypto(null, chain, null, PdfSignatureAppearance.SELF_SIGNED);
 
             if (!profile.PdfSettings.Signature.AllowMultiSigning)
-                //Lock PDF, except for annotations and form filling (irrelevant for clawPDF)
+                //Lock PDF, except for annotations and form filling (irrelevant for zupitPDF)
                 psa.CertificationLevel = PdfSignatureAppearance.CERTIFIED_FORM_FILLING_AND_ANNOTATIONS;
 
             psa.Reason = signing.SignReason;

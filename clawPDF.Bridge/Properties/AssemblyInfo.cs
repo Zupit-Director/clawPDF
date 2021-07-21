@@ -4,13 +4,13 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("clawPDF.Bridge")]
-[assembly: AssemblyDescription("clawPDF Bridge")]
+[assembly: AssemblyTitle("zupitPDF.Bridge")]
+[assembly: AssemblyDescription("zupitPDF Bridge")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Andrew Hess // clawSoft")]
-[assembly: AssemblyProduct("clawPDF.Bridge")]
+[assembly: AssemblyCompany("Roberto Demozzi // zupit")]
+[assembly: AssemblyProduct("zupitPDF.Bridge")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
-[assembly: AssemblyTrademark("Copyright © 2019 Andrew Hess // clawSoft")]
+[assembly: AssemblyTrademark("Copyright © 2019 Roberto Demozzi // zupit")]
 [assembly: AssemblyCulture("")]
 
 // Durch Festlegen von ComVisible auf FALSE werden die Typen in dieser Assembly

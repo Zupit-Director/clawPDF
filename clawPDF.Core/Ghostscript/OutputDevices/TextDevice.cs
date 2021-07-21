@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Utilities;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Utilities;
 using SystemInterface.IO;
 
-namespace clawSoft.clawPDF.Core.Ghostscript.OutputDevices
+namespace zupit.zupitPDF.Core.Ghostscript.OutputDevices
 {
     public class TextDevice : OutputDevice
     {

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
-using clawSoft.clawPDF.Helper;
-using clawSoft.clawPDF.PrintFile;
+using zupit.zupitPDF.Helper;
+using zupit.zupitPDF.PrintFile;
 
-namespace clawSoft.clawPDF.COM
+namespace zupit.zupitPDF.COM
 {
     internal class PrintFileHelperCom : PrintFileHelperBase
     {

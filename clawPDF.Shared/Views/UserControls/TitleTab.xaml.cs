@@ -6,11 +6,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
-using clawSoft.clawPDF.Core.Jobs;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels.UserControls;
+using zupit.zupitPDF.Core.Jobs;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels.UserControls;
 
-namespace clawSoft.clawPDF.Shared.Views.UserControls
+namespace zupit.zupitPDF.Shared.Views.UserControls
 {
     public partial class TitleTab : UserControl
     {

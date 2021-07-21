@@ -3,16 +3,16 @@ using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Shared.Converter;
-using clawSoft.clawPDF.Shared.Helper;
-using clawSoft.clawPDF.Shared.ViewModels.UserControls;
-using clawSoft.clawPDF.Utilities.Tokens;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Shared.Converter;
+using zupit.zupitPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.ViewModels.UserControls;
+using zupit.zupitPDF.Utilities.Tokens;
 using ComboBox = System.Windows.Controls.ComboBox;
 using TextBox = System.Windows.Controls.TextBox;
 using UserControl = System.Windows.Controls.UserControl;
 
-namespace clawSoft.clawPDF.Shared.Views.UserControls
+namespace zupit.zupitPDF.Shared.Views.UserControls
 {
     public partial class DocumentTab : UserControl
     {
@@ -125,7 +125,7 @@ namespace clawSoft.clawPDF.Shared.Views.UserControls
                     var message = TranslationHelper.TranslatorInstance.GetTranslation("ProfileSettingsWindow",
                         "FontFileNotSupported",
                         "The selected font is not supported. Please select a different font.");
-                    MessageWindow.ShowTopMost(message, "clawPDF", MessageWindowButtons.OK,
+                    MessageWindow.ShowTopMost(message, "zupitPDF", MessageWindowButtons.OK,
                         MessageWindowIcon.Warning);
                     return;
                 }

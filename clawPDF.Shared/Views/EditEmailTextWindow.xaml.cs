@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using clawSoft.clawPDF.Shared.Converter;
-using clawSoft.clawPDF.Shared.Helper;
+using zupit.zupitPDF.Shared.Converter;
+using zupit.zupitPDF.Shared.Helper;
 
-namespace clawSoft.clawPDF.Shared.Views
+namespace zupit.zupitPDF.Shared.Views
 {
     public partial class EditEmailTextWindow : Window
     {

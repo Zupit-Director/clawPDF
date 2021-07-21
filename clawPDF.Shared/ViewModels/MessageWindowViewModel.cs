@@ -1,6 +1,6 @@
-﻿using clawSoft.clawPDF.Shared.Views;
+﻿using zupit.zupitPDF.Shared.Views;
 
-namespace clawSoft.clawPDF.Shared.ViewModels
+namespace zupit.zupitPDF.Shared.ViewModels
 {
     public class MessageWindowViewModel : ViewModelBase
     {

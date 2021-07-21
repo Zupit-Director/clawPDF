@@ -1,8 +1,8 @@
 ﻿using System.IO;
-using clawSoft.clawPDF.Assistants;
+using zupit.zupitPDF.Assistants;
 using NLog;
 
-namespace clawSoft.clawPDF.Startup
+namespace zupit.zupitPDF.Startup
 {
     internal class PrintFileStart : IAppStart
     {

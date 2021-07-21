@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Windows.Controls;
-using clawSoft.clawPDF.Core.Settings;
-using clawSoft.clawPDF.Shared.Properties;
+using zupit.zupitPDF.Core.Settings;
+using zupit.zupitPDF.Shared.Properties;
 
-namespace clawSoft.clawPDF.Shared.Views.ActionControls
+namespace zupit.zupitPDF.Shared.Views.ActionControls
 {
     public class ActionControl : UserControl, INotifyPropertyChanged
     {

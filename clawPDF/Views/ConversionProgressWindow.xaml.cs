@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Timers;
 using System.Windows;
-using clawSoft.clawPDF.Core.Jobs;
+using zupit.zupitPDF.Core.Jobs;
 
-namespace clawSoft.clawPDF.Views
+namespace zupit.zupitPDF.Views
 {
     internal partial class ConversionProgressWindow : Window
     {
